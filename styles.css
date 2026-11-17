@@ -220,6 +220,9 @@ footer a{color:#c3cffa}
 .curr li{position:relative;padding:16px 0 16px 26px;border-bottom:1px solid var(--lav);color:var(--ink);font-size:18px;font-weight:400;line-height:1.5}
 .curr li:before{content:"";position:absolute;left:2px;top:27px;width:8px;height:8px;background:var(--navy)}
 @media(max-width:1200px){.curr{grid-template-columns:1fr}}
+.apply-cta{display:flex;justify-content:center;padding:40px var(--pad) 76px}
+.apply-button{display:inline-block;padding:18px 52px;background:var(--blue);color:#fff;text-decoration:none;text-transform:uppercase;font-size:16px;font-weight:600;letter-spacing:.12em;transition:background .25s ease}
+.apply-button:hover{background:var(--navy)}
 
 /* LOGIN MODAL */
 .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(7,26,82,.55);overflow-y:auto}
