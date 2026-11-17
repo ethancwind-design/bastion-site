@@ -84,3 +84,7 @@ a.pc:hover h3{background-size:100% 1px}
 /* Explore labels are not links (strategy pages removed) */
 span.more{cursor:default}
 span.more:hover{text-decoration:none}
+
+/* HOMEPAGE: purpose text all in blue; "Where we're from" note styled like a legal footnote */
+.purpose-feature h2,.purpose-feature .sub{color:var(--navy)}
+.from-note{margin:64px 0 0;max-width:none;text-align:left;font-family:"Albert Sans","Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.65;font-weight:400;color:var(--navy)}
