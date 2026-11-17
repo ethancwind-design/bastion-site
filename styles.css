@@ -183,7 +183,7 @@ footer a{color:#c3cffa}
 .logos small{display:block;margin-top:2px;color:var(--mute);font-size:15px;letter-spacing:.04em}
 
 /* AI STRATEGY */
-.ai{padding:56px var(--pad) 170px;display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,110px);align-items:start}
+.ai{padding:56px var(--pad) 0;display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,110px);align-items:start}
 .ai figure{position:sticky;top:150px}
 .ai-body{border-left:3px solid #c9cedc;padding-left:clamp(24px,3vw,56px)}
 .still{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--lav);clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease)}
@@ -220,6 +220,9 @@ footer a{color:#c3cffa}
 .curr li{position:relative;padding:16px 0 16px 26px;border-bottom:1px solid var(--lav);color:var(--ink);font-size:18px;font-weight:400;line-height:1.5}
 .curr li:before{content:"";position:absolute;left:2px;top:27px;width:8px;height:8px;background:var(--navy)}
 @media(max-width:1200px){.curr{grid-template-columns:1fr}}
+.apply-cta{display:flex;align-items:center;justify-content:center;min-height:220px;padding:56px var(--pad)}
+.apply-button{display:inline-block;width:min(520px,90vw);padding:30px 48px;background:var(--blue);color:#fff;text-align:center;text-decoration:none;text-transform:uppercase;font-size:22px;font-weight:600;letter-spacing:.12em;transition:background .25s ease}
+.apply-button:hover{background:var(--navy)}
 
 /* LOGIN MODAL */
 .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(7,26,82,.55);overflow-y:auto}
