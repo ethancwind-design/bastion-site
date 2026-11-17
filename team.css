@@ -102,3 +102,7 @@ span.more:hover{text-decoration:none}
 .who.purpose-feature.split h2{font-size:clamp(32px,3.55vw,60px)}
 @media (min-width:1101px){.who.purpose-feature.split h2 span{white-space:nowrap}}
 @media (max-width:900px){.who.purpose-feature.split{grid-template-columns:1fr}}
+
+/* Citadel-style "Explore What We Do" button: turns yellow on hover */
+.btn-explore{display:inline-block;margin-top:30px;padding:16px 26px;background:#fff;color:var(--ink);border:1px solid var(--navy);font-size:17px;letter-spacing:.01em;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-explore:hover,.btn-explore:focus-visible{background:#f1cf63;border-color:#f1cf63;color:var(--ink);text-decoration:none}
