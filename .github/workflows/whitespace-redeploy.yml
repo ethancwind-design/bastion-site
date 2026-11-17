@@ -1,0 +1,56 @@
+name: Whitespace redeploy
+
+# After every push to main, add or remove one trailing space in README.md and
+# push that as a follow-up commit, which makes Vercel build once more.
+#
+# Loop guard: the job is skipped for its own commits (message prefix below)
+# and for anything pushed by github-actions[bot]. The commit is authored as the
+# project owner because the Vercel Hobby plan only builds the owner's commits.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: whitespace-redeploy
+  cancel-in-progress: false
+
+jobs:
+  whitespace:
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      !startsWith(github.event.head_commit.message, 'chore: whitespace redeploy')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toggle one trailing space in README.md
+        run: |
+          python3 - <<'PY'
+          p = "README.md"
+          s = open(p, encoding="utf-8").read()
+          if s.endswith(" \n"):
+              s = s[:-2] + "\n"
+          elif s.endswith("\n"):
+              s = s[:-1] + " \n"
+          else:
+              s = s + " "
+          open(p, "w", encoding="utf-8").write(s)
+          PY
+          git diff --stat
+
+      - name: Commit and push
+        run: |
+          git config user.name "Ethan Wind"
+          git config user.email "ethancwind@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: whitespace redeploy"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+          done
+          echo "push failed after 3 attempts" >&2
+          exit 1
