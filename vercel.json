@@ -1,0 +1,31 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/portfolio",
+      "destination": "/investments",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/executive-board",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/media/research/(.*)\\.pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Bastion - TTWO Initiation.pdf\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investments | Bastion Investment Society</title>
+<meta name="description" content="Investments at the Bastion Investment Society.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="team.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="/"><img src="media/logo.png" alt="">BASTION<span class="tag">Investment Society</span></a>
+  <nav id="nav"><a href="/">Our Purpose</a><a href="/what-we-do">What We Do</a><a href="/research">Research</a><a href="/investments" class=on>Investments</a><div class="dd"><a href="/executive-board" class="ddt" aria-haspopup="true">Our Team</a><div class="ddm"><span class="ddx">Our Culture</span><a href="/executive-board">Executive Board</a><a href="/research-team">Research Team</a><a href="/investment-team">Investment Team</a></div></div></nav>
+  <a class="login" href="#" id="loginBtn">Client Login</a>
+  <button class="burger" id="burger" aria-label="Menu"></button>
+</header>
+
+<section class="hero" id="hero">
+  <video class="reel" id="heroVideo" src="media/investments-hero.mp4" autoplay muted loop playsinline preload="auto"></video>
+  <h1><span>Fund 1:</span><span>Locust Partners</span><span>Equity Fund.</span></h1>
+  <button class="pause" id="pause" aria-label="Pause video"></button>
+  <div class="cta"><p>Locust Partners Equity Fund is a $75K long-only equity fund managed by students at the University of Pennsylvania.</p></div>
+</section>
+
+<section class="fund">
+  <div class="fcol"><div class="big rv" id="fNumber"></div><div class="cap">Fund</div></div>
+  <div class="fcol"><div class="big rv d1" id="fAum"></div><div class="cap">Assets under management</div></div>
+  <div class="fcol"><div class="big sm rv d2" id="fStrat"></div><div class="cap">Strategy</div></div>
+  <div class="fcol lists"><h3>Portfolio Managers</h3><ul id="fMgrs"></ul><h3 class="gap">Allocation</h3><ul id="fAlloc"></ul></div>
+  <div class="fchart"><h3>Portfolio Allocation</h3><svg id="donut" viewBox="0 0 880 540" role="img" aria-label="Portfolio allocation by sector and position"></svg></div>
+</section>
+
+<section class="approach">
+  <div class="atext rv">
+    <h2>Locust Partners<br>Equity Fund</h2>
+    <p>Locust Partners Equity Fund is a concentrated long-only equity portfolio built around a small number of high-conviction ideas across technology, consumer and health care.</p>
+    <p>We favor durable businesses, size positions by the strength of the thesis, and stay disciplined on risk. The fund is run by students at the University of Pennsylvania as part of the Bastion Investment Society.</p>
+  </div>
+  <img class="rv d1" src="media/skyline.jpg" alt="">
+</section>
+<footer>
+  <div class="row">
+    <img src="media/logo-white.png" alt="Bastion">
+    <nav><a href="/">Our Purpose</a><a href="/what-we-do">What We Do</a><a href="/research">Research</a><a href="/investments">Investments</a><a href="/executive-board">Our Team</a></nav>
+  </div>
+  <p>Bastion Investment Society is an independent organization made up of students, mentors, and partners. It is not affiliated with, sponsored by, or endorsed by Harvard, Yale, Princeton, the University of Pennsylvania, Columbia, Brown, Cornell, Dartmouth, or any other university. We do not provide investment advice on this website. This site has not been reviewed by those universities, and they are not responsible for viewers' investment decisions.</p>
+  <p style="margin-top:14px">Please contact <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a> for more information.</p>
+</footer>
+<script src="fund-data.js"></script>
+<script src="fund.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
