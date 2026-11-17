@@ -1,37 +1,70 @@
 name: Whitespace redeploy
 
-# After every push to main, add or remove one trailing space in README.md and
-# push that as a follow-up commit, which makes Vercel build once more.
+# After every push to any branch (and every push to a pull request branch),
+# add or remove one trailing space in README.md and push that as a follow-up
+# commit, which makes Vercel build once more.
 #
-# Loop guard: the job is skipped for its own commits (message prefix below)
-# and for anything pushed by github-actions[bot]. The commit is authored as the
-# project owner because the Vercel Hobby plan only builds the owner's commits.
+# Triggers:
+#   push                - branches that already contain this workflow file
+#   pull_request_target - runs this file from main, so it also covers PR
+#                         branches cut before the workflow existed
+#
+# Loop guards: skipped for its own commits (message prefix below), for
+# github-actions[bot], and when the branch tip is already a whitespace commit
+# (so a push + PR event for the same push only commits once). Pushes made with
+# the built-in token never trigger further workflow runs.
+#
+# The commit is authored as the project owner because the Vercel Hobby plan
+# only builds the owner's commits.
+#
+# pull_request_target note: this job never runs code from the PR branch. It only
+# rewrites README.md with a fixed script and is limited to same-repo branches.
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
 
 concurrency:
-  group: whitespace-redeploy
+  group: whitespace-redeploy-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: false
 
 jobs:
   whitespace:
     if: >-
       github.actor != 'github-actions[bot]' &&
-      !startsWith(github.event.head_commit.message, 'chore: whitespace redeploy')
+      (github.event_name != 'push' ||
+        (github.event.deleted == false &&
+         !startsWith(github.event.head_commit.message, 'chore: whitespace redeploy'))) &&
+      (github.event_name != 'pull_request_target' ||
+        github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ github.head_ref || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Skip if the branch tip is already a whitespace commit
+        id: tip
+        run: |
+          case "$(git log -1 --format=%s)" in
+            "chore: whitespace redeploy"*) echo "skip=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "skip=false" >> "$GITHUB_OUTPUT" ;;
+          esac
 
       - name: Toggle one trailing space in README.md
+        if: steps.tip.outputs.skip != 'true'
         run: |
           python3 - <<'PY'
+          import os
           p = "README.md"
-          s = open(p, encoding="utf-8").read()
+          s = open(p, encoding="utf-8").read() if os.path.exists(p) else "# bastion-site\n"
           if s.endswith(" \n"):
               s = s[:-2] + "\n"
           elif s.endswith("\n"):
@@ -43,14 +76,15 @@ jobs:
           git diff --stat
 
       - name: Commit and push
+        if: steps.tip.outputs.skip != 'true'
         run: |
           git config user.name "Ethan Wind"
           git config user.email "ethancwind@users.noreply.github.com"
           git add README.md
           git commit -m "chore: whitespace redeploy"
           for attempt in 1 2 3; do
-            if git push origin HEAD:main; then exit 0; fi
-            git pull --rebase origin main
+            if git push origin "HEAD:refs/heads/${BRANCH}"; then exit 0; fi
+            git pull --rebase origin "${BRANCH}"
           done
           echo "push failed after 3 attempts" >&2
           exit 1
