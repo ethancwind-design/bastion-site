@@ -158,9 +158,17 @@ footer a{color:#c3cffa}
 .from{padding:110px var(--pad) 130px}
 .from h2{font-size:clamp(36px,4.2vw,64px);color:var(--navy)}
 .logos{display:grid;grid-template-columns:repeat(4,1fr);gap:56px 44px;margin-top:70px}
-.logos>div{border-top:3px solid var(--navy);padding-top:28px}
-.logos .lg{height:96px;display:flex;align-items:center}
-.logos .lg img{max-height:96px;max-width:100%;width:auto;object-fit:contain}
+.logos>div{border-top:3px solid var(--navy);padding-top:28px;text-align:center}
+.logos .lg{height:132px;position:relative}
+.logos .lg img{position:absolute;left:50%;top:50%;width:auto;height:var(--crest-height);max-width:none;transform:translate(-50%,calc(-50% - var(--crest-shift, 0px)));filter:drop-shadow(0 2px 2px rgba(11,21,51,.08))}
+.logos img[src$="harvard-enhanced.png"]{--crest-height:149px;--crest-shift:3px}
+.logos img[src$="yale-enhanced.png"]{--crest-height:153px;--crest-shift:6px}
+.logos img[src$="princeton-enhanced.png"]{--crest-height:156px}
+.logos img[src$="penn-enhanced.png"]{--crest-height:149px;--crest-shift:1px}
+.logos img[src$="columbia-enhanced.png"]{--crest-height:161px;--crest-shift:1px}
+.logos img[src$="brown-enhanced.png"]{--crest-height:156px;--crest-shift:3px}
+.logos img[src$="cornell-enhanced.png"]{--crest-height:136px;--crest-shift:3px}
+.logos img[src$="dartmouth-enhanced.png"]{--crest-height:153px}
 .logos b{display:block;margin-top:22px;font-family:Newsreader,serif;font-weight:400;font-size:clamp(26px,2.4vw,34px);color:var(--ink)}
 .logos small{display:block;margin-top:2px;color:var(--mute);font-size:15px;letter-spacing:.04em}
 
