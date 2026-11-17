@@ -61,10 +61,10 @@ nav a{white-space:nowrap}
 .btn:hover{background:var(--blue)}
 .btn.w{background:#fff;color:var(--navy)}
 .btn.w:hover{background:var(--lav)}
-.band{background:var(--deep);color:#fff;padding:130px var(--pad) 0;position:relative}
+.band{background:var(--deep);color:#fff;margin:0 var(--pad);padding:clamp(80px,8vw,130px) 0 0;position:relative}
 .band .top{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
 .band h2{font-size:clamp(40px,4.8vw,72px);line-height:1.1}
-.band h2 em{font-style:normal;color:var(--sky);display:block}
+.band h2 em{font-style:normal;color:var(--sky);display:block;white-space:nowrap}
 .band p{font-size:21px;line-height:1.6;color:#dbe4ff;max-width:640px;padding-top:12px}
 .media{position:relative;margin-top:100px;aspect-ratio:21/9;overflow:hidden;background:#071a52;margin-bottom:-190px;z-index:2}
 .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -144,6 +144,7 @@ footer a{color:#c3cffa}
   .hero{margin-top:108px}.cta{width:calc(100% - 48px);height:auto;padding:36px 24px;margin-top:-120px}.cta p{max-width:820px;font-size:20px;line-height:28px;font-weight:400;letter-spacing:0;color:#fff;text-shadow:0 1px 14px rgba(7,26,82,.45)}
   .who{grid-template-columns:1fr;gap:24px}.who .body{padding-left:24px}
   .band .top{grid-template-columns:1fr;gap:28px}
+  .band h2{font-size:clamp(32px,6vw,52px)}
   .stills,.stills.flip{grid-template-columns:1fr}.stills figure:nth-child(n){margin-top:0}
   .grid3{grid-template-columns:1fr}.schools .list,.cards{grid-template-columns:1fr 1fr}
   .page-head{margin-top:84px;padding:90px var(--pad)}
