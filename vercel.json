@@ -11,6 +11,21 @@
       "source": "/team",
       "destination": "/executive-board",
       "permanent": false
+    },
+    {
+      "source": "/equities",
+      "destination": "/what-we-do",
+      "permanent": false
+    },
+    {
+      "source": "/credit-convertibles",
+      "destination": "/what-we-do",
+      "permanent": false
+    },
+    {
+      "source": "/quantitative-strategies",
+      "destination": "/what-we-do",
+      "permanent": false
     }
   ],
   "headers": [

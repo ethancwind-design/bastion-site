@@ -80,3 +80,7 @@ a.pc:hover h3{background-size:100% 1px}
 
 /* FOUR STRATEGIES alignment */
 @media(min-width:1301px){.strat .card h3{font-size:clamp(24px,1.8vw,30px);min-height:2.6em}.strat .card .more{min-height:3.4em;align-items:flex-start}.strat .card p{min-height:5.2em}}
+
+/* Explore labels are not links (strategy pages removed) */
+span.more{cursor:default}
+span.more:hover{text-decoration:none}

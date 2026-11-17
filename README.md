@@ -17,7 +17,6 @@ Open http://localhost:8000/index.html. Production uses Vercel's clean URLs (`/re
 | Path | What it is |
 | --- | --- |
 | `index.html`, `what-we-do.html`, `research.html`, `investments.html` | Main pages |
-| `equities.html`, `credit-convertibles.html`, `quantitative-strategies.html` | Strategy pages |
 | `executive-board.html`, `research-team.html`, `investment-team.html` | Our Team pages (people cards) |
 | `styles.css` | Main site styles |
 | `team.css` | Our Team dropdown, people cards, Featured Research, Drone Club section, four-strategy grid |
