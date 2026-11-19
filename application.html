@@ -3,54 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#0b1533">
   <title>Apply | Bastion Investment Society</title>
+  <meta name="description" content="Apply to join Bastion Investment Society.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
   <style>
-    :root{--navy:#0a2166;--blue:#1646b8;--ink:#0b1533;--mute:#58627a;--lav:#d9dfef;--pad:clamp(24px,8.6vw,172px)}
+    :root{--navy:#0a2166;--deep:#14254f;--blue:#2f5bd3;--ink:#0b1533;--mute:#58627a;--line:#c9cfdc}
     *{box-sizing:border-box}
-    body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.6 "Albert Sans","Helvetica Neue",Arial,sans-serif}
-    a{color:inherit}
-    .top{padding:30px var(--pad)}
-    .brand{font:400 22px/1 Newsreader,Georgia,serif;letter-spacing:.12em;text-decoration:none;color:var(--navy)}
-    main{width:min(760px,calc(100% - 2 * var(--pad)));margin:clamp(48px,10vh,110px) auto 120px}
-    .eyebrow{color:var(--blue);font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    h1{margin:14px 0 16px;color:var(--navy);font:400 clamp(42px,6vw,72px)/1.05 Newsreader,Georgia,serif}
-    .intro{max-width:600px;margin:0 0 42px;color:var(--mute);font-size:18px}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    label{display:grid;gap:9px;font-size:15px;font-weight:500;color:var(--ink)}
-    input,textarea{width:100%;border:1px solid #c7ccda;border-radius:0;background:#fff;padding:14px 16px;color:var(--ink);font:400 16px/1.5 "Albert Sans","Helvetica Neue",Arial,sans-serif}
-    input{height:54px}
-    textarea{min-height:180px;resize:vertical}
-    input:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:2px;border-color:var(--blue)}
-    .wide{grid-column:1/-1}
-    button{justify-self:start;border:0;background:var(--blue);padding:16px 34px;color:#fff;font:500 16px/1.2 "Albert Sans","Helvetica Neue",Arial,sans-serif;cursor:pointer;transition:background .2s}
-    button:hover{background:var(--navy)}
-    .note{grid-column:1/-1;margin:-8px 0 0;color:var(--mute);font-size:14px}
-    @media(max-width:600px){.top{padding-top:24px}main{margin-top:44px;margin-bottom:72px}.intro{font-size:17px}form{grid-template-columns:1fr;gap:19px}.wide,.note{grid-column:auto}button{width:100%}}
+    html,body{margin:0;height:100%}
+    body{min-height:100vh;min-height:100svh;color:var(--ink);font:400 16px/1.55 "Albert Sans","Helvetica Neue",Arial,sans-serif;background:#0b1533;overflow-x:hidden}
+    /* full-bleed video background: always covers the whole screen */
+    .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:#0b1533 url(media/apply-dartmouth.jpg) center/cover no-repeat}
+    .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+    .bg video.on{opacity:1}
+    .bg:after{content:"";position:absolute;inset:0;background:rgba(8,18,48,.42)}
+    .top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:26px clamp(20px,2.6vw,44px)}
+    .brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+    .brand img{height:46px;width:auto;display:block}
+    .brand b{font:400 30px/1 Newsreader,Georgia,serif;letter-spacing:.06em}
+    .brand span{padding-left:14px;border-left:1px solid rgba(255,255,255,.55);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;line-height:1.3}
+    .top a.home{color:#fff;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+    .top a.home:hover{text-decoration:underline;text-underline-offset:4px}
+    main{position:relative;z-index:2;display:flex;justify-content:center;padding:clamp(28px,7vh,90px) 20px 80px}
+    .card{width:min(560px,100%);background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+    .card .in{padding:40px 44px 34px}
+    h1{margin:0;text-align:center;color:var(--navy);font:700 46px/1.1 "Albert Sans",sans-serif;letter-spacing:.01em;text-transform:uppercase}
+    .sub{margin:12px 0 26px;text-align:center;color:#333;font-size:16px}
+    label{display:block;margin:0 0 14px}
+    label span{display:block;margin:0 0 6px;font-size:14px;font-weight:600;color:var(--ink)}
+    input,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:3px;font:inherit;color:var(--ink);background:#fff}
+    textarea{min-height:150px;resize:vertical}
+    input:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+    .hint{display:block;margin-top:5px;font-size:13px;color:var(--mute)}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .actions{text-align:center;margin-top:22px}
+    button{min-width:220px;padding:15px 28px;border:0;background:var(--blue);color:#fff;font:700 16px/1 "Albert Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+    button:hover{background:#2148b3}
+    button:disabled{opacity:.6;cursor:wait}
+    .err{margin:14px 0 0;text-align:center;color:#b42318;font-size:14px;min-height:1px}
+    .foot{display:flex;align-items:center;justify-content:center;gap:12px;padding:24px;background:var(--deep);color:#fff;font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .foot:hover{background:#0f1c40}
+    .done{display:none;text-align:center;padding:24px 0 10px}
+    .done .tick{width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center}
+    .done h2{margin:0 0 10px;color:var(--navy);font:700 26px/1.2 "Albert Sans",sans-serif}
+    .done p{margin:0;color:#333}
+    .card.sent form,.card.sent .sub{display:none}
+    .card.sent .done{display:block}
+    @media(max-width:600px){.brand b{font-size:24px}.brand img{height:38px}.brand span{display:none}.card .in{padding:30px 22px 26px}h1{font-size:36px}button{width:100%}}
+    @media(prefers-reduced-motion:reduce){.bg video{display:none}}
   </style>
 </head>
 <body>
-  <header class="top"><a class="brand" href="/">BASTION</a></header>
+  <div class="bg" aria-hidden="true">
+    <video id="v1" class="on" src="media/apply-dartmouth.mp4" poster="media/apply-dartmouth.jpg" muted playsinline autoplay preload="auto"></video>
+    <video id="v2" src="media/apply-brown.mp4" poster="media/apply-brown.jpg" muted playsinline preload="auto"></video>
+  </div>
+
+  <header class="top">
+    <a class="brand" href="/"><img src="media/logo-white.png" alt=""><b>BASTION</b><span>Investment<br>Society</span></a>
+    <a class="home" href="/">Home</a>
+  </header>
+
   <main>
-    <div class="eyebrow">Bastion Investment Society</div>
-    <h1>Apply to join us.</h1>
-    <p class="intro">Tell us a little about yourself and your interest in investing. Submitting opens an email draft addressed to Bastion.</p>
-    <form id="application-form">
-      <label>Full name<input name="name" autocomplete="name" required></label>
-      <label>Email address<input name="email" type="email" autocomplete="email" required></label>
-      <label class="wide">School<input name="school" autocomplete="organization" required></label>
-      <label class="wide">Why are you interested in Bastion?<textarea name="interest" required></textarea></label>
-      <p class="note">Your answers stay in your email draft until you choose to send it.</p>
-      <button type="submit">Continue by email</button>
-    </form>
+    <div class="card" id="card">
+      <div class="in">
+        <h1>Apply</h1>
+        <p class="sub">Apply to join Bastion Investment Society.</p>
+        <form id="application-form" novalidate>
+          <label><span>Full name</span><input name="name" autocomplete="name" required maxlength="120"></label>
+          <label><span>School</span><input name="school" autocomplete="organization" required maxlength="160"></label>
+          <label><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
+          <label><span>Why are you interested in joining Bastion?</span><textarea name="why" required maxlength="4000"></textarea><small class="hint">4 sentences.</small></label>
+          <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <div class="actions"><button type="submit" id="submit">Submit application</button></div>
+          <p class="err" id="err" role="alert"></p>
+        </form>
+        <div class="done" role="status" aria-live="polite">
+          <div class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2>Application submitted.</h2>
+          <p>Thank you. We'll contact you soon.</p>
+        </div>
+      </div>
+      <a class="foot" href="/">Back to Bastion <span aria-hidden="true">&rarr;</span></a>
+    </div>
   </main>
+
   <script>
-    document.getElementById('application-form').addEventListener('submit',event=>{
-      event.preventDefault();
-      const fields=new FormData(event.currentTarget);
-      const body=[`Name: ${fields.get('name')}`,`Email: ${fields.get('email')}`,`School: ${fields.get('school')}`,'',`Why Bastion: ${fields.get('interest')}`].join('\n');
-      window.location.href=`mailto:bastioninvestmentsociety@gmail.com?subject=${encodeURIComponent('Bastion application')}&body=${encodeURIComponent(body)}`;
+    // Background: Dartmouth, then Brown, back to back, looping.
+    (function(){
+      const vids=[document.getElementById('v1'),document.getElementById('v2')];
+      let i=0;
+      vids.forEach((v,n)=>v.addEventListener('ended',()=>{
+        const next=vids[(n+1)%2];
+        next.currentTime=0;
+        next.play().catch(()=>{});
+        next.classList.add('on');v.classList.remove('on');i=(n+1)%2;
+      }));
+      vids[0].play().catch(()=>{});
+    })();
+
+    // Submission -> Google Sheet "Applications" tab (Apps Script web app).
+    const ENDPOINT='https://script.google.com/macros/s/AKfycbx-5JAkwXLPn2lSf8S6YmUPRGSe6agOHyMK9cB9wwMdCgqHth16wcEjSkdfMlWqdK8SwA/exec';
+    const form=document.getElementById('application-form'),btn=document.getElementById('submit'),err=document.getElementById('err'),card=document.getElementById('card');
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();err.textContent='';
+      const d=Object.fromEntries(new FormData(form));
+      for(const k of ['name','school','phone','why']){if(!String(d[k]||'').trim()){err.textContent='Please fill in every field.';form.elements[k].focus();return}}
+      btn.disabled=true;btn.textContent='Submitting…';
+      try{
+        const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+        const j=await r.json();
+        if(!j.ok)throw new Error(j.error||'failed');
+        card.classList.add('sent');
+      }catch(_){
+        err.innerHTML='Something went wrong. Please try again, or email <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a>.';
+      }finally{btn.disabled=false;btn.textContent='Submit application'}
     });
   </script>
 </body>
