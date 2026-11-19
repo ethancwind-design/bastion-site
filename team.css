@@ -106,20 +106,3 @@ span.more:hover{text-decoration:none}
 /* Citadel-style "Explore What We Do" button: turns yellow on hover */
 .btn-explore{display:inline-block;margin-top:30px;padding:16px 26px;background:#fff;color:var(--ink);border:1px solid var(--navy);font-size:17px;letter-spacing:.01em;text-decoration:none;transition:background .2s,border-color .2s}
 .btn-explore:hover,.btn-explore:focus-visible{background:#f1cf63;border-color:#f1cf63;color:var(--ink);text-decoration:none}
-
-/* HOMEPAGE: Collaborate section (Citadel "Work with Exceptional Talent" style); photo hangs into the footer */
-.collab{--hang:clamp(120px,14vw,220px);background:linear-gradient(to bottom,#f4f4f4 calc(100% - var(--hang)),#06123a calc(100% - var(--hang)));padding:clamp(80px,8vw,120px) var(--pad) 0}
-.collab-top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(40px,6vw,110px);align-items:start}
-.collab h2{margin:0;color:var(--ink);font-size:clamp(32px,3.55vw,60px);line-height:1.12}
-.collab h2 span{display:block}
-.collab h2 .hl{color:var(--blue)}
-.collab-body p{margin:0;color:var(--navy);font-size:18px;line-height:1.7;max-width:640px}
-.collab-body p a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.collab-body p a:hover{color:var(--navy)}
-.btn-apply{display:inline-block;margin-top:30px;padding:16px 34px;background:var(--blue);color:#fff;font-size:17px;letter-spacing:.02em;text-decoration:none;transition:background .2s}
-.btn-apply:hover,.btn-apply:focus-visible{background:var(--navy);color:#fff}
-.collab-photo{margin:clamp(48px,5vw,72px) 0 0;aspect-ratio:2/1;overflow:hidden}
-.collab-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.collab + footer{padding-top:clamp(48px,5vw,72px)}
-@media (min-width:1101px){.collab h2 span{white-space:nowrap}}
-@media (max-width:900px){.collab-top{grid-template-columns:1fr;gap:28px}.collab{--hang:90px}}
