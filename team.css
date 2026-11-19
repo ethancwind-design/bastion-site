@@ -106,3 +106,10 @@ span.more:hover{text-decoration:none}
 /* Citadel-style "Explore What We Do" button: turns yellow on hover */
 .btn-explore{display:inline-block;margin-top:30px;padding:16px 26px;background:#fff;color:var(--ink);border:1px solid var(--navy);font-size:17px;letter-spacing:.01em;text-decoration:none;transition:background .2s,border-color .2s}
 .btn-explore:hover,.btn-explore:focus-visible{background:#f1cf63;border-color:#f1cf63;color:var(--ink);text-decoration:none}
+
+/* OUR CHAPTERS: clickable chapter cards + blank chapter pages */
+.logos>a.chap{display:block;border-top:3px solid var(--navy);padding-top:28px;text-align:center;color:inherit;text-decoration:none}
+.logos>a.chap .lg img{transition:transform .35s var(--ease)}
+.logos>a.chap:hover .lg img,.logos>a.chap:focus-visible .lg img{transform:translate(-50%,calc(-50% - var(--crest-shift, 0px))) scale(1.06)}
+.logos>a.chap:hover b,.logos>a.chap:focus-visible b{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.chapter-blank{min-height:70vh;background:#fff}
