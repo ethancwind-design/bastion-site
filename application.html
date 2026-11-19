@@ -3,10 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Application | Bastion Investment Society</title>
+  <meta name="theme-color" content="#ffffff">
+  <title>Apply | Bastion Investment Society</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
   <style>
-    html, body { min-height: 100%; margin: 0; background: #fff; }
+    :root{--navy:#0a2166;--blue:#1646b8;--ink:#0b1533;--mute:#58627a;--lav:#d9dfef;--pad:clamp(24px,8.6vw,172px)}
+    *{box-sizing:border-box}
+    body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.6 "Albert Sans","Helvetica Neue",Arial,sans-serif}
+    a{color:inherit}
+    .top{padding:30px var(--pad)}
+    .brand{font:400 22px/1 Newsreader,Georgia,serif;letter-spacing:.12em;text-decoration:none;color:var(--navy)}
+    main{width:min(760px,calc(100% - 2 * var(--pad)));margin:clamp(48px,10vh,110px) auto 120px}
+    .eyebrow{color:var(--blue);font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    h1{margin:14px 0 16px;color:var(--navy);font:400 clamp(42px,6vw,72px)/1.05 Newsreader,Georgia,serif}
+    .intro{max-width:600px;margin:0 0 42px;color:var(--mute);font-size:18px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    label{display:grid;gap:9px;font-size:15px;font-weight:500;color:var(--ink)}
+    input,textarea{width:100%;border:1px solid #c7ccda;border-radius:0;background:#fff;padding:14px 16px;color:var(--ink);font:400 16px/1.5 "Albert Sans","Helvetica Neue",Arial,sans-serif}
+    input{height:54px}
+    textarea{min-height:180px;resize:vertical}
+    input:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:2px;border-color:var(--blue)}
+    .wide{grid-column:1/-1}
+    button{justify-self:start;border:0;background:var(--blue);padding:16px 34px;color:#fff;font:500 16px/1.2 "Albert Sans","Helvetica Neue",Arial,sans-serif;cursor:pointer;transition:background .2s}
+    button:hover{background:var(--navy)}
+    .note{grid-column:1/-1;margin:-8px 0 0;color:var(--mute);font-size:14px}
+    @media(max-width:600px){.top{padding-top:24px}main{margin-top:44px;margin-bottom:72px}.intro{font-size:17px}form{grid-template-columns:1fr;gap:19px}.wide,.note{grid-column:auto}button{width:100%}}
   </style>
 </head>
-<body></body>
+<body>
+  <header class="top"><a class="brand" href="/">BASTION</a></header>
+  <main>
+    <div class="eyebrow">Bastion Investment Society</div>
+    <h1>Apply to join us.</h1>
+    <p class="intro">Tell us a little about yourself and your interest in investing. Submitting opens an email draft addressed to Bastion.</p>
+    <form id="application-form">
+      <label>Full name<input name="name" autocomplete="name" required></label>
+      <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+      <label class="wide">School<input name="school" autocomplete="organization" required></label>
+      <label class="wide">Why are you interested in Bastion?<textarea name="interest" required></textarea></label>
+      <p class="note">Your answers stay in your email draft until you choose to send it.</p>
+      <button type="submit">Continue by email</button>
+    </form>
+  </main>
+  <script>
+    document.getElementById('application-form').addEventListener('submit',event=>{
+      event.preventDefault();
+      const fields=new FormData(event.currentTarget);
+      const body=[`Name: ${fields.get('name')}`,`Email: ${fields.get('email')}`,`School: ${fields.get('school')}`,'',`Why Bastion: ${fields.get('interest')}`].join('\n');
+      window.location.href=`mailto:bastioninvestmentsociety@gmail.com?subject=${encodeURIComponent('Bastion application')}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
 </html>
