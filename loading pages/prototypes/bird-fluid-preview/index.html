@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Bastion Bird — Fluid Animation Preview</title>
+  <link rel="stylesheet" href="./preview.css">
+</head>
+<body>
+  <main class="preview" aria-label="Bastion bird animation preview">
+    <svg class="scene" id="scene" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="An engraved Bastion swallow launches from a tree branch and swoops across the screen">
+      <defs>
+        <image id="engraving" href="./assets/bastion-swallow-engraving.svg" x="0" y="0" width="1000" height="875" />
+        <filter id="paper-grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix values="0.6 0 0 0 0.34  0 0.6 0 0 0.31  0 0 0.6 0 0.24  0 0 0 0.045 0" />
+        </filter>
+        <clipPath id="clip-body" clipPathUnits="userSpaceOnUse">
+          <path d="M-8 300 L92 302 L151 352 L184 405 L244 432 L333 445 L424 462 L500 500 L548 555 L574 616 L540 684 L451 748 L350 787 L253 760 L170 714 L98 644 L39 564 L-8 496 Z" />
+        </clipPath>
+        <clipPath id="clip-wing-far" clipPathUnits="userSpaceOnUse">
+          <path d="M132 476 C148 392 163 321 216 265 C296 181 420 101 572 44 C631 22 681 5 711 -4 L737 -6 C718 71 665 168 594 266 C539 343 487 420 439 472 C396 519 337 520 281 494 L191 475 Z" />
+        </clipPath>
+        <clipPath id="clip-wing-near" clipPathUnits="userSpaceOnUse">
+          <path d="M133 415 C208 422 286 465 363 516 C476 591 613 738 731 858 L752 884 C624 855 451 758 321 658 C231 589 174 528 145 476 Z" />
+        </clipPath>
+        <clipPath id="clip-tail" clipPathUnits="userSpaceOnUse">
+          <path d="M396 404 C590 372 814 310 1006 280 L1006 338 C789 382 609 445 441 505 Z" />
+          <path d="M391 527 C596 538 820 594 1006 612 L1006 675 C797 652 587 611 415 595 Z" />
+          <path d="M387 439 C473 442 548 479 606 526 L574 614 C506 610 441 588 389 554 Z" />
+        </clipPath>
+        <path id="flight-path" d="M1120 245 C1115 110 1005 70 900 135 C780 210 670 430 520 590 C365 755 200 820 40 860 C-80 890 -220 970 -490 1060" />
+      </defs>
+
+      <rect class="scene-paper" width="1440" height="900" />
+      <rect class="paper-texture" width="1440" height="900" filter="url(#paper-grain)" />
+      <g id="forest-branches" aria-hidden="true">
+        <image class="forest-art" href="./assets/engraved-forest.svg" x="0" y="0" width="1440" height="900" preserveAspectRatio="none" />
+      </g>
+      <image class="branch" href="./assets/bastion-branch.svg" x="1020" y="258" width="420" height="141" />
+      <g id="dot-trail" aria-hidden="true"></g>
+      <!-- The bird is intentionally painted after the branch so it remains in front. -->
+      <g id="bird-motion">
+        <g id="bird-scale">
+          <g id="bird-pitch">
+            <g id="bird-origin">
+              <g id="wing-far" class="component">
+                <use href="#engraving" clip-path="url(#clip-wing-far)" />
+              </g>
+              <g id="tail" class="component">
+                <use href="#engraving" clip-path="url(#clip-tail)" />
+              </g>
+              <g id="body" class="component">
+                <use href="#engraving" clip-path="url(#clip-body)" />
+              </g>
+              <g id="wing-near" class="component">
+                <use href="#engraving" clip-path="url(#clip-wing-near)" />
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+
+    <div class="controls" aria-label="Preview controls">
+      <button id="replay" type="button">Replay</button>
+      <span>Fluid SVG prototype</span>
+    </div>
+  </main>
+  <script src="./animation.js"></script>
+</body>
+</html>
