@@ -29,7 +29,7 @@
     label.setAttribute('text-anchor', 'middle');
     label.setAttribute('dominant-baseline', 'middle');
     label.setAttribute('fill', index === 3 ? '#0a2166' : '#fff');
-    label.textContent = String(index + 1).padStart(2, '0');
+    label.textContent = String(index + 1);
     link.append(path, label);
     svg.append(link);
 
@@ -39,7 +39,7 @@
     const number = document.createElement('span');
     number.className = 'strategy-number';
     number.style.setProperty('--strategy-color', strategy.color);
-    number.textContent = String(index + 1).padStart(2, '0');
+    number.textContent = String(index + 1);
     const name = document.createElement('span');
     name.className = 'strategy-name';
     name.textContent = strategy.committee;
