@@ -13,6 +13,11 @@
       "permanent": false
     },
     {
+      "source": "/executive-board/",
+      "destination": "/chapters/",
+      "permanent": false
+    },
+    {
       "source": "/equities",
       "destination": "/what-we-do",
       "permanent": false
