@@ -80,7 +80,7 @@
       '<section class="chapter-navy">',
         '<div class="chapter-wrap chapter-navy-inner">',
           '<h2>Want to join?<em>How to apply.</em></h2>',
-          '<p>Apply on the <a href="/application">application page</a>, or contact <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a>.</p>',
+          '<p>Apply on the <a href="/application">application page</a>, or contact your campus president.</p>',
         '</div>',
       '</section>',
       '<section class="pgroup chapter-officials" id="officials">',
