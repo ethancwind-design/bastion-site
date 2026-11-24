@@ -1,6 +1,5 @@
 // What We Do timeline: stages along the bottom, two yellow segments per stage, auto-advance, arrows.
-(function(){
-  const root=document.getElementById('timeline');if(!root)return;
+document.querySelectorAll('.timeline').forEach(function(root){
   const slides=[...root.querySelectorAll('.tl-slide')],segs=[...root.querySelectorAll('.tl-seg')],stages=[...root.querySelectorAll('.tl-stage')];
   const DUR=7000;let i=-1,timer=null,start=0,paused=false,left=DUR;
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -35,4 +34,4 @@
   root.addEventListener('focusin',pause);root.addEventListener('focusout',resume);
   // start when visible
   const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){io.disconnect();show(0)}},{threshold:.3});io.observe(root);
-})();
+});
