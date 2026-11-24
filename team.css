@@ -199,3 +199,38 @@ span.more:hover{text-decoration:none}
 .timeline:has(.tl-box.on) .tl-bar{color:#fff}
 @media(max-width:1000px){.tl-box{grid-template-columns:1fr;min-height:640px;align-content:end;gap:24px}.tl-polaroid{width:200px;left:auto;right:6%}.tl-card{justify-self:stretch;padding:30px}}
 .tl-polaroid{top:70px!important}
+/* timeline transitions (Citadel-style) */
+.tl-slide,.tl-slide.on{opacity:1;transition:none}
+.tl-slide{visibility:hidden}
+.tl-slide.on,.tl-slide.out{visibility:visible}
+.tl-slide.out{pointer-events:none;z-index:1}
+.tl-slide.on{z-index:2}
+.tl-slide .tl-copy>*,.tl-slide .tl-pics img,.tl-slide .tl-card,.tl-slide .tl-polaroid,.tl-slide .tl-bg,.tl-slide.on .tl-copy>*,.tl-slide.on .tl-pics img,.tl-slide.on .tl-card,.tl-slide.on .tl-bg{transition:none;transform:none}
+.tl-slide .tl-polaroid,.tl-slide.on .tl-polaroid{transition:none;transform:rotate(-3deg)}
+@keyframes tlEnterR{0%{opacity:0;transform:translateX(100%) scale(.85)}100%{opacity:1;transform:none}}
+@keyframes tlEnterL{0%{opacity:0;transform:translateX(-100%) scale(.85)}100%{opacity:1;transform:none}}
+@keyframes tlExitL{0%{opacity:1;transform:none}100%{opacity:0;transform:translateX(-100%) scale(.85)}}
+@keyframes tlExitR{0%{opacity:1;transform:none}100%{opacity:0;transform:translateX(100%) scale(.85)}}
+@keyframes tlWipeIn{0%{opacity:0;clip-path:inset(0 0 100% 0)}100%{opacity:1;clip-path:inset(0)}}
+@keyframes tlWipeOut{0%{clip-path:inset(0)}100%{clip-path:inset(0 0 100% 0)}}
+@keyframes tlTextIn{0%{opacity:0;transform:translateY(50px)}100%{opacity:1;transform:none}}
+@keyframes tlTextOut{0%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-50px)}}
+@keyframes tlTextDown{0%{opacity:0;transform:translateY(-50px)}100%{opacity:1;transform:none}}
+@keyframes tlFadeOut{0%{opacity:1}100%{opacity:0}}
+@keyframes tlCardIn{0%{opacity:0;clip-path:inset(0 100% 0 0)}100%{opacity:1;clip-path:inset(0)}}
+@keyframes tlPolIn{0%{opacity:0;transform:translateX(-40px) rotate(-3deg)}100%{opacity:1;transform:rotate(-3deg)}}
+.tl-slide.on.fwd .tl-bg{animation:tlEnterR .9s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.on.back .tl-bg{animation:tlEnterL .9s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.out.fwd .tl-bg{animation:tlExitL .9s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.out.back .tl-bg{animation:tlExitR .9s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.on .tl-pics img{animation:tlWipeIn .8s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.on .tl-pics .p1{animation-delay:.35s}.tl-slide.on .tl-pics .p2{animation-delay:.45s}.tl-slide.on .tl-pics .p3{animation-delay:.55s}.tl-slide.on .tl-pics .p4{animation-delay:.65s}
+.tl-slide.out .tl-pics img{animation:tlWipeOut .6s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.on .tl-copy>*{animation:tlTextIn .8s .4s cubic-bezier(.2,.7,.2,1) both}
+.tl-slide.on .tl-copy>p{animation-delay:.55s}
+.tl-slide.out .tl-copy>*{animation:tlTextOut .5s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.on .tl-big{animation:tlTextDown .8s .6s cubic-bezier(.2,.7,.2,1) both}
+.tl-slide.on .tl-polaroid{animation:tlPolIn .8s .7s cubic-bezier(.2,.7,.2,1) both}
+.tl-slide.on .tl-card{animation:tlCardIn .8s .8s cubic-bezier(.65,0,.35,1) both}
+.tl-slide.out .tl-big,.tl-slide.out .tl-polaroid,.tl-slide.out .tl-card{animation:tlFadeOut .35s both}
+@media(prefers-reduced-motion:reduce){.tl-slide *{animation:none!important}}
