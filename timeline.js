@@ -24,8 +24,8 @@ document.querySelectorAll('.timeline').forEach(function(root){
     const b=segs[i].querySelector('i');b.offsetWidth;b.style.transition='width '+ms+'ms linear';b.style.width='100%';
     timer=setTimeout(()=>show(i+1,'fwd'),ms);
   }
-  function pause(){if(paused||reduce)return;paused=true;clearTimeout(timer);left=Math.max(0,left-(performance.now()-start));const b=segs[i].querySelector('i'),w=getComputedStyle(b).width;b.style.transition='none';b.style.width=w}
-  function resume(){if(!paused)return;paused=false;run(left)}
+  function pause(){if(paused||reduce||i<0)return;paused=true;clearTimeout(timer);left=Math.max(0,left-(performance.now()-start));const b=segs[i].querySelector('i'),w=getComputedStyle(b).width;b.style.transition='none';b.style.width=w}
+  function resume(){if(!paused||i<0)return;paused=false;run(left)}
   root.querySelector('.tl-prev').addEventListener('click',()=>show(i-1,'back'));
   root.querySelector('.tl-next').addEventListener('click',()=>show(i+1,'fwd'));
   segs.forEach((s,k)=>s.addEventListener('click',e=>{e.stopPropagation();show(k)}));
