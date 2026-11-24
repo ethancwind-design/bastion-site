@@ -238,3 +238,4 @@ body[data-chapter] header {
 .chapter-page .chapter-breadcrumb a,
 .chapter-page .chapter-navy p a{color:var(--school-text-2,var(--navy))}
 .chapter-page .chapter-officials h2::after,.chapter-page .chapter-activity h2::after{background:var(--school-text-2,var(--school))}
+.chapter-officials .pgrid{align-items:stretch}

@@ -311,3 +311,9 @@ span.more:hover{text-decoration:none}
 .admin-table tr.new td:first-child{box-shadow:inset 4px 0 0 #f1cf63}
 .admin-msg{margin-top:26px;color:var(--mute)}
 .nav-admin{color:var(--blue)!important}
+/* People cards: every photo the same size and aligned across a row, whatever the text length */
+.pgrid{align-items:stretch}
+.pc{height:100%}
+.pc .ph{margin-top:auto;width:100%;flex:none;box-sizing:border-box}
+.pc>:nth-last-child(2){margin-bottom:28px}
+.pc .ph.pic{border:1px solid transparent}
