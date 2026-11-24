@@ -54,7 +54,7 @@
     tbl.tHead.innerHTML='<tr>'+data.headers.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr>';
     tbl.tBodies[0].innerHTML=rows.map(r=>'<tr'+(r[4]==='Existing member'?'':' class="new"')+'>'+r.map((c,k)=>{const h=data.headers[k]||'';const cls=h==='Full Name'?'nm':(h.indexOf('Why')===0?'why':'');return '<td'+(cls?' class="'+cls+'"':'')+' data-label="'+esc(h)+'">'+(h.indexOf('Why')===0&&c==='Existing member'?'<span class="tag">Existing member</span>':esc(c))+'</td>'}).join('')+'</tr>').join('');
     const apps=data.rows.filter(r=>r[4]!=='Existing member').length;
-    count.textContent=data.rows.length+' people · '+apps+' new application'+(apps===1?'':'s')+(term?' · '+rows.length+' shown':'');
+    count.textContent=data.rows.length+(data.rows.length===1?' person · ':' people · ')+apps+' new application'+(apps===1?'':'s')+(term?' · '+rows.length+' shown':'');
   }
   async function load(){
     const s=bastionAdminSession();
