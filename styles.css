@@ -431,3 +431,5 @@ footer a{color:#c3cffa}
 .who.upc{grid-template-columns:220px minmax(0,1fr) 300px}
 .who.upc .body{padding-right:40px}
 .bignum span{font-size:clamp(70px,7.4vw,130px)}
+.funds-list{margin-top:0}.fund-entry:first-child{border-top:0}
+@media(max-width:700px){.funds-list{margin-top:0}}
