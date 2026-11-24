@@ -198,3 +198,4 @@ span.more:hover{text-decoration:none}
 .tl-card p+p{margin-top:16px}
 .timeline:has(.tl-box.on) .tl-bar{color:#fff}
 @media(max-width:1000px){.tl-box{grid-template-columns:1fr;min-height:640px;align-content:end;gap:24px}.tl-polaroid{width:200px;left:auto;right:6%}.tl-card{justify-self:stretch;padding:30px}}
+.tl-polaroid{top:70px!important}
