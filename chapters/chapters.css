@@ -1,11 +1,10 @@
 .chapters-network {
-  --map-pad: clamp(16px, 1.6vw, 30px);
-  padding: 84px var(--map-pad) 68px;
+  padding: 84px var(--pad) 68px;
   background: #fff;
 }
 
 .chapters-heading {
-  margin: 0 calc(var(--pad) - var(--map-pad)) 4px;
+  margin: 0 0 4px;
   padding: 0;
 }
 
@@ -18,7 +17,7 @@
 
 .chapter-map {
   position: relative;
-  width: min(100%, 1130px, calc(117.39vh - 80px));
+  width: min(100%, 1280px, calc(117.39vh - 80px));
   aspect-ratio: 1080 / 920;
   margin: 0 auto;
   container-type: inline-size;
@@ -186,8 +185,8 @@
 }
 
 @media (max-width: 680px) {
-  .chapters-network { padding: 56px 20px 70px; }
-  .chapters-heading { margin: 0 4px 14px; }
+  .chapters-network { padding: 56px var(--pad) 70px; }
+  .chapters-heading { margin: 0 0 14px; }
   .chapter-map { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 8px; }
   .chapter-crest { width: 110px; height: 110px; }
   .chapter-node b { font-size: 25px; }

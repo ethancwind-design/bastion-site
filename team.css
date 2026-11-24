@@ -16,11 +16,11 @@
 }
 
 /* TEAM PAGES */
-.pintro{background:var(--soft);padding:110px var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.pintro{background:var(--soft);padding:var(--section-space) var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:var(--column-gap);align-items:start}
 .pintro h2{font-size:clamp(38px,3.8vw,60px);line-height:1.1;color:var(--navy)}
 .pintro h2 em{font-style:normal;color:var(--blue);display:block}
 .pintro p{color:var(--mute);font-size:18px;line-height:1.75;max-width:620px;padding-top:12px}
-.pgroup{padding:100px var(--pad) 120px}
+.pgroup{padding:var(--section-space) var(--pad) calc(var(--section-space) * 1.1)}
 .pgroup.alt{background:var(--soft)}
 .pgroup h2{font-size:clamp(38px,3.8vw,58px);color:var(--blue);line-height:1.1}
 .gnote{color:var(--mute);font-size:17px;margin-top:14px;max-width:760px}
@@ -47,7 +47,7 @@ a.pc:hover h3{background-size:100% 1px}
 @media(max-width:1300px){.strat .grid{grid-template-columns:1fr 1fr;row-gap:50px}}
 @media(max-width:700px){.strat .grid{grid-template-columns:1fr}}
 @media(max-width:1200px){.pgrid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:900px){.pintro{grid-template-columns:1fr;gap:20px;padding:70px var(--pad)}.pgrid{grid-template-columns:repeat(2,1fr);gap:50px 0}.pc{padding:0 18px}}
+@media(max-width:900px){.pintro{grid-template-columns:1fr;gap:20px;padding:70px var(--pad)}.pgroup{padding-block:76px 88px}.pgrid{grid-template-columns:repeat(2,1fr);gap:50px 0}.pc{padding:0 18px}}
 @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
 
 /* FEATURED RESEARCH (research page) */

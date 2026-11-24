@@ -1,0 +1,18 @@
+/* Shared layout measurements for every public page. Backgrounds remain full width. */
+:root {
+  --content-max: 1440px;
+  --page-gutter: clamp(24px, 5vw, 80px);
+  --content-inset: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  --content-width: min(calc(100vw - 2 * var(--page-gutter)), var(--content-max));
+  --section-space: clamp(88px, 7vw, 110px);
+  --column-gap: clamp(32px, 4.5vw, 80px);
+  --breakpoint-mobile: 560px;
+  --breakpoint-tablet: 900px;
+  --breakpoint-navigation: 1100px;
+  --pad: var(--content-inset);
+}
+
+.content-container {
+  width: var(--content-width);
+  margin-inline: auto;
+}

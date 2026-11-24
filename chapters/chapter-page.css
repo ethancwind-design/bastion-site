@@ -10,14 +10,14 @@ body[data-chapter] header {
 }
 
 .chapter-wrap {
-  width: min(calc(100% - 2 * var(--pad)), 1600px);
+  width: var(--content-width);
   margin-inline: auto;
 }
 
 .chapter-hero-inner {
   display: grid;
   grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
-  gap: clamp(40px, 5vw, 96px);
+  gap: var(--column-gap);
   align-items: start;
   padding-top: clamp(56px, 5vw, 88px);
 }
@@ -108,7 +108,7 @@ body[data-chapter] header {
 .chapter-navy-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(44px, 7vw, 130px);
+  gap: var(--column-gap);
   align-items: start;
   padding-top: clamp(210px, 18vw, 260px);
   padding-bottom: clamp(90px, 9vw, 140px);

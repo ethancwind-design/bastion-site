@@ -1,35 +1,63 @@
-(function(){
-const F=window.FUND,$=id=>document.getElementById(id);
-$('fNumber').textContent=F.number;$('fAum').textContent=F.aum;$('fStrat').textContent=F.strategy;
-$('fMgrs').innerHTML=F.managers.map(m=>`<li>${m}</li>`).join('');
-$('fAlloc').innerHTML=F.sectors.map(s=>`<li>${s.name} <span>${s.pct}%</span></li>`).join('');
-const NS='http://www.w3.org/2000/svg',cx=420,cy=270;
-const pt=(r,a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
-function seg(r0,r1,a0,a1,off){
-  const m=(a0+a1)/2,dx=off*Math.cos(m),dy=off*Math.sin(m),big=a1-a0>Math.PI?1:0;
-  const [x0,y0]=pt(r1,a0),[x1,y1]=pt(r1,a1),[x2,y2]=pt(r0,a1),[x3,y3]=pt(r0,a0);
-  return `M${x0+dx},${y0+dy}A${r1},${r1} 0 ${big} 1 ${x1+dx},${y1+dy}L${x2+dx},${y2+dy}A${r0},${r0} 0 ${big} 0 ${x3+dx},${y3+dy}Z`;
-}
-function render(){
-  const svg=$('donut');let h='';const gap=.012,T=Math.PI*2,start=-Math.PI/2;
-  let a=start;const tot=F.sectors.reduce((s,x)=>s+x.pct,0);
-  const sec={};
-  F.sectors.forEach(s=>{const span=s.pct/tot*T;sec[s.name]={a0:a,a1:a+span,color:s.color,used:a};a+=span});
-  // outer ring + labels
-  F.sectors.forEach(s=>{const o=sec[s.name],a0=o.a0+gap,a1=o.a1-gap,m=(o.a0+o.a1)/2;
-    h+=`<path class="seg" d="${seg(150,232,a0,a1,10)}" fill="${s.color}"/>`;
-    const [lx,ly]=pt(192+10,m),[ex,ey]=pt(262,m),right=Math.cos(m)>=0,tx=ex+(right?26:-26);
-    h+=`<polyline points="${lx},${ly} ${ex},${ey} ${tx},${ey}" fill="none" stroke="#0b1533" stroke-width="1"/>`;
-    h+=`<text class="lbl" x="${tx+(right?6:-6)}" y="${ey-4}" text-anchor="${right?'start':'end'}">${s.name}</text><text class="lbl" x="${tx+(right?6:-6)}" y="${ey+20}" text-anchor="${right?'start':'end'}">${s.pct}%</text>`;
+(function () {
+  const { strategies, investmentCommittee } = window.FUND;
+  const svg = document.getElementById('strategyPie');
+  const list = document.getElementById('fundStrategies');
+  const committee = document.getElementById('fundCommittee');
+  const namespace = 'http://www.w3.org/2000/svg';
+  const center = 260;
+  const radius = 210;
+
+  function point(angle, distance) {
+    return [center + distance * Math.cos(angle), center + distance * Math.sin(angle)];
+  }
+
+  strategies.forEach((strategy, index) => {
+    const start = -Math.PI / 2 + index * Math.PI / 2;
+    const end = start + Math.PI / 2;
+    const [x0, y0] = point(start, radius);
+    const [x1, y1] = point(end, radius);
+    const [labelX, labelY] = point((start + end) / 2, radius * .59);
+    const link = document.createElementNS(namespace, 'a');
+    const path = document.createElementNS(namespace, 'path');
+    const label = document.createElementNS(namespace, 'text');
+    link.setAttribute('href', strategy.href);
+    link.setAttribute('aria-label', strategy.committee);
+    path.setAttribute('d', `M ${center} ${center} L ${x0} ${y0} A ${radius} ${radius} 0 0 1 ${x1} ${y1} Z`);
+    path.setAttribute('fill', strategy.color);
+    label.setAttribute('x', labelX);
+    label.setAttribute('y', labelY);
+    label.setAttribute('text-anchor', 'middle');
+    label.setAttribute('dominant-baseline', 'middle');
+    label.setAttribute('fill', index === 3 ? '#0a2166' : '#fff');
+    label.textContent = String(index + 1).padStart(2, '0');
+    link.append(path, label);
+    svg.append(link);
+
+    const row = document.createElement('a');
+    row.className = 'strategy-row';
+    row.href = strategy.href;
+    const number = document.createElement('span');
+    number.className = 'strategy-number';
+    number.style.setProperty('--strategy-color', strategy.color);
+    number.textContent = String(index + 1).padStart(2, '0');
+    const name = document.createElement('span');
+    name.className = 'strategy-name';
+    name.textContent = strategy.committee;
+    const manager = document.createElement('span');
+    manager.className = 'strategy-manager';
+    manager.textContent = `Portfolio Manager · ${strategy.manager || 'To be announced'}`;
+    row.append(number, name, manager);
+    list.append(row);
   });
-  // inner ring by position, grouped by sector order
-  F.sectors.forEach(s=>{const o=sec[s.name];let b=o.a0;const ps=F.positions.filter(p=>p.sector===s.name),pt0=ps.reduce((x,p)=>x+p.pct,0)||1;
-    ps.forEach((p,i)=>{const span=(o.a1-o.a0)*p.pct/pt0,a0=b+gap/2,a1=b+span-gap/2,m=(a0+a1)/2;b+=span;
-      h+=`<path class="seg" d="${seg(66,128,a0,a1,0)}" fill="${s.color}" opacity="${(1-i*.17).toFixed(2)}"/>`;
-      if(span>.2){const [tx,ty]=pt(97,m);h+=`<text class="tick" x="${tx}" y="${ty+4}" text-anchor="middle">${p.ticker}</text>`}
-    });
+
+  investmentCommittee.forEach(person => {
+    const item = document.createElement('div');
+    item.className = 'oversight-person';
+    const name = document.createElement('strong');
+    name.textContent = person.name;
+    const role = document.createElement('span');
+    role.textContent = person.role;
+    item.append(name, role);
+    committee.append(item);
   });
-  svg.innerHTML=h;
-}
-render();
 })();
