@@ -317,3 +317,14 @@ span.more:hover{text-decoration:none}
 .pc .ph{margin-top:auto;width:100%;flex:none;box-sizing:border-box}
 .pc>:nth-last-child(2){margin-bottom:28px}
 .pc .ph.pic{border:1px solid transparent}
+/* What We Do hero: clickable goals */
+.cta .goal-link{color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;transition:color .25s}
+.cta .goal-link:hover,.cta .goal-link:focus-visible{color:#f1cf63}
+#internal,#partnerships,#community{scroll-margin-top:120px}
+html{scroll-behavior:smooth}
+/* Our Funds pods */
+.pods-note{color:var(--mute);font-size:18px;margin-top:16px;max-width:680px}
+.pod-tag{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.pods .pgrid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.pods .pgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pods .pgrid{grid-template-columns:1fr}}

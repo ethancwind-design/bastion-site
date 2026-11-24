@@ -26,13 +26,22 @@
   };
   const officers = presCard + VP_ROLES.map((role) => card(Object.assign({ name: 'First Last' }, (OFFICERS[key] || {})[role], { role: role }))).join('');
   const MEMBERS = {
+    yale: [
+      { name: 'Johnny Guo', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/johnny-guo-212bb22a5/', photo: '/media/people/johnny-guo.jpg' },
+    ],
     princeton: [
       { name: 'Krish Bharwani', role: 'Member', url: 'https://www.linkedin.com/in/krish-bharwani-aa0626313/' }
     ],
     harvard: [
+      { name: 'Ryan Casey', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/ryancasey-/', photo: '/media/people/ryan-casey.jpg' },
       { name: 'Buhlebenkosi Mhlongo', role: 'Member', url: 'https://www.linkedin.com/in/buhlebenkosi-mhlongo-895285361/', photo: '/media/people/buhlebenkosi-mhlongo.jpg' }
     ],
     penn: [
+      { name: 'Albert Armin', role: 'Portfolio Manager, Real Estate', url: 'https://www.linkedin.com/in/albert-armin-07110026b/', photo: '/media/people/albert-armin.jpg' },
+      { name: 'Ryan Watach', role: 'Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/ryan-watach/', photo: '/media/people/ryan-watach.jpg' },
+      { name: 'James Horangic', role: 'Associate Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/james-horangic-314026364/', photo: '/media/people/james-horangic.jpg' },
+      { name: 'Asher Wan', role: 'Portfolio Manager, Equities: Financials', url: 'https://www.linkedin.com/in/asherwan/', photo: '/media/people/asher-wan.jpg' },
+      { name: 'Arna Rakhimbergenova', role: 'Portfolio Manager, Energy &amp; Infrastructure', url: 'https://www.linkedin.com/in/arnusikon/', photo: '/media/people/arna-rakhimbergenova.jpg' },
       { name: 'David Bratucu', role: 'Co-Founder &amp; Chief Investment Officer', url: 'https://www.linkedin.com/in/david-bratucu/', photo: '/media/people/david-bratucu.jpg' },
       { name: 'Giacomo Maffre', role: 'Head of Portfolio Analytics', url: 'https://www.linkedin.com/in/giacomo-maffre/', photo: '/media/people/giacomo-maffre.jpg?v=2' },
       { name: 'Rasmus Suonio', role: 'Head of Trading &amp; Execution', url: 'https://www.linkedin.com/in/rasmus-suonio/', photo: '/media/people/rasmus-suonio.jpg' },

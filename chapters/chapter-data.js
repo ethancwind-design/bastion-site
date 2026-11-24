@@ -21,7 +21,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/yale.jpg",
     "landmark": "Sterling Memorial Library",
     "photoPosition": "50% 0%",
-    "intro": "Yale is a chapter with zero members. The Society is currently interviewing candidates for leadership roles at this chapter.",
+    "intro": "The Society is currently interviewing candidates for leadership roles at the Yale chapter.",
     "credit": {
       "author": "Adam Jones",
       "source": "https://commons.wikimedia.org/wiki/File:Facade_of_Sterling_Memorial_Library_-_Yale_University_-_New_Haven_-_CT_-_USA_(7088650351).jpg",
