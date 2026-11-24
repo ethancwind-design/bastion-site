@@ -234,3 +234,7 @@ span.more:hover{text-decoration:none}
 .tl-slide.on .tl-card{animation:tlCardIn .8s .8s cubic-bezier(.65,0,.35,1) both}
 .tl-slide.out .tl-big,.tl-slide.out .tl-polaroid,.tl-slide.out .tl-card{animation:tlFadeOut .35s both}
 @media(prefers-reduced-motion:reduce){.tl-slide *{animation:none!important}}
+/* What We Do: section heads + placeholder blocks */
+.split--gap{padding-top:110px;padding-bottom:70px}
+.ph-block{margin:0 var(--pad) 110px;height:clamp(320px,38vw,560px);background:#0f2160}
+#research.featured--flip{padding-top:110px}
