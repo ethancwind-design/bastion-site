@@ -238,3 +238,8 @@ span.more:hover{text-decoration:none}
 .split--gap{padding-top:110px;padding-bottom:70px}
 .ph-block{margin:0 var(--pad) 110px;height:clamp(320px,38vw,560px);background:#0f2160}
 #research.featured--flip{padding-top:110px}
+/* timeline: photo framed by navy on both sides */
+.timeline{--tl-frame:max(var(--pad),10vw);padding-left:calc(var(--tl-frame) + clamp(24px,3vw,48px));padding-right:calc(var(--tl-frame) + clamp(24px,3vw,48px))}
+.tl-bg{left:var(--tl-frame);right:var(--tl-frame)}
+.tl-polaroid{left:calc(var(--tl-frame) + 6%)!important}
+@media(max-width:900px){.timeline{--tl-frame:0px;padding-left:var(--pad);padding-right:var(--pad)}}
