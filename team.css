@@ -114,3 +114,28 @@ span.more:hover{text-decoration:none}
 .logos>a.chap:hover b,.logos>a.chap:focus-visible b{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
 .chapter-blank{min-height:70vh;background:#fff}
 
+/* Research Teams tab bar */
+.rtabs{background:var(--soft);padding:var(--section-space) 0 calc(var(--section-space) * 1.1)}
+.rt-head{padding:0 var(--pad) 48px}
+.rt-head h2{font-size:clamp(38px,3.8vw,58px);color:var(--navy);line-height:1.1}
+.rt-bar{background:#e6e9ef;padding:0 var(--pad);overflow-x:auto;scrollbar-width:none}
+.rt-bar::-webkit-scrollbar{display:none}
+.rt-tabs{position:relative;display:flex;width:max-content;min-width:100%}
+.rt-tabs button{position:relative;z-index:1;flex:none;font:500 15px/1 "Albert Sans",sans-serif;color:var(--mute);background:none;border:0;padding:22px 26px;cursor:pointer;white-space:nowrap;transition:color .35s var(--ease)}
+.rt-tabs button+button:before{content:"";position:absolute;left:0;top:30%;bottom:30%;width:1px;background:#c9cfdb;transition:opacity .3s}
+.rt-tabs button:hover{color:var(--navy)}
+.rt-tabs button:after{content:"";position:absolute;left:26px;right:26px;bottom:14px;height:2px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.rt-tabs button:hover:after{transform:scaleX(1)}
+.rt-tabs button[aria-selected=true]{color:#fff}
+.rt-tabs button[aria-selected=true]:after{transform:scaleX(0)}
+.rt-tabs button[aria-selected=true]:before,.rt-tabs button[aria-selected=true]+button:before{opacity:0}
+.rt-tabs button:focus-visible{outline:2px solid var(--sky);outline-offset:-4px}
+.rt-ind{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);box-shadow:0 0 0 3px rgba(22,70,184,.18);transition:transform .5s var(--ease),width .5s var(--ease)}
+.rt-body{margin:0 var(--pad);background:#fff;padding:60px 56px 70px}
+.rt-panel{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rt-panel.on{opacity:1;transform:none}
+.rt-top{display:grid;grid-template-columns:1fr 1fr;gap:var(--column-gap);align-items:start;padding-bottom:36px;border-bottom:1px solid #dfe3ea}
+.rt-top h3{font-size:clamp(30px,2.6vw,42px);line-height:1.15;color:var(--navy)}
+.rt-top p{color:var(--mute);font-size:17px;line-height:1.7;max-width:560px;padding-top:6px}
+.rt-panel .pgrid{margin-top:50px}
+@media(max-width:900px){.rt-body{margin:0;padding:44px var(--pad) 56px}.rt-top{grid-template-columns:1fr;gap:16px}.rt-tabs button{padding:18px 20px;font-size:14px}}
