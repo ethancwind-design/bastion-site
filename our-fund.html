@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Our Funds | Bastion Investment Society</title>
-<meta name="description" content="Explore Bastion's two student-run funds: Locust Partners at $75K and a new $45K fund with a technology and S&amp;P 500 allocation.">
+<meta name="description" content="Explore Locust Partners, Bastion's $75K long-only fund, and Meridian Fund, a $45K technology-focused fund.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -25,60 +25,38 @@
   <video class="reel" id="heroVideo" src="/media/investments-hero.mp4" autoplay muted loop playsinline preload="auto"></video>
   <h1><span>Our Funds.</span></h1>
   <button class="pause" id="pause" aria-label="Pause video"></button>
-  <div class="cta"><p>Two student-run funds with distinct approaches: Locust Partners, our first $75K fund, and a new $45K fund allocated to technology and the S&amp;P 500.</p></div>
+  <div class="cta"><p>Student-run funds with distinct approaches: Locust Partners, our $75K long-only fund, and Meridian Fund, our $45K technology-heavy fund.</p></div>
 </section>
 
-<section class="fund" aria-labelledby="fund-heading">
-  <div class="fund-intro">
-    <div>
-      <p class="fund-kicker">Fund 01 · Locust Partners</p>
-      <h2 id="fund-heading">Our First Fund.<br><em>$75K.</em></h2>
+<main class="funds-list">
+  <section class="fund-entry" aria-labelledby="locust-heading">
+    <p class="fund-entry-index">Fund 01</p>
+    <div class="fund-entry-head">
+      <h2 id="locust-heading">Locust Partners</h2>
+      <p class="fund-entry-amount">$75K</p>
     </div>
-    <p>Locust Partners invests across a broad set of asset classes and approaches. Four strategy committees evaluate long and short opportunities in equities, credit and convertibles, global quantitative strategies, and venture capital through alternative data, portfolio construction, and risk-aware underwriting.</p>
-  </div>
-  <div class="fund-system">
-    <figure class="fund-visual">
-      <svg id="strategyPie" viewBox="0 0 520 520" role="img" aria-label="Bastion's four strategy committees"></svg>
-    </figure>
-    <div class="strategy-committees">
-      <p class="fund-kicker">Strategy Committees</p>
-      <div id="fundStrategies"></div>
+    <p class="fund-entry-description">Locust Partners is Bastion's long-only equity fund, built on fundamental company research and long-term conviction.</p>
+  </section>
+  <section class="fund-entry" aria-labelledby="meridian-heading">
+    <p class="fund-entry-index">Fund 02</p>
+    <div class="fund-entry-head">
+      <h2 id="meridian-heading">Meridian Fund</h2>
+      <p class="fund-entry-amount">$45K</p>
     </div>
-  </div>
-  <div class="fund-oversight">
-    <div>
-      <p class="fund-kicker">Portfolio Oversight</p>
-      <h3>Investment Committee</h3>
-    </div>
-    <div class="fund-oversight-people" id="fundCommittee"></div>
-  </div>
-</section>
+    <p class="fund-entry-description">Meridian Fund takes a leveraged, technology-heavy approach with exposure to broad-market futures.</p>
+  </section>
+</main>
 
-<section class="approach">
-  <div class="atext rv">
-    <h2>Locust Partners.<br>Multiple perspectives.</h2>
-    <p>Portfolio managers lead research within each strategy, combining company fundamentals, alternative data, and market signals to evaluate opportunities across asset classes.</p>
-    <p>The investment committee brings those perspectives together through position sizing, liquidity review, and risk oversight. The fund is run by students as part of the Bastion Investment Society.</p>
+<section class="fund-committees" aria-labelledby="fund-committees-heading">
+  <div class="fund-committees-intro">
+    <h2 id="fund-committees-heading">Investment Committee</h2>
+    <p>The Investment Committee oversees both funds and coordinates research across Bastion's specialist committees. Explore each team below.</p>
   </div>
-  <img class="rv d1" src="/media/skyline.jpg" alt="">
-</section>
-<section class="fund-second" aria-labelledby="second-fund-heading">
-  <div class="fund-second-intro">
-    <div>
-      <p class="fund-kicker">Fund 02 · Meridian Fund (working name)</p>
-      <h2 id="second-fund-heading">Our Second Fund.<br><em>$45K.</em></h2>
-    </div>
-    <p>The Meridian Fund is a working name for our new $45K fund. Its allocation is 75% technology and 25% S&amp;P 500.</p>
-  </div>
-  <div class="fund-second-allocation">
-    <p class="fund-kicker">Fund Allocation</p>
-    <div class="fund-allocation-bar" role="img" aria-label="75 percent technology and 25 percent S&amp;P 500">
-      <span class="fund-allocation-tech"></span><span class="fund-allocation-index"></span>
-    </div>
-    <div class="fund-allocation-labels">
-      <div><strong>75%</strong><span>Technology</span></div>
-      <div><strong>25%</strong><span>S&amp;P 500</span></div>
-    </div>
+  <div class="fund-committee-links" role="navigation" aria-label="Strategy committees">
+    <a href="/investment-team/#credit-convertibles">Credit &amp; Convertibles <span aria-hidden="true">↗</span></a>
+    <a href="/investment-team/#equities">Equities <span aria-hidden="true">↗</span></a>
+    <a href="/investment-team/#quantitative-strategies">Global Quantitative Strategies <span aria-hidden="true">↗</span></a>
+    <a href="/investment-team/#venture-capital">Venture Capital <span aria-hidden="true">↗</span></a>
   </div>
 </section>
 <footer>
@@ -89,8 +67,6 @@
   <p>Bastion Investment Society is an independent organization made up of students, mentors, and partners. It is not affiliated with, sponsored by, or endorsed by Harvard, Yale, Princeton, the University of Pennsylvania, Columbia, Brown, Cornell, Dartmouth, or any other university. We do not provide investment advice on this website. This site has not been reviewed by those universities, and they are not responsible for viewers' investment decisions.</p>
   <p style="margin-top:14px">Please contact <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a> for more information.</p>
 </footer>
-<script src="/fund-data.js"></script>
-<script src="/fund.js"></script>
 <script src="/site.js"></script>
 </body>
 </html>
