@@ -49,7 +49,7 @@
           '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae semper sapien. Suspendisse potenti, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
         '</div>',
       '</section>',
-      '<section class="pgroup chapter-officials">',
+      '<section class="pgroup chapter-officials" id="officials">',
         '<div class="chapter-wrap">',
           '<h2>Chapter Officials</h2>',
           '<div class="pgrid">' + officers + '</div>',
@@ -72,4 +72,8 @@
       '<p style="margin-top:14px">Campus photograph: <a href="' + credit.source + '">' + chapter.landmark + ' by ' + credit.author + '</a> (' + license + '). Image resized for web and displayed with a responsive crop.</p>',
     '</footer>'
   ].join('');
+  if (location.hash === '#officials') {
+    const go = () => { const el = document.getElementById('officials'); if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 120); };
+    requestAnimationFrame(go); window.addEventListener('load', go);
+  }
 })();
