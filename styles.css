@@ -433,3 +433,9 @@ footer a{color:#c3cffa}
 .bignum span{font-size:clamp(70px,7.4vw,130px)}
 .funds-list{margin-top:0}.fund-entry:first-child{border-top:0}
 @media(max-width:700px){.funds-list{margin-top:0}}
+/* Curriculum: image stays pinned while the list scrolls past */
+@media(min-width:901px){
+  .ai{align-items:start}
+  .ai figure{position:sticky;top:150px;align-self:start}
+  .ai figure .still.tall{height:auto;aspect-ratio:4/5;max-height:calc(100vh - 190px)}
+}
