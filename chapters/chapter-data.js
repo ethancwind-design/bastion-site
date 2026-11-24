@@ -21,7 +21,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/yale.jpg",
     "landmark": "Sterling Memorial Library",
     "photoPosition": "50% 0%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "Yale is a chapter with zero members. The Society is currently interviewing candidates for leadership roles at this chapter.",
     "credit": {
       "author": "Adam Jones",
       "source": "https://commons.wikimedia.org/wiki/File:Facade_of_Sterling_Memorial_Library_-_Yale_University_-_New_Haven_-_CT_-_USA_(7088650351).jpg",
@@ -81,7 +81,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/brown.jpg",
     "landmark": "University Hall",
     "photoPosition": "50% 50%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "Brown is a chapter with zero members. The Society is currently interviewing candidates for leadership roles at this chapter.",
     "credit": {
       "author": "Filetime",
       "source": "https://commons.wikimedia.org/wiki/File:University_Hall_(Brown)_2.jpg",
@@ -111,7 +111,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/dartmouth.jpg",
     "landmark": "Baker-Berry Library and Baker Tower",
     "photoPosition": "50% 50%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "Dartmouth is a chapter with zero members. The Society is currently interviewing candidates for leadership roles at this chapter.",
     "credit": {
       "author": "Kane5187",
       "source": "https://commons.wikimedia.org/wiki/File:Dartmouth_College_campus_2007-06-23_Baker_Memorial_Library_01.JPG",

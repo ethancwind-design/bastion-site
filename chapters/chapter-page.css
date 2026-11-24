@@ -192,3 +192,4 @@ body[data-chapter] header {
   .chapter-navy h2 { font-size: clamp(40px, 10vw, 56px); }
   .chapter-officials.pgroup, .chapter-activity.pgroup { padding-top: 70px; padding-bottom: 84px; }
 }
+.chapter-navy p a{color:#fff;text-decoration:underline;text-underline-offset:4px}.chapter-navy p a:hover{color:#f1cf63}
