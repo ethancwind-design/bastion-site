@@ -10,7 +10,7 @@ The site is plain HTML, CSS, and JavaScript. There is no framework and no build 
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000/index.html. Production uses Vercel's clean URLs (`/research` instead of `/research.html`), so open pages by their `.html` names when testing locally, or run `npx vercel dev` to get the same URLs as production.
+Open http://localhost:8000/index.html. Production uses Vercel's clean URLs with trailing slashes (`/research/` instead of `/research.html`), so open root pages by their `.html` names when testing locally, or run `npx vercel dev` to get the same URLs as production. Chapter pages use `chapters/<school>/index.html` and work locally at `/chapters/<school>/`.
 
 ## Where things live
 
@@ -26,6 +26,12 @@ Open http://localhost:8000/index.html. Production uses Vercel's clean URLs (`/re
 | `media/people/` | Team headshots (600×600 JPEG), named `first-last.jpg` |
 | `media/research/` | Research PDFs and their cover images |
 | `vercel.json` | Clean URLs, redirects, and PDF headers |
+
+## Chapter pages
+
+Each university route at `chapters/<school>/index.html` is a small shell that selects its chapter by key. `chapters/chapter-data.js` holds the school name, crest, location, landmark photograph, intro placeholder, and photo credit. `chapters/chapter-page.js` renders one shared template for all eight routes, and `chapters/chapter-page.css` controls the responsive layout. Edit the template once to update every chapter; edit the data file for school-specific content. The officer grid reuses `team.css`.
+
+The landmark photos and their licenses are documented in [chapters/PHOTO_CREDITS.md](chapters/PHOTO_CREDITS.md). Campus video assets from the earlier design are preserved separately and are no longer embedded on chapter pages.
 
 ## Adding a person to a team page
 
@@ -48,5 +54,4 @@ Vercel deploys this repo automatically: anything merged into `main` goes live on
 2. Open a pull request.
 3. Ethan reviews and merges it on GitHub. The merge publishes the site.
 
-Don't push straight to `main`. The Vercel project is on the free Hobby plan, so Vercel only builds commits from the project owner. Commits you author yourself (including preview builds of your pull request) show as "Blocked" in Vercel, and that's expected. Test locally (see above) before opening the pull request.
-         
+Don't push straight to `main`. The Vercel project is on the free Hobby plan, so Vercel only builds commits from the project owner. Commits you author yourself (including preview builds of your pull request) show as "Blocked" in Vercel, and that's expected. Test locally (see above) before opening the pull request. 

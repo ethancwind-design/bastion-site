@@ -1,0 +1,206 @@
+.chapters-network {
+  --map-pad: clamp(16px, 1.6vw, 30px);
+  padding: 84px var(--map-pad) 68px;
+  background: #fff;
+}
+
+.chapters-heading {
+  margin: 0 calc(var(--pad) - var(--map-pad)) 4px;
+  padding: 0;
+}
+
+.chapters-heading p {
+  margin-top: 16px;
+  color: var(--mute);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.chapter-map {
+  position: relative;
+  width: min(100%, 1130px, calc(117.39vh - 80px));
+  aspect-ratio: 1080 / 920;
+  margin: 0 auto;
+  container-type: inline-size;
+}
+
+.chapter-map-artwork,
+.chapter-map-art,
+.chapter-connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chapter-map-art {
+  display: block;
+  animation: chapter-map-in .7s var(--ease) forwards;
+}
+
+.chapter-connections {
+  z-index: 1;
+  fill: none;
+  pointer-events: none;
+  animation: chapter-map-in .7s .25s var(--ease) forwards;
+}
+
+.network-arcs {
+  stroke: #9cafc8;
+  stroke-width: 1.05;
+  opacity: .46;
+}
+
+.chapter-leaders {
+  stroke: #6e87aa;
+  stroke-width: 1.15;
+  opacity: .62;
+}
+
+.chapter-locations circle {
+  fill: #456286;
+  stroke: #fff;
+  stroke-width: 1;
+  transition: fill .25s var(--ease), transform .25s var(--ease);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.chapter-locations circle.is-active {
+  fill: var(--blue);
+  transform: scale(1.8);
+}
+
+.chapter-node {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17.25cqw;
+  padding: .8cqw .5cqw 1.4cqw;
+  color: var(--ink);
+  text-align: center;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  animation: chapter-marker-in .52s var(--delay) forwards;
+}
+
+.chapter-crest {
+  display: grid;
+  place-items: center;
+  width: 12.8cqw;
+  height: 12.8cqw;
+}
+
+.chapter-crest img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform .28s var(--ease);
+}
+
+.chapter-node:hover .chapter-crest img,
+.chapter-node:focus-visible .chapter-crest img,
+.chapter-node.is-active .chapter-crest img {
+  transform: scale(1.12);
+}
+
+.chapter-node b {
+  margin-top: .6cqw;
+  font: 400 clamp(21px, 2.45cqw, 31px)/1.08 Newsreader, Georgia, serif;
+  text-underline-offset: 5px;
+}
+
+.chapter-node small {
+  margin-top: .25cqw;
+  color: var(--mute);
+  font-size: clamp(12px, 1.2cqw, 15px);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.chapter-node:hover b,
+.chapter-node:focus-visible b,
+.chapter-node.is-active b {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.chapter-node:hover small,
+.chapter-node:focus-visible small,
+.chapter-node.is-active small {
+  color: var(--blue);
+}
+
+.chapter-node:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.chapters-network .from-note {
+  max-width: 1100px;
+  margin: 8px auto 0;
+}
+
+@keyframes chapter-map-in {
+  from { opacity: .85; }
+  to { opacity: 1; }
+}
+
+@keyframes chapter-marker-in {
+  from { opacity: .82; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1100px) {
+  .chapter-map {
+    width: min(100%, 900px);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 34px 12px;
+    aspect-ratio: auto;
+  }
+  .chapter-map-artwork {
+    position: relative;
+    grid-column: 1 / -1;
+    aspect-ratio: 1080 / 920;
+    height: auto;
+  }
+  .chapter-connections { display: none; }
+  .chapter-node {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+  .chapter-crest { width: 124px; height: 124px; }
+  .chapter-node b { font-size: 28px; }
+  .chapter-node small { white-space: normal; }
+  .chapters-network .from-note { margin-top: 48px; }
+}
+
+@media (max-width: 680px) {
+  .chapters-network { padding: 56px 20px 70px; }
+  .chapters-heading { margin: 0 4px 14px; }
+  .chapter-map { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 8px; }
+  .chapter-crest { width: 110px; height: 110px; }
+  .chapter-node b { font-size: 25px; }
+  .chapter-node small { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .chapter-node small { max-width: 135px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter-crest img { transition: none; }
+  .chapter-map-art,
+  .chapter-connections,
+  .chapter-node { animation: none; }
+}

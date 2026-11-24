@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <defs>
+    <path id="leaf" d="M1 8C8 1 21 0 33 5C25 12 12 15 1 8Z" />
+    <g id="sprig" stroke="#756e62" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 52C25 37 43 20 69 0" stroke-width="1.6" />
+      <use href="#leaf" stroke-width="1.15" transform="translate(8 39) rotate(-32 17 7)" />
+      <use href="#leaf" stroke-width="1.15" transform="translate(17 38) rotate(142 17 7)" />
+      <use href="#leaf" stroke-width="1.15" transform="translate(27 25) rotate(-35 17 7)" />
+      <use href="#leaf" stroke-width="1.15" transform="translate(35 26) rotate(143 17 7)" />
+      <use href="#leaf" stroke-width="1.15" transform="translate(46 13) rotate(-34 17 7)" />
+      <use href="#leaf" stroke-width="1.15" transform="translate(52 14) rotate(145 17 7)" />
+      <path d="M15 43L27 49M30 30L42 36M45 17L57 23" stroke-width=".8" />
+    </g>
+    <g id="oak" stroke="#756e62" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Broad, irregular trunk and boughs -->
+      <path d="M174 920C192 817 163 746 176 661C189 575 163 518 151 447C139 375 161 319 175 251C190 181 197 112 225 24" stroke-width="18" />
+      <path d="M196 920C207 822 184 751 194 666C205 577 184 520 174 454C163 385 183 324 195 259C208 187 216 112 239 35" stroke-width="2" />
+      <path d="M174 690C129 651 82 602 42 520C98 560 147 568 182 614" stroke-width="11" />
+      <path d="M176 604C228 555 268 491 310 405C252 452 211 468 181 520" stroke-width="10" />
+      <path d="M160 470C119 423 83 374 63 293C107 339 142 354 169 405" stroke-width="8" />
+      <path d="M174 381C219 337 253 280 269 203C232 246 201 274 179 319" stroke-width="7" />
+      <path d="M185 278C151 235 143 188 148 132C171 172 191 192 202 229" stroke-width="5.5" />
+      <path d="M205 188C239 151 251 106 251 57C230 91 214 121 203 150" stroke-width="4.5" />
+      <path d="M46 520C27 496 15 470 8 441M311 405C326 382 338 357 345 329M64 293C44 270 35 246 31 220M269 203C288 178 302 151 306 121" stroke-width="3.2" />
+      <!-- Fine bark scoring -->
+      <path d="M178 879l12-34m-18-10 14-33m-11-23 12-31m-17-20 14-30m-20-23 12-31m-9-22 13-32m-19-20 12-29m-7-25 12-30m-3-25 13-32m5-28 12-29" stroke-width="1.4" />
+      <path d="M202 890l9-31m-11-23 10-28m-15-24 9-28m-15-25 10-27m-17-26 9-26m-9-25 10-26m-12-25 10-26m-3-26 10-25m7-27 10-25" stroke-width=".9" />
+      <path d="M157 665l20 11m-34-39 21 9m-26-42 21 8m55-90 20-14m-28-10 19-15m-25-73 21 9m-19-40 18 8m35-119 18-10m-10-26 15-12m21 5 15-18" stroke-width="1.1" />
+      <g stroke-width="1.1">
+        <use href="#sprig" transform="translate(-4 482) rotate(198 35 26)" />
+        <use href="#sprig" transform="translate(8 570) rotate(204 35 26)" />
+        <use href="#sprig" transform="translate(228 411) rotate(-22 35 26)" />
+        <use href="#sprig" transform="translate(241 300) rotate(-28 35 26)" />
+        <use href="#sprig" transform="translate(26 316) rotate(194 35 26)" />
+        <use href="#sprig" transform="translate(188 202) rotate(-30 35 26)" />
+        <use href="#sprig" transform="translate(108 104) rotate(202 35 26)" />
+        <use href="#sprig" transform="translate(218 76) rotate(-24 35 26)" />
+        <use href="#sprig" transform="translate(52 207) rotate(197 35 26)" />
+        <use href="#sprig" transform="translate(258 480) rotate(-19 35 26)" />
+      </g>
+    </g>
+    <g id="elm" stroke="#756e62" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Slender elm with a high, arching crown -->
+      <path d="M198 920C183 818 198 724 183 639C166 545 191 466 205 381C219 299 203 223 219 150C230 96 242 51 260 8" stroke-width="14" />
+      <path d="M217 920C201 818 214 731 201 647C186 559 209 479 224 393C238 310 222 233 237 158C249 99 258 58 273 18" stroke-width="1.8" />
+      <path d="M188 674C135 619 90 565 28 482C99 521 155 540 198 589" stroke-width="9" />
+      <path d="M190 597C249 541 301 478 354 389C286 435 241 458 200 511" stroke-width="9" />
+      <path d="M197 479C148 433 106 385 71 310C124 348 165 371 208 420" stroke-width="7" />
+      <path d="M207 395C257 343 298 282 321 211C274 252 239 287 213 333" stroke-width="7" />
+      <path d="M215 291C178 247 158 198 160 145C188 183 210 210 223 247" stroke-width="5" />
+      <path d="M228 214C268 170 289 120 293 66C263 105 243 137 229 173" stroke-width="4" />
+      <path d="M28 482C16 455 9 427 7 396M354 389C373 362 386 332 392 301M71 310C49 281 37 252 31 222M321 211C346 182 361 151 365 115" stroke-width="3" />
+      <path d="M195 856l-10-32m14-18-11-30m14-27-10-27m17-24-10-29m17-24-9-28m16-28-9-27m13-28-8-26m12-24-6-25m7-24-5-23m20-44-8-21" stroke-width="1.2" />
+      <path d="M168 651l18 10m-25-41 20 9m48-90 22-17m-30-8 19-17m-20-72 20 11m-15-38 20 8m18-114 18-11m-6-25 17-13" stroke-width="1" />
+      <g stroke-width="1.05">
+        <use href="#sprig" transform="translate(-20 449) rotate(203 35 26)" />
+        <use href="#sprig" transform="translate(285 355) rotate(-18 35 26)" />
+        <use href="#sprig" transform="translate(33 291) rotate(197 35 26)" />
+        <use href="#sprig" transform="translate(261 191) rotate(-26 35 26)" />
+        <use href="#sprig" transform="translate(109 125) rotate(202 35 26)" />
+        <use href="#sprig" transform="translate(250 44) rotate(-25 35 26)" />
+        <use href="#sprig" transform="translate(-2 542) rotate(203 35 26)" />
+      </g>
+    </g>
+    <g id="pine" stroke="#756e62" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Open, tapered evergreen silhouette with etched needle fans -->
+      <path d="M198 920C210 778 191 658 208 531C222 411 211 299 230 191C238 136 247 78 260 12" stroke-width="12" />
+      <path d="M216 920C227 778 210 657 226 534C240 412 230 301 247 194C255 136 263 81 275 19" stroke-width="1.7" />
+      <path d="M207 724C157 708 110 675 52 625C111 638 162 636 211 665M211 650C265 627 315 586 369 526C313 552 264 563 213 591M214 552C165 535 124 501 78 454C127 472 173 474 219 493M220 480C264 450 300 409 337 354C292 381 256 397 218 421M226 386C187 357 158 321 126 275C166 301 198 315 230 334M232 318C266 284 289 244 311 193C278 222 254 244 229 273M241 228C217 194 201 156 192 113C217 144 234 165 245 191M251 136C271 105 285 71 291 36" stroke-width="5.5" />
+      <path d="M53 625l-45-29m54 28-22-44m58 46-8-42m277-58 40-38m-51 41 19-51m-68 73 1-43M78 454l-41-28m55 39-17-41m69 47-4-38m197-79 35-43m-48 51 16-49m-64 65 4-40M126 275l-35-36m55 42-12-40m55 49-3-36m125-61 31-42m-44 50 13-46m-57 59 4-38" stroke-width="1.25" />
+      <path d="M201 875l14-34m-15-27 13-32m-10-29 13-29m-8-28 12-31m-8-31 11-28m-6-32 11-28m-4-30 11-27m-2-30 11-28m6-29 10-28" stroke-width="1" />
+      <g stroke-width="1">
+        <use href="#sprig" transform="translate(29 597) rotate(196 35 26) scale(1.15)" />
+        <use href="#sprig" transform="translate(319 498) rotate(-21 35 26) scale(1.08)" />
+        <use href="#sprig" transform="translate(55 428) rotate(194 35 26)" />
+        <use href="#sprig" transform="translate(284 329) rotate(-25 35 26)" />
+        <use href="#sprig" transform="translate(107 251) rotate(196 35 26)" />
+        <use href="#sprig" transform="translate(263 170) rotate(-22 35 26)" />
+        <use href="#sprig" transform="translate(177 92) rotate(199 35 26)" />
+      </g>
+    </g>
+  </defs>
+
+  <!-- Far silhouettes fade into the ivory; middle trees overlap without closing the flight path. -->
+  <g opacity=".28">
+    <use href="#pine" transform="translate(-5 486) scale(.45)" opacity=".38" />
+    <use href="#elm" transform="translate(216 422) scale(-.52 .52)" opacity=".42" />
+    <use href="#pine" transform="translate(460 532) scale(.4)" opacity=".34" />
+    <use href="#oak" transform="translate(718 476.8) scale(-.46 .46)" opacity=".4" />
+    <use href="#pine" transform="translate(980 440) scale(.5)" opacity=".36" />
+    <use href="#elm" transform="translate(1462 384.8) scale(-.56 .56)" opacity=".4" />
+  </g>
+  <g opacity=".48">
+    <use href="#elm" transform="translate(-196 182.4) scale(.78)" opacity=".72" />
+    <use href="#oak" transform="translate(278 200.8) scale(-.76 .76)" opacity=".74" />
+    <use href="#pine" transform="translate(505 164) scale(.8)" opacity=".68" />
+    <use href="#elm" transform="translate(1270 145.6) scale(-.82 .82)" opacity=".72" />
+  </g>
+  <g opacity=".68">
+    <use href="#oak" transform="translate(-230 -112) scale(1.12)" opacity=".84" />
+    <use href="#elm" transform="translate(1630 -66) scale(-1.05 1.05)" opacity=".82" />
+  </g>
+</svg>

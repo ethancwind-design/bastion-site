@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/team.css">
+<link rel="stylesheet" href="/chapters/chapters.css">
 </head>
 <body>
 <header>
@@ -21,26 +22,31 @@
   <button class="burger" id="burger" aria-label="Menu"></button>
 </header>
 
-<section class="hero" id="hero">
-  <img class="reel" src="/media/flag.jpg" alt="The New York Stock Exchange facade draped in an American flag">
-  <h1><span>Our Chapters</span></h1>
-  <div class="cta"><p>This is placeholder text.</p></div>
-</section>
+<section class="banner"><h1 class="rv">Our Chapters</h1></section>
+<section class="pintro"><h2 class="rv">Eight Universities.<em>One Society.</em></h2><p class="rv d1">Bastion brings together students across the Ivy League through a shared interest in investing and the exchange of ideas beyond individual campuses.</p></section>
 
-<section class="from" id="chapters">
-  <h2 class="rv">Click a chapter</h2>
-  <div class="logos">
-    <a class="chap rv d0" href="/chapters/harvard"><div class="lg"><img src="/media/logos/harvard-enhanced.png" alt="Harvard University shield" loading="lazy"></div><b>Harvard</b><small>Harvard University</small></a>
-    <a class="chap rv d1" href="/chapters/yale"><div class="lg"><img src="/media/logos/yale-enhanced.png" alt="Yale University shield" loading="lazy"></div><b>Yale</b><small>Yale University</small></a>
-    <a class="chap rv d2" href="/chapters/princeton"><div class="lg"><img src="/media/logos/princeton-enhanced.png" alt="Princeton University shield" loading="lazy"></div><b>Princeton</b><small>Princeton University</small></a>
-    <a class="chap rv d3" href="/chapters/penn"><div class="lg"><img src="/media/logos/penn-enhanced.png" alt="University of Pennsylvania shield" loading="lazy"></div><b>Penn</b><small>University of Pennsylvania</small></a>
-    <a class="chap rv d0" href="/chapters/columbia"><div class="lg"><img src="/media/logos/columbia-enhanced.png" alt="Columbia University shield" loading="lazy"></div><b>Columbia</b><small>Columbia University</small></a>
-    <a class="chap rv d1" href="/chapters/brown"><div class="lg"><img src="/media/logos/brown-enhanced.png" alt="Brown University shield" loading="lazy"></div><b>Brown</b><small>Brown University</small></a>
-    <a class="chap rv d2" href="/chapters/cornell"><div class="lg"><img src="/media/logos/cornell-enhanced.png" alt="Cornell University shield" loading="lazy"></div><b>Cornell</b><small>Cornell University</small></a>
-    <a class="chap rv d3" href="/chapters/dartmouth"><div class="lg"><img src="/media/logos/dartmouth-enhanced.png" alt="Dartmouth College shield" loading="lazy"></div><b>Dartmouth</b><small>Dartmouth College</small></a>
+<main id="chapters" class="chapters-network" aria-label="Bastion chapters">
+  <div class="pgroup chapters-heading"><h2 class="rv">Explore Our Chapters</h2><p class="rv d1">Select a university to discover its Bastion chapter.</p></div>
+  <div class="chapter-map">
+    <div class="chapter-map-artwork">
+    <img class="chapter-map-art" src="/media/northeast-states.svg" alt="Map of nine northeastern states, from Pennsylvania to Maine" loading="eager">
+    <svg class="chapter-connections" viewBox="80 0 1080 920" aria-hidden="true" focusable="false">
+      <g class="network-arcs"><path d="M510 709 Q522 684 550 676 Q570 650 601 636 Q636 594 678 592 Q740 556 791 548 Q810 528 812 501 Q797 430 725 386 M415 494 Q494 545 601 636"/></g>
+      <g class="chapter-leaders"><path d="M725 386 L700 194 M415 494 L260 392 M812 501 L1000 385 M791 548 L1010 615 M678 592 L575 535 M601 636 L760 758 M550 676 L535 762 M510 709 L290 748"/></g>
+      <g class="chapter-locations"><circle data-location="dartmouth" cx="725" cy="386" r="3"/><circle data-location="cornell" cx="415" cy="494" r="3"/><circle data-location="harvard" cx="812" cy="501" r="3"/><circle data-location="brown" cx="791" cy="548" r="3"/><circle data-location="yale" cx="678" cy="592" r="3"/><circle data-location="columbia" cx="601" cy="636" r="3"/><circle data-location="princeton" cx="550" cy="676" r="3"/><circle data-location="penn" cx="510" cy="709" r="3"/></g>
+    </svg>
+    </div>
+    <a class="chapter-node" href="/chapters/dartmouth/" data-chapter="dartmouth" data-state="NH" style="--x:57.4%;--y:24.5%;--delay:.08s"><span class="chapter-crest"><img src="/media/logos/dartmouth-enhanced.png" alt="" loading="eager"></span><b>Dartmouth</b><small>Dartmouth College</small></a>
+    <a class="chapter-node" href="/chapters/cornell/" data-chapter="cornell" data-state="NY" style="--x:16.7%;--y:46%;--delay:.16s"><span class="chapter-crest"><img src="/media/logos/cornell-enhanced.png" alt="" loading="eager"></span><b>Cornell</b><small>Cornell University</small></a>
+    <a class="chapter-node" href="/chapters/harvard/" data-chapter="harvard" data-state="MA" style="--x:85.2%;--y:45%;--delay:.24s"><span class="chapter-crest"><img src="/media/logos/harvard-enhanced.png" alt="" loading="eager"></span><b>Harvard</b><small>Harvard University</small></a>
+    <a class="chapter-node" href="/chapters/brown/" data-chapter="brown" data-state="RI" style="--x:86.1%;--y:69.5%;--delay:.32s"><span class="chapter-crest"><img src="/media/logos/brown-enhanced.png" alt="" loading="eager"></span><b>Brown</b><small>Brown University</small></a>
+    <a class="chapter-node" href="/chapters/yale/" data-chapter="yale" data-state="CT" style="--x:45.8%;--y:60.7%;--delay:.4s"><span class="chapter-crest"><img src="/media/logos/yale-enhanced.png" alt="" loading="eager"></span><b>Yale</b><small>Yale University</small></a>
+    <a class="chapter-node" href="/chapters/columbia/" data-chapter="columbia" data-state="NY" style="--x:63%;--y:86.1%;--delay:.48s"><span class="chapter-crest"><img src="/media/logos/columbia-enhanced.png" alt="" loading="eager"></span><b>Columbia</b><small>Columbia University</small></a>
+    <a class="chapter-node" href="/chapters/princeton/" data-chapter="princeton" data-state="NJ" style="--x:42.1%;--y:86.1%;--delay:.56s"><span class="chapter-crest"><img src="/media/logos/princeton-enhanced.png" alt="" loading="eager"></span><b>Princeton</b><small>Princeton University</small></a>
+    <a class="chapter-node" href="/chapters/penn/" data-chapter="penn" data-state="PA" style="--x:19.4%;--y:84.1%;--delay:.64s"><span class="chapter-crest"><img src="/media/logos/penn-enhanced.png" alt="" loading="eager"></span><b>Penn</b><small>University of Pennsylvania</small></a>
   </div>
   <p class="from-note">Bastion Investment Society is an independent organization of students, mentors, and partners. It is not affiliated with, sponsored by, or endorsed by any of the institutions shown above. Institution names and logos are the property of their respective owners and are displayed solely to identify the schools our members attend.</p>
-</section>
+</main>
 
 <footer>
   <div class="row">
@@ -52,5 +58,6 @@
   <p style="margin-top:14px">ARGOS ATLAS name, logo, and map image belong to ARGOS ATLAS. University names and logos belong to their respective owners. Photography from Wikimedia Commons: Nasdaq MarketSite by ajay_suresh (CC BY 2.0), Wall Street by Carlos Delgado (CC BY-SA 3.0), Black Marble Americas by NASA Earth Observatory (public domain), and the New York Stock Exchange facade (CC BY-SA 4.0).</p>
 </footer>
 <script src="/site.js"></script>
+<script src="/chapters/chapters.js"></script>
 </body>
 </html>
