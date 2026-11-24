@@ -142,3 +142,5 @@ span.more:hover{text-decoration:none}
 .featured--flip{padding-top:40px}
 .featured--flip .fcard{grid-template-columns:1fr minmax(260px,420px)}
 @media(max-width:900px){.featured--flip .fcard{grid-template-columns:1fr}.featured--flip .fimg{order:-1}}
+.rtabs{background:#fff}
+.rt-body{margin:0;background:#fff;padding:60px var(--pad) 20px}
