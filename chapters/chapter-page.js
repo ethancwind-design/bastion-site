@@ -39,6 +39,14 @@
   const memberList = MEMBERS[key] || Array.from({ length: 4 }, () => ({ name: 'First Last', role: 'Member' }));
   const members = memberList.map(card).join('');
 
+  const SCHOOL_COLORS = {
+    harvard: ['#A51C30', '#1E1E1E'], yale: ['#00356B', '#978D85'], princeton: ['#EE7F2D', '#1E1E1E'],
+    penn: ['#990000', '#011F5B'], columbia: ['#B9D9EB', '#1D4F91'], brown: ['#ED1C24', '#4E3629'],
+    cornell: ['#B31B1B', '#222222'], dartmouth: ['#00693E', '#00693E']
+  };
+  const sc = SCHOOL_COLORS[key] || ['#1646b8', '#0a2166'];
+  document.body.style.setProperty('--school', sc[0]);
+  document.body.style.setProperty('--school-2', sc[1]);
   root.innerHTML = [
     '<header>',
       '<a class="logo" href="/"><img src="/media/logo.png" alt="">BASTION<span class="tag">Investment Society</span></a>',

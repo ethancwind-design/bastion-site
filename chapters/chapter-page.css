@@ -195,3 +195,27 @@ body[data-chapter] header {
 .chapter-navy p a{color:#fff;text-decoration:underline;text-underline-offset:4px}.chapter-navy p a:hover{color:#f1cf63}
 .chapter-members.pgroup{background:#fff;padding-top:0}
 .chapter-members .pgrid{row-gap:70px}
+
+/* Redesign: white page, Bastion navy type, school color as a quiet accent */
+.chapter-hero{background:#fff;color:var(--ink);border-top:6px solid var(--school,#1646b8)}
+.chapter-breadcrumb{color:var(--mute)}
+.chapter-breadcrumb a{color:var(--navy)}
+.chapter-hero h1{color:var(--navy)}
+.chapter-location{color:var(--school-2,var(--mute));font-weight:500}
+.chapter-hero-description{color:var(--mute)}
+.chapter-hero-copy::after{content:"";display:block;width:84px;height:4px;background:var(--school,#1646b8);margin-top:34px}
+.chapter-hero-inner{padding-bottom:clamp(70px,6vw,110px)}
+.chapter-hero-photo{margin:0;overflow:visible;background:none;height:clamp(460px,38vw,600px)}
+.chapter-hero-photo::before{content:"";position:absolute;inset:22px -22px -22px 22px;background:var(--school,#1646b8);z-index:-1}
+.chapter-hero-photo img{position:relative;box-shadow:0 18px 44px rgba(11,21,51,.14)}
+.chapter-navy{background:var(--soft);color:var(--ink);border-top:1px solid #e3e7ee}
+.chapter-navy-inner{padding-top:clamp(90px,8vw,130px);padding-bottom:clamp(90px,8vw,130px)}
+.chapter-navy h2{color:var(--navy)}
+.chapter-navy h2 em{color:var(--blue)}
+.chapter-navy p{color:var(--mute)}
+.chapter-navy p a{color:var(--navy)}
+.chapter-navy p a:hover{color:var(--blue)}
+.chapter-officials h2,.chapter-activity h2{position:relative;padding-bottom:18px}
+.chapter-officials h2::after,.chapter-activity h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:3px;background:var(--school,#1646b8)}
+.chapter-officials .pc .ph span{background:var(--school-2,var(--navy))}
+@media(max-width:900px){.chapter-hero-photo{height:360px;margin-right:22px}}
