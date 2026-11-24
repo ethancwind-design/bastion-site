@@ -17,7 +17,7 @@
     html,body{margin:0;height:100%}
     body{min-height:100vh;min-height:100svh;color:var(--ink);font:400 16px/1.55 "Albert Sans","Helvetica Neue",Arial,sans-serif;background:#0b1533;overflow-x:hidden}
     /* full-bleed video background: always covers the whole screen */
-    .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:#0b1533 url(/media/apply-dartmouth.jpg) center/cover no-repeat}
+    .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:#0b1533 url(/media/apply-brown.jpg) center/cover no-repeat}
     .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
     .bg video.on{opacity:1}
     .bg:after{content:"";position:absolute;inset:0;background:rgba(8,18,48,.42)}
@@ -59,8 +59,8 @@
 </head>
 <body>
   <div class="bg" aria-hidden="true">
-    <video id="v1" class="on" src="/media/apply-dartmouth.mp4" poster="/media/apply-dartmouth.jpg" muted playsinline autoplay preload="auto"></video>
-    <video id="v2" src="/media/apply-brown.mp4" poster="/media/apply-brown.jpg" muted playsinline preload="auto"></video>
+    <video id="v1" class="on" src="/media/apply-brown.mp4" poster="/media/apply-brown.jpg" muted playsinline autoplay preload="auto"></video>
+    <video id="v2" src="/media/apply-dartmouth.mp4" poster="/media/apply-dartmouth.jpg" muted playsinline preload="auto"></video>
   </div>
 
   <header class="top">
@@ -93,7 +93,7 @@
   </main>
 
   <script>
-    // Background: Dartmouth, then Brown, back to back, looping.
+    // Background: Brown, then Dartmouth, back to back, looping.
     (function(){
       const vids=[document.getElementById('v1'),document.getElementById('v2')];
       let i=0;
