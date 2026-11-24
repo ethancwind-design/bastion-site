@@ -114,6 +114,3 @@ span.more:hover{text-decoration:none}
 .logos>a.chap:hover b,.logos>a.chap:focus-visible b{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
 .chapter-blank{min-height:70vh;background:#fff}
 
-/* ARGOS section: keep text in its own column (no wrapping under the image) */
-#argos{display:grid}
-#argos .vid{float:none;width:auto;margin:0}
