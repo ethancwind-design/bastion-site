@@ -203,3 +203,5 @@
   .chapter-connections,
   .chapter-node { animation: none; }
 }
+.chapters-network{background:var(--soft)}
+.pintro--white{background:#fff}
