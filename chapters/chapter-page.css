@@ -193,3 +193,5 @@ body[data-chapter] header {
   .chapter-officials.pgroup, .chapter-activity.pgroup { padding-top: 70px; padding-bottom: 84px; }
 }
 .chapter-navy p a{color:#fff;text-decoration:underline;text-underline-offset:4px}.chapter-navy p a:hover{color:#f1cf63}
+.chapter-members.pgroup{background:#fff;padding-top:0}
+.chapter-members .pgrid{row-gap:70px}

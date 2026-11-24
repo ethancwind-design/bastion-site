@@ -14,12 +14,30 @@
   const presCard = pres
     ? '<a class="pc" href="' + pres.url + '" target="_blank" rel="noopener"><h3>' + pres.name + '</h3><p class="pt">Campus President</p>' + (pres.photo ? '<div class="ph pic"><img src="' + pres.photo + '" alt="' + pres.name + '" loading="lazy"></div>' : '<div class="ph"><span></span></div>') + '</a>'
     : '<article class="pc"><h3>First Last</h3><p class="pt">Campus President</p><div class="ph" aria-label="Portrait placeholder"><span></span></div></article>';
-  const officers = presCard + Array.from({ length: 3 }, () =>
-    '<article class="pc">' +
-      '<h3>First Last</h3>' +
-      '<div class="ph" aria-label="Portrait placeholder"><span></span></div>' +
-    '</article>'
-  ).join('');
+  const ph = '<div class="ph" aria-label="Portrait placeholder"><span></span></div>';
+  const card = (p) => {
+    const inner = '<h3>' + p.name + '</h3>' + (p.role ? '<p class="pt">' + p.role + '</p>' : '') +
+      (p.photo ? '<div class="ph pic"><img src="' + p.photo + '" alt="' + p.name + '" loading="lazy"></div>' : ph);
+    return p.url ? '<a class="pc" href="' + p.url + '" target="_blank" rel="noopener">' + inner + '</a>' : '<article class="pc">' + inner + '</article>';
+  };
+  const VP_ROLES = ['Vice President of Internal Affairs', 'Vice President of External Affairs', 'Vice President of Community Outreach'];
+  const officers = presCard + VP_ROLES.map((role) => card({ name: 'First Last', role: role })).join('');
+  const MEMBERS = {
+    columbia: [
+      { name: 'Andrew Watcharananan', role: 'Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/andrew-watcharananan-627aa9348/', photo: '/media/people/andrew-watcharananan.jpg' },
+      { name: 'Dean Karuhadej', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/varis-karuhadej-542616330/', photo: '/media/people/dean-karuhadej.jpg' },
+      { name: 'Hugo Eechaute', role: 'Co-Founder &amp; Chief Operating Officer', url: 'https://www.linkedin.com/in/hugoeechaute/', photo: '/media/people/hugo-eechaute.jpg' },
+      { name: 'Aituar Kurmambay', role: 'Member', url: 'https://www.linkedin.com/in/aituar-kurmambay-4238bb3a1/', photo: '/media/people/aituar-kurmambay.jpg' },
+      { name: 'Manuel Trelles', role: 'Member' },
+      { name: 'Sophia Kalochoritis', role: 'Member' },
+      { name: 'Pavani Rhoads', role: 'Member' },
+      { name: 'Amelie Piergentili', role: 'Member' },
+      { name: 'Lilian Dicrescenzo', role: 'Member' },
+      { name: 'Aura', role: 'Member' }
+    ]
+  };
+  const memberList = MEMBERS[key] || Array.from({ length: 4 }, () => ({ name: 'First Last', role: 'Member' }));
+  const members = memberList.map(card).join('');
 
   root.innerHTML = [
     '<header>',
@@ -53,6 +71,12 @@
         '<div class="chapter-wrap">',
           '<h2>Chapter Officials</h2>',
           '<div class="pgrid">' + officers + '</div>',
+        '</div>',
+      '</section>',
+      '<section class="pgroup chapter-officials chapter-members" id="members">',
+        '<div class="chapter-wrap">',
+          '<h2>Chapter Members</h2>',
+          '<div class="pgrid">' + members + '</div>',
         '</div>',
       '</section>',
       '<section class="pgroup alt chapter-activity">',
