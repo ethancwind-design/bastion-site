@@ -1,0 +1,38 @@
+/* Shared title-bar bird pattern. Tune these values without changing the base banner. */
+.banner--bird {
+  --bird-pattern-tile-width: 120px;
+  --bird-pattern-tile-height: 80px;
+  --bird-pattern-opacity: .24;
+  --bird-pattern-duration: 21s;
+  --bird-pattern-shift-x: -120px;
+  --bird-pattern-shift-y: 80px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.banner--bird::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/media/bird-monogram-tile.svg");
+  background-repeat: repeat;
+  background-size: var(--bird-pattern-tile-width) var(--bird-pattern-tile-height);
+  opacity: var(--bird-pattern-opacity);
+  animation: bird-pattern-drift var(--bird-pattern-duration) linear infinite;
+}
+
+.banner--bird h1 {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes bird-pattern-drift {
+  to { background-position: var(--bird-pattern-shift-x) var(--bird-pattern-shift-y); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner--bird::before { animation: none; }
+}
