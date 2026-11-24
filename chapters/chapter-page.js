@@ -9,10 +9,10 @@
   const license = credit.licenseUrl
     ? '<a href="' + credit.licenseUrl + '">' + credit.license + '</a>'
     : credit.license;
-  const PRESIDENTS = {"harvard": {"name": "Daniel Adibi", "url": "https://www.linkedin.com/in/daniel-adibi-05885a239/", "photo": "/media/people/daniel-adibi.jpg"}, "princeton": {"name": "Luke Pierce", "url": "https://www.linkedin.com/in/luke-w-pierce/", "photo": "/media/people/luke-pierce.jpg"}, "penn": {"name": "Ethan Wind", "url": "https://www.linkedin.com/in/ethanwind/", "photo": "/media/people/ethan-wind.jpg"}, "columbia": {"name": "Fateh Arif Kerimli", "url": "https://www.linkedin.com/in/fateh-arif-kerimli/", "photo": "/media/people/fateh-arif-kerimli.jpg"}, "cornell": {"name": "Srinidith Gummadi", "url": "https://www.linkedin.com/in/srinidith-gummadi-95a24627a/", "photo": "/media/people/srinidith-gummadi.jpg"}};
+  const PRESIDENTS = {"harvard": {"name": "Daniel Adibi", "url": "https://www.linkedin.com/in/daniel-adibi-05885a239/", "photo": "/media/people/daniel-adibi.jpg"}, "princeton": {"name": "Luke Pierce", "url": "https://www.linkedin.com/in/luke-w-pierce/", "photo": "/media/people/luke-pierce.jpg"}, "penn": {"name": "Ethan Wind", "url": "https://www.linkedin.com/in/ethanwind/", "photo": "/media/people/ethan-wind.jpg"}, "columbia": {"name": "Fateh Arif Kerimli", "url": "https://www.linkedin.com/in/fateh-arif-kerimli/", "photo": "/media/people/fateh-arif-kerimli.jpg"}, "cornell": {"name": "Sisi Xu", "url": "https://www.linkedin.com/in/sisixu08/", "photo": ""}};
   const pres = PRESIDENTS[key];
   const presCard = pres
-    ? '<a class="pc" href="' + pres.url + '" target="_blank" rel="noopener"><h3>' + pres.name + '</h3><p class="pt">Campus President</p><div class="ph pic"><img src="' + pres.photo + '" alt="' + pres.name + '" loading="lazy"></div></a>'
+    ? '<a class="pc" href="' + pres.url + '" target="_blank" rel="noopener"><h3>' + pres.name + '</h3><p class="pt">Campus President</p>' + (pres.photo ? '<div class="ph pic"><img src="' + pres.photo + '" alt="' + pres.name + '" loading="lazy"></div>' : '<div class="ph"><span></span></div>') + '</a>'
     : '<article class="pc"><h3>First Last</h3><p class="pt">Campus President</p><div class="ph" aria-label="Portrait placeholder"><span></span></div></article>';
   const officers = presCard + Array.from({ length: 3 }, () =>
     '<article class="pc">' +
