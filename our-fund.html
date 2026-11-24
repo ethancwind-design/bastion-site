@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Our Fund | Bastion Investment Society</title>
-<meta name="description" content="Learn about the Locust Partners Equity Fund at Bastion Investment Society.">
+<meta name="description" content="Explore Bastion's first $75K student-run fund, its strategy committees, and investment leadership.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -16,31 +16,50 @@
 <body>
 <header>
   <a class="logo" href="/"><img src="/media/logo.png" alt="">BASTION<span class="tag">Investment Society</span></a>
-  <nav id="nav"><a href="/">Our Purpose</a><a href="/what-we-do">What We Do</a><a href="/our-fund" class=on>Our Fund</a><div class="dd"><a href="/executive-board" class="ddt" aria-haspopup="true">Our Team</a><div class="ddm"><a href="/executive-board">Executive Board</a><a href="/chapters">Our Chapters</a></div></div></nav>
+  <nav id="nav"><a href="/">Our Purpose</a><a href="/what-we-do">What We Do</a><a href="/our-fund" class=on>Our Fund</a><div class="dd"><a href="/executive-board" class="ddt" aria-haspopup="true">Our Team</a><div class="ddm"><a href="/executive-board">Executive Board</a><a href="/investment-team">Committees</a><a href="/chapters">Chapters</a></div></div></nav>
   <a class="login" href="#" id="loginBtn">Client Login</a>
   <button class="burger" id="burger" aria-label="Menu"></button>
 </header>
 
 <section class="hero" id="hero">
   <video class="reel" id="heroVideo" src="/media/investments-hero.mp4" autoplay muted loop playsinline preload="auto"></video>
-  <h1><span>Our Fund.</span><span>Locust Partners</span><span>Equity Fund.</span></h1>
+  <h1><span>Our First Fund.</span><span>$75K.</span></h1>
   <button class="pause" id="pause" aria-label="Pause video"></button>
-  <div class="cta"><p>Locust Partners Equity Fund is a $75K long-only equity fund managed by students at the University of Pennsylvania.</p></div>
+  <div class="cta"><p>We invest across asset classes, combining long and short positions with fundamental research, systematic insights, and disciplined risk management.</p></div>
 </section>
 
-<section class="fund">
-  <div class="fcol"><div class="big rv" id="fNumber"></div><div class="cap">Fund</div></div>
-  <div class="fcol"><div class="big rv d1" id="fAum"></div><div class="cap">Assets under management</div></div>
-  <div class="fcol"><div class="big sm rv d2" id="fStrat"></div><div class="cap">Strategy</div></div>
-  <div class="fcol lists"><h3>Portfolio Managers</h3><ul id="fMgrs"></ul><h3 class="gap">Allocation</h3><ul id="fAlloc"></ul></div>
-  <div class="fchart"><h3>Portfolio Allocation</h3><svg id="donut" viewBox="0 0 880 540" role="img" aria-label="Portfolio allocation by sector and position"></svg></div>
+<section class="fund" aria-labelledby="fund-heading">
+  <div class="fund-intro">
+    <div>
+      <p class="fund-kicker">Our First Fund · $75K</p>
+      <h2 id="fund-heading">Research across<br><em>asset classes.</em></h2>
+    </div>
+    <p>Our $75K student-run fund invests across a broad set of asset classes and approaches. Four strategy committees evaluate long and short opportunities in equities, credit and convertibles, global quantitative strategies, and venture capital through alternative data, portfolio construction, and risk-aware underwriting.</p>
+  </div>
+  <div class="fund-system">
+    <figure class="fund-visual">
+      <svg id="strategyPie" viewBox="0 0 520 520" role="img" aria-label="Four equal segments representing Bastion's strategy committees"></svg>
+      <figcaption>The segments represent our four strategy committees, not capital allocation or current positions.</figcaption>
+    </figure>
+    <div class="strategy-committees">
+      <p class="fund-kicker">Strategy Committees</p>
+      <div id="fundStrategies"></div>
+    </div>
+  </div>
+  <div class="fund-oversight">
+    <div>
+      <p class="fund-kicker">Portfolio Oversight</p>
+      <h3>Investment Committee</h3>
+    </div>
+    <div class="fund-oversight-people" id="fundCommittee"></div>
+  </div>
 </section>
 
 <section class="approach">
   <div class="atext rv">
-    <h2>Locust Partners<br>Equity Fund</h2>
-    <p>Locust Partners Equity Fund is a concentrated long-only equity portfolio built around a small number of high-conviction ideas across technology, consumer and health care.</p>
-    <p>We favor durable businesses, size positions by the strength of the thesis, and stay disciplined on risk. The fund is run by students at the University of Pennsylvania as part of the Bastion Investment Society.</p>
+    <h2>One fund.<br>Multiple perspectives.</h2>
+    <p>Portfolio managers lead research within each strategy, combining company fundamentals, alternative data, and market signals to evaluate opportunities across asset classes.</p>
+    <p>The investment committee brings those perspectives together through position sizing, liquidity review, and risk oversight. The fund is run by students as part of the Bastion Investment Society.</p>
   </div>
   <img class="rv d1" src="/media/skyline.jpg" alt="">
 </section>
