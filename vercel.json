@@ -3,11 +3,6 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/portfolio",
-      "destination": "/investments",
-      "permanent": true
-    },
-    {
       "source": "/team",
       "destination": "/executive-board",
       "permanent": false

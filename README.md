@@ -10,18 +10,17 @@ The site is plain HTML, CSS, and JavaScript. There is no framework and no build 
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000/index.html. Production uses Vercel's clean URLs with trailing slashes (`/research/` instead of `/research.html`), so open root pages by their `.html` names when testing locally, or run `npx vercel dev` to get the same URLs as production. Chapter pages use `chapters/<school>/index.html` and work locally at `/chapters/<school>/`.
+Open http://localhost:8000/index.html. Production uses Vercel's clean URLs with trailing slashes (`/executive-board/` instead of `/executive-board.html`), so open root pages by their `.html` names when testing locally, or run `npx vercel dev` to get the same URLs as production. Chapter pages use `chapters/<school>/index.html` and work locally at `/chapters/<school>/`.
 
 ## Where things live
 
 | Path | What it is |
 | --- | --- |
-| `index.html`, `what-we-do.html`, `research.html`, `investments.html` | Main pages |
+| `index.html`, `what-we-do.html` | Main pages |
 | `executive-board.html`, `research-team.html`, `investment-team.html` | Our Team pages (people cards) |
 | `styles.css` | Main site styles |
 | `team.css` | Our Team dropdown, people cards, Featured Research, Drone Club section, four-strategy grid |
 | `site.js` | Shared behavior: mobile menu, scroll reveals, login pop-up, "Under Development" notice |
-| `fund-data.js`, `fund.js` | Investments page: fund numbers and holdings chart. Edit `fund-data.js` to change them. |
 | `media/` | Images, videos, logos |
 | `media/people/` | Team headshots (600×600 JPEG), named `first-last.jpg` |
 | `media/research/` | Research PDFs and their cover images |
