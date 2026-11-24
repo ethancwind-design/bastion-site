@@ -4,7 +4,12 @@
   "redirects": [
     {
       "source": "/team",
-      "destination": "/executive-board",
+      "destination": "/chapters",
+      "permanent": false
+    },
+    {
+      "source": "/executive-board",
+      "destination": "/chapters",
       "permanent": false
     },
     {
