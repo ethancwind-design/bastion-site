@@ -1,4 +1,4 @@
-// EDIT ME: everything on the Investments page (stats, lists, donut chart, holdings) is drawn from this object.
+// EDIT ME: everything on the Our Fund page (stats, lists, donut chart, holdings) is drawn from this object.
 window.FUND = {
   number: "Fund 1",
   name: "Locust Partners Equity Fund",

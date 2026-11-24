@@ -16,11 +16,12 @@ Open http://localhost:8000/index.html. Production uses Vercel's clean URLs with 
 
 | Path | What it is |
 | --- | --- |
-| `index.html`, `what-we-do.html` | Main pages |
+| `index.html`, `what-we-do.html`, `our-fund.html` | Main pages |
 | `executive-board.html`, `research-team.html`, `investment-team.html` | Our Team pages (people cards) |
 | `styles.css` | Main site styles |
 | `team.css` | Our Team dropdown, people cards, Featured Research, Drone Club section, four-strategy grid |
 | `site.js` | Shared behavior: mobile menu, scroll reveals, login pop-up, "Under Development" notice |
+| `fund-data.js`, `fund.js` | Our Fund page data and allocation chart |
 | `media/` | Images, videos, logos |
 | `media/people/` | Team headshots (600×600 JPEG), named `first-last.jpg` |
 | `media/research/` | Research PDFs and their cover images |
