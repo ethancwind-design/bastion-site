@@ -22,24 +22,30 @@
   };
   const VP_ROLES = ['Vice President of Internal Affairs', 'Vice President of External Affairs', 'Vice President of Community Outreach'];
   const OFFICERS = {
-    columbia: { 'Vice President of External Affairs': { name: 'Fateh Arif Kerimli', url: 'https://www.linkedin.com/in/fateh-arif-kerimli/', photo: '/media/people/fateh-arif-kerimli.jpg' } }
+    columbia: { 'Vice President of Internal Affairs': { name: 'Sophia Kalochoritis', url: 'https://www.linkedin.com/in/skalochoritis/', photo: '/media/people/sophia-kalochoritis.jpg' }, 'Vice President of External Affairs': { name: 'Fateh Arif Kerimli', url: 'https://www.linkedin.com/in/fateh-arif-kerimli/', photo: '/media/people/fateh-arif-kerimli.jpg' } }
   };
   const officers = presCard + VP_ROLES.map((role) => card(Object.assign({ name: 'First Last' }, (OFFICERS[key] || {})[role], { role: role }))).join('');
   const MEMBERS = {
+    princeton: [
+      { name: 'Krish Bharwani', role: 'Member', url: 'https://www.linkedin.com/in/krish-bharwani-aa0626313/' }
+    ],
+    harvard: [
+      { name: 'Buhlebenkosi Mhlongo', role: 'Member', url: 'https://www.linkedin.com/in/buhlebenkosi-mhlongo-895285361/', photo: '/media/people/buhlebenkosi-mhlongo.jpg' }
+    ],
     penn: [
+      { name: 'Adam Polzien', role: 'Portfolio Manager, Equities: Industrials', url: 'https://www.linkedin.com/in/adam-polzien-0a29a1262/', photo: '/media/people/adam-polzien.jpg' },
       { name: 'Stanley Yang', role: 'Associate Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/stanley-yang-933652369/', photo: '/media/people/stanley-yang.jpg' }
     ],
     columbia: [
       { name: 'Andrew Watcharananan', role: 'Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/andrew-watcharananan-627aa9348/', photo: '/media/people/andrew-watcharananan.jpg' },
       { name: 'Dean Karuhadej', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/varis-karuhadej-542616330/', photo: '/media/people/dean-karuhadej.jpg' },
       { name: 'Hugo Eechaute', role: 'Co-Founder &amp; Chief Operating Officer', url: 'https://www.linkedin.com/in/hugoeechaute/', photo: '/media/people/hugo-eechaute.jpg' },
-      { name: 'Aituar Kurmambay', role: 'Member', url: 'https://www.linkedin.com/in/aituar-kurmambay-4238bb3a1/', photo: '/media/people/aituar-kurmambay.jpg' },
+      { name: 'Aituar Kurmambay', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/aituar-kurmambay-4238bb3a1/', photo: '/media/people/aituar-kurmambay.jpg' },
       { name: 'Manuel Trelles', role: 'Member', url: 'https://www.linkedin.com/in/manuel-trelles-a559a437a/', photo: '/media/people/manuel-trelles.jpg' },
-      { name: 'Sophia Kalochoritis', role: 'Member', url: 'https://www.linkedin.com/in/skalochoritis/', photo: '/media/people/sophia-kalochoritis.jpg' },
-      { name: 'Pavani Rhoads', role: 'Member' },
-      { name: 'Amelie Piergentili', role: 'Member' },
-      { name: 'Lilian Dicrescenzo', role: 'Member' },
-      { name: 'Aura', role: 'Member' }
+      { name: 'Pavani Rhoads', role: 'Member', url: 'https://www.linkedin.com/in/pavani-rhoads-0348582a5/', photo: '/media/people/pavani-rhoads.jpg' },
+      { name: 'Amelie Piergentili', role: 'Member', url: 'https://www.linkedin.com/in/amelie-piergentili-b832072a5/', photo: '/media/people/amelie-piergentili.jpg' },
+      { name: 'Lela DiCrescenzo', role: 'Member', url: 'https://www.linkedin.com/in/lela-dicrescenzo-b72959371/', photo: '/media/people/lela-dicrescenzo.jpg' },
+      { name: 'Aura Ackerman Sandoval', role: 'Member', url: 'https://www.linkedin.com/in/aura-ackerman-sandoval-3507b33ba/', photo: '/media/people/aura-ackerman-sandoval.jpg' }
     ]
   };
   const memberList = MEMBERS[key] || Array.from({ length: 4 }, () => ({ name: 'First Last', role: 'Member' }));
