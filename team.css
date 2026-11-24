@@ -139,3 +139,6 @@ span.more:hover{text-decoration:none}
 .rt-top p{color:var(--mute);font-size:17px;line-height:1.7;max-width:560px;padding-top:6px}
 .rt-panel .pgrid{margin-top:50px}
 @media(max-width:900px){.rt-body{margin:0;padding:44px var(--pad) 56px}.rt-top{grid-template-columns:1fr;gap:16px}.rt-tabs button{padding:18px 20px;font-size:14px}}
+.featured--flip{padding-top:40px}
+.featured--flip .fcard{grid-template-columns:1fr minmax(260px,420px)}
+@media(max-width:900px){.featured--flip .fcard{grid-template-columns:1fr}.featured--flip .fimg{order:-1}}
