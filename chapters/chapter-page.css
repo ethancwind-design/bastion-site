@@ -226,3 +226,4 @@ body[data-chapter] header {
 .chapter-hero-photo{border:14px solid var(--school,#1646b8);box-sizing:border-box;box-shadow:0 18px 44px rgba(11,21,51,.14)}
 .chapter-hero-photo img{box-shadow:none}
 @media(max-width:900px){.chapter-hero-photo{margin-right:0;border-width:10px}}
+.chapter-hero h1{color:var(--school-text,var(--navy))}

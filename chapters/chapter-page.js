@@ -53,6 +53,8 @@
   const sc = SCHOOL_COLORS[key] || ['#1646b8', '#0a2166'];
   document.body.style.setProperty('--school', sc[0]);
   document.body.style.setProperty('--school-2', sc[1]);
+  const SCHOOL_TEXT = { harvard: '#A51C30', yale: '#00356B', princeton: '#E0701C', penn: '#990000', columbia: '#1D4F91', brown: '#4E3629', cornell: '#B31B1B', dartmouth: '#00693E' };
+  document.body.style.setProperty('--school-text', SCHOOL_TEXT[key] || '#0a2166');
   root.innerHTML = [
     '<header>',
       '<a class="logo" href="/"><img src="/media/logo.png" alt="">BASTION<span class="tag">Investment Society</span></a>',
