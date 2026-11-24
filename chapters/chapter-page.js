@@ -83,7 +83,7 @@
             '<img class="chapter-hero-crest" src="' + chapter.crest + '" alt="' + chapter.name + ' crest">',
             '<h1 id="chapter-title">' + chapter.name + '</h1>',
             '<p class="chapter-location">' + chapter.location + '</p>',
-            '<p class="chapter-hero-description">' + chapter.intro + '</p>',
+            (chapter.intro ? '<p class="chapter-hero-description">' + chapter.intro + '</p>' : ''),
           '</div>',
           '<figure class="chapter-hero-photo" style="--photo-position:' + chapter.photoPosition + '">',
             '<img src="' + chapter.photo + '" alt="' + chapter.landmark + ' at ' + chapter.name + '" fetchpriority="high">',

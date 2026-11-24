@@ -6,7 +6,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/harvard.jpg",
     "landmark": "Memorial Hall",
     "photoPosition": "50% 0%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "",
     "credit": {
       "author": "Phileven",
       "source": "https://commons.wikimedia.org/wiki/File:Memorial_Hall,_Harvard_University_with_Beautiful_Clouds.jpg",
@@ -36,7 +36,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/princeton.jpg",
     "landmark": "Nassau Hall",
     "photoPosition": "50% 50%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "",
     "credit": {
       "author": "Z3lvs",
       "source": "https://commons.wikimedia.org/wiki/File:Nassau_Hall_and_front_lawn,_Princeton_University,_Princeton,_New_Jersey.jpg",
@@ -51,7 +51,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/penn.jpg",
     "landmark": "College Hall",
     "photoPosition": "50% 50%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "",
     "credit": {
       "author": "Michel Alexandre Salim",
       "source": "https://commons.wikimedia.org/wiki/File:College_Hall,_University_of_Pennsylvania.jpg",
@@ -66,7 +66,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/columbia.jpg",
     "landmark": "Low Memorial Library",
     "photoPosition": "50% 50%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "",
     "credit": {
       "author": "Ajay Suresh",
       "source": "https://commons.wikimedia.org/wiki/File:Columbia_University_-_Low_Memorial_Library_(48170370506).jpg",
@@ -96,7 +96,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/cornell.jpg",
     "landmark": "McGraw Tower and Uris Library",
     "photoPosition": "50% 46%",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "intro": "",
     "credit": {
       "author": "P. Hughes",
       "source": "https://commons.wikimedia.org/wiki/File:Cornell_University_-_Uris_Library_and_McGraw_Tower.jpg",
