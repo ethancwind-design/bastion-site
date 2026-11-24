@@ -53,8 +53,15 @@
   const sc = SCHOOL_COLORS[key] || ['#1646b8', '#0a2166'];
   document.body.style.setProperty('--school', sc[0]);
   document.body.style.setProperty('--school-2', sc[1]);
-  const SCHOOL_TEXT = { harvard: '#A51C30', yale: '#00356B', princeton: '#E0701C', penn: '#990000', columbia: '#1D4F91', brown: '#4E3629', cornell: '#B31B1B', dartmouth: '#00693E' };
-  document.body.style.setProperty('--school-text', SCHOOL_TEXT[key] || '#0a2166');
+  // Heading colors from each school's identity: [main heading, second line / subheadings]
+  const SCHOOL_TEXT = {
+    harvard: ['#A51C30', '#1E1E1E'], yale: ['#00356B', '#978D85'], princeton: ['#1E1E1E', '#E0701C'],
+    penn: ['#011F5B', '#990000'], columbia: ['#1D4F91', '#1D4F91'], brown: ['#4E3629', '#ED1C24'],
+    cornell: ['#B31B1B', '#222222'], dartmouth: ['#00693E', '#00693E']
+  };
+  const st = SCHOOL_TEXT[key] || ['#0a2166', '#1646b8'];
+  document.body.style.setProperty('--school-text', st[0]);
+  document.body.style.setProperty('--school-text-2', st[1]);
   root.innerHTML = [
     '<header>',
       '<a class="logo" href="/"><img src="/media/logo.png" alt="">BASTION<span class="tag">Investment Society</span></a>',
@@ -110,7 +117,6 @@
       '<div class="fsoc"><a href="https://www.linkedin.com/company/bastion-investment-society/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a><a href="https://www.instagram.com/bastioninvestmentsociety/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 4.86a4.94 4.94 0 1 0 0 9.88 4.94 4.94 0 0 0 0-9.88zm0 8.15a3.21 3.21 0 1 1 0-6.42 3.21 3.21 0 0 1 0 6.42zm5.14-9.5a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3z"/></svg></a><a href="mailto:bastioninvestmentsociety@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 5.5h18v13H3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3.5 6l8.5 7 8.5-7"/></svg></a></div>',
       '<p>Bastion Investment Society is an independent organization made up of students, mentors, and partners. It is not affiliated with, sponsored by, or endorsed by Harvard, Yale, Princeton, the University of Pennsylvania, Columbia, Brown, Cornell, Dartmouth, or any other university. We do not provide investment advice on this website. This site has not been reviewed by those universities, and they are not responsible for viewers\' investment decisions.</p>',
       '<p style="margin-top:14px">Please contact <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a> for more information.</p>',
-      '<p style="margin-top:14px">Campus photograph: <a href="' + credit.source + '">' + chapter.landmark + ' by ' + credit.author + '</a> (' + license + '). Image resized for web and displayed with a responsive crop.</p>',
     '</footer>'
   ].join('');
   if (location.hash === '#officials') {
