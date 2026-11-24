@@ -289,3 +289,25 @@ span.more:hover{text-decoration:none}
 .ps-slide.on .ps-card{animation:psCard .8s .5s cubic-bezier(.65,0,.35,1) both}
 @media(max-width:900px){.pslider{background:linear-gradient(#0f2160 0,#0f2160 70%,var(--soft) 70%);padding-bottom:60px}.ps-slide{height:auto;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end}.ps-img{bottom:auto;height:420px}.ps-quote{top:120px;max-width:86%}.ps-card{position:relative;bottom:auto;right:auto;width:auto;margin-top:380px}.ps-cta{top:340px;bottom:auto}}
 @media(prefers-reduced-motion:reduce){.ps-slide *{animation:none!important}}
+/* Admin page */
+.admin{padding:170px var(--pad) 120px;min-height:70vh}
+.admin-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;border-bottom:3px solid var(--navy);padding-bottom:26px}
+.admin-eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.admin h1{font-size:clamp(44px,4.6vw,70px);line-height:1.05;color:var(--navy);margin-top:10px}
+.admin-tools{display:flex;gap:10px;flex-wrap:wrap}
+.admin-tools input{font:inherit;font-size:15px;padding:12px 16px;border:1px solid #cdd2dd;min-width:280px}
+.admin-tools button{font:inherit;font-size:14px;padding:12px 20px;border:1px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;transition:background .25s,color .25s}
+.admin-tools button:hover{background:var(--navy);color:#fff}
+.admin-count{margin-top:22px;color:var(--mute);font-size:15px}
+.admin-wrap{margin-top:22px;overflow-x:auto;border:1px solid #dfe3ea}
+.admin-table{width:100%;border-collapse:collapse;font-size:15px;min-width:900px}
+.admin-table th{background:#0f2160;color:#fff;text-align:left;font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:16px 18px;position:sticky;top:0}
+.admin-table td{padding:15px 18px;border-top:1px solid #e6e9ef;vertical-align:top;color:var(--ink)}
+.admin-table tbody tr:nth-child(even){background:var(--soft)}
+.admin-table tbody tr:hover{background:#e9eef9}
+.admin-table td.nm{font-family:Newsreader,Georgia,serif;font-size:20px;color:var(--navy);white-space:nowrap}
+.admin-table td.why{max-width:420px;color:var(--mute)}
+.admin-table .tag{display:inline-block;font-size:12px;letter-spacing:.04em;padding:4px 10px;background:#e3e8f4;color:var(--navy)}
+.admin-table tr.new td:first-child{box-shadow:inset 4px 0 0 #f1cf63}
+.admin-msg{margin-top:26px;color:var(--mute)}
+.nav-admin{color:var(--blue)!important}

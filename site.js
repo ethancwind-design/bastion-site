@@ -23,7 +23,19 @@ function onScroll(){
 }
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-// Client Login pop-up (placeholder: there is no real sign-in yet, so it always shows an error).
+// Admin sign-in: credentials are checked by the Apps Script (not in this file); data loads only after sign-in.
+const BASTION_ADMIN_ENDPOINT='https://script.google.com/macros/s/AKfycbx-5JAkwXLPn2lSf8S6YmUPRGSe6agOHyMK9cB9wwMdCgqHth16wcEjSkdfMlWqdK8SwA/exec';
+function bastionAdminFetch(user,pass){return fetch(BASTION_ADMIN_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'list',user:user,pass:pass})}).then(r=>r.json())}
+function bastionAdminSession(){try{return JSON.parse(sessionStorage.getItem('bastionAdmin')||'null')}catch(e){return null}}
+// Show an Admin tab in the menu while signed in.
+(function(){
+  if(!bastionAdminSession())return;
+  const n=document.getElementById('nav');if(!n||n.querySelector('.nav-admin'))return;
+  const a=document.createElement('a');a.href='/admin/';a.className='nav-admin';a.textContent='Admin';
+  if(location.pathname.replace(/\/$/,'')==='/admin')a.classList.add('on');
+  n.appendChild(a);
+})();
+// Client Login pop-up.
 (function(){
   const m=document.createElement('div');m.className='modal';m.id='loginModal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','loginTitle');
   m.innerHTML=`<div class="modal-card"><button class="modal-x" id="loginX" aria-label="Close"></button>
@@ -44,7 +56,19 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
   m.addEventListener('mousedown',e=>{if(e.target===m)close()});
   addEventListener('keydown',e=>{if(e.key==='Escape')close()});
   m.querySelector('.terms a').addEventListener('click',e=>e.preventDefault());
-  document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('loginErr').textContent='We could not sign you in. Client access is not available yet.'});
+  document.getElementById('loginForm').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const f=e.target,err=document.getElementById('loginErr'),btn=f.querySelector('.enter');
+    const user=f.u.value.trim(),pass=f.p.value;
+    if(!user||!pass){err.textContent='Enter your username and password.';return}
+    btn.disabled=true;err.textContent='Signing in...';
+    try{
+      const d=await bastionAdminFetch(user,pass);
+      if(d.ok){try{sessionStorage.setItem('bastionAdmin',JSON.stringify({user:user,pass:pass}))}catch(x){}location.href='/admin/'}
+      else err.textContent=d.error==='locked'?'Too many attempts. Try again in 10 minutes.':'We could not sign you in.';
+    }catch(x){err.textContent='We could not reach the server. Try again.'}
+    btn.disabled=false;
+  });
 })();
 
 // "Under development" notice: shows once per visit (per browser session) when the site opens.
