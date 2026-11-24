@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Our Chapters | Bastion Investment Society</title>
+<title>Chapters | Bastion Investment Society</title>
 <meta name="description" content="Bastion Investment Society chapters across all eight Ivy League schools.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/team.css">
 <link rel="stylesheet" href="/chapters/chapters.css">
-<link rel="stylesheet" href="/bird-pattern.css">
 </head>
 <body>
 <header>
@@ -23,7 +22,15 @@
   <button class="burger" id="burger" aria-label="Menu"></button>
 </header>
 
-<section class="banner banner--bird"><h1 class="rv">Our Chapters</h1></section>
+<section class="hero" id="hero">
+  <video class="reel" id="teamVideo" src="/media/apply-dartmouth.mp4#t=8" poster="/media/team-dome.jpg" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
+  <h1><span>Chapters</span></h1>
+  <div class="cta"><p>We have members across the eight Ivy League schools, managing multiple investment strategy portfolios.</p></div>
+</section>
+<script>
+// Starts on the dome clip (8s into the second file), then cycles: first clip, second clip, repeat.
+(function(){const v=document.getElementById('teamVideo'),list=['/media/apply-brown.mp4','/media/apply-dartmouth.mp4'];let i=-1;v.addEventListener('ended',()=>{i=(i+1)%list.length;v.src=list[i];v.play().catch(()=>{})});})();
+</script>
 <section class="pintro"><h2 class="rv">Eight Universities.<em>One Society.</em></h2><p class="rv d1">Bastion brings together students across the Ivy League through a shared interest in investing and the exchange of ideas beyond individual campuses.</p></section>
 
 <main id="chapters" class="chapters-network" aria-label="Bastion chapters">
