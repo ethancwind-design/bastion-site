@@ -9,7 +9,7 @@
   const license = credit.licenseUrl
     ? '<a href="' + credit.licenseUrl + '">' + credit.license + '</a>'
     : credit.license;
-  const PRESIDENTS = {"harvard": {"name": "Daniel Adibi", "url": "https://www.linkedin.com/in/daniel-adibi-05885a239/", "photo": "/media/people/daniel-adibi.jpg"}, "princeton": {"name": "Luke Pierce", "url": "https://www.linkedin.com/in/luke-w-pierce/", "photo": "/media/people/luke-pierce.jpg"}, "penn": {"name": "Ethan Wind", "url": "https://www.linkedin.com/in/ethanwind/", "photo": "/media/people/ethan-wind.jpg"}, "columbia": {"name": "Fateh Arif Kerimli", "url": "https://www.linkedin.com/in/fateh-arif-kerimli/", "photo": "/media/people/fateh-arif-kerimli.jpg"}, "cornell": {"name": "Sisi Xu", "url": "https://www.linkedin.com/in/sisixu08/", "photo": "/media/people/sisi-xu.jpg"}};
+  const PRESIDENTS = {"harvard": {"name": "Daniel Adibi", "url": "https://www.linkedin.com/in/daniel-adibi-05885a239/", "photo": "/media/people/daniel-adibi.jpg"}, "princeton": {"name": "Luke Pierce", "url": "https://www.linkedin.com/in/luke-w-pierce/", "photo": "/media/people/luke-pierce.jpg"}, "penn": {"name": "Ethan Wind", "url": "https://www.linkedin.com/in/ethanwind/", "photo": "/media/people/ethan-wind.jpg"}, "cornell": {"name": "Sisi Xu", "url": "https://www.linkedin.com/in/sisixu08/", "photo": "/media/people/sisi-xu.jpg"}, "dartmouth": {"name": "Karen Park", "url": "https://www.linkedin.com/in/jiminkarenpark/", "photo": "/media/people/karen-park.jpg"}};
   const pres = PRESIDENTS[key];
   const presCard = pres
     ? '<a class="pc" href="' + pres.url + '" target="_blank" rel="noopener"><h3>' + pres.name + '</h3><p class="pt">Campus President</p>' + (pres.photo ? '<div class="ph pic"><img src="' + pres.photo + '" alt="' + pres.name + '" loading="lazy"></div>' : '<div class="ph"><span></span></div>') + '</a>'
@@ -21,15 +21,21 @@
     return p.url ? '<a class="pc" href="' + p.url + '" target="_blank" rel="noopener">' + inner + '</a>' : '<article class="pc">' + inner + '</article>';
   };
   const VP_ROLES = ['Vice President of Internal Affairs', 'Vice President of External Affairs', 'Vice President of Community Outreach'];
-  const officers = presCard + VP_ROLES.map((role) => card({ name: 'First Last', role: role })).join('');
+  const OFFICERS = {
+    columbia: { 'Vice President of External Affairs': { name: 'Fateh Arif Kerimli', url: 'https://www.linkedin.com/in/fateh-arif-kerimli/', photo: '/media/people/fateh-arif-kerimli.jpg' } }
+  };
+  const officers = presCard + VP_ROLES.map((role) => card(Object.assign({ name: 'First Last' }, (OFFICERS[key] || {})[role], { role: role }))).join('');
   const MEMBERS = {
+    penn: [
+      { name: 'Stanley Yang', role: 'Associate Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/stanley-yang-933652369/', photo: '/media/people/stanley-yang.jpg' }
+    ],
     columbia: [
       { name: 'Andrew Watcharananan', role: 'Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/andrew-watcharananan-627aa9348/', photo: '/media/people/andrew-watcharananan.jpg' },
       { name: 'Dean Karuhadej', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/varis-karuhadej-542616330/', photo: '/media/people/dean-karuhadej.jpg' },
       { name: 'Hugo Eechaute', role: 'Co-Founder &amp; Chief Operating Officer', url: 'https://www.linkedin.com/in/hugoeechaute/', photo: '/media/people/hugo-eechaute.jpg' },
       { name: 'Aituar Kurmambay', role: 'Member', url: 'https://www.linkedin.com/in/aituar-kurmambay-4238bb3a1/', photo: '/media/people/aituar-kurmambay.jpg' },
-      { name: 'Manuel Trelles', role: 'Member' },
-      { name: 'Sophia Kalochoritis', role: 'Member' },
+      { name: 'Manuel Trelles', role: 'Member', url: 'https://www.linkedin.com/in/manuel-trelles-a559a437a/', photo: '/media/people/manuel-trelles.jpg' },
+      { name: 'Sophia Kalochoritis', role: 'Member', url: 'https://www.linkedin.com/in/skalochoritis/', photo: '/media/people/sophia-kalochoritis.jpg' },
       { name: 'Pavani Rhoads', role: 'Member' },
       { name: 'Amelie Piergentili', role: 'Member' },
       { name: 'Lilian Dicrescenzo', role: 'Member' },

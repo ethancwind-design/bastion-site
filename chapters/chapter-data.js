@@ -111,7 +111,7 @@ window.BASTION_CHAPTERS = {
     "photo": "/media/chapter-landmarks/dartmouth.jpg",
     "landmark": "Baker-Berry Library and Baker Tower",
     "photoPosition": "50% 50%",
-    "intro": "Dartmouth is a chapter with zero members. The Society is currently interviewing candidates for leadership roles at this chapter.",
+    "intro": "The Society is currently interviewing candidates for the remaining leadership roles at the Dartmouth chapter.",
     "credit": {
       "author": "Kane5187",
       "source": "https://commons.wikimedia.org/wiki/File:Dartmouth_College_campus_2007-06-23_Baker_Memorial_Library_01.JPG",
