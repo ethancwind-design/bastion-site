@@ -54,4 +54,4 @@ Vercel deploys this repo automatically: anything merged into `main` goes live on
 2. Open a pull request.
 3. Ethan reviews and merges it on GitHub. The merge publishes the site.
 
-Don't push straight to `main`. The Vercel project is on the free Hobby plan, so Vercel only builds commits from the project owner. Commits you author yourself (including preview builds of your pull request) show as "Blocked" in Vercel, and that's expected. Test locally (see above) before opening the pull request.
+Don't push straight to `main`. The Vercel project is on the free Hobby plan, so Vercel only builds commits from the project owner. Commits you author yourself (including preview builds of your pull request) show as "Blocked" in Vercel, and that's expected. Test locally (see above) before opening the pull request. 
