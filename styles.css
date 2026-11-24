@@ -403,7 +403,22 @@ footer a{color:#c3cffa}
 .approach p{color:var(--mute);font-size:20px;line-height:1.75;max-width:600px}
 .approach p+p{margin-top:20px}
 .approach img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.fund-second{background:var(--soft);padding:var(--section-space) var(--pad) 120px}
+.fund-second-intro{display:grid;grid-template-columns:1fr 1fr;gap:var(--column-gap);align-items:start;border-bottom:1px solid #cdd2dd;padding-bottom:76px}
+.fund-second-intro h2{font-size:clamp(54px,6vw,86px);line-height:1.04;color:var(--navy);margin-top:20px}
+.fund-second-intro h2 em{font-style:normal;color:var(--blue)}
+.fund-second-intro>p{font-size:20px;line-height:1.7;color:var(--mute);max-width:650px;padding-top:8px}
+.fund-second-allocation{padding-top:72px}
+.fund-allocation-bar{display:flex;width:100%;height:36px;margin-top:22px}
+.fund-allocation-tech{width:75%;background:var(--navy)}
+.fund-allocation-index{width:25%;background:var(--blue)}
+.fund-allocation-labels{display:grid;grid-template-columns:3fr 1fr;gap:var(--column-gap);margin-top:26px}
+.fund-allocation-labels>div{display:flex;align-items:baseline;gap:14px}
+.fund-allocation-labels strong{font-family:Newsreader,Georgia,serif;font-size:clamp(38px,4vw,58px);font-weight:400;line-height:1;color:var(--navy)}
+.fund-allocation-labels span{font-size:18px;color:var(--mute)}
 @media(max-width:900px){.fund{padding:80px var(--pad) 90px}.fund-intro,.fund-system,.fund-oversight{grid-template-columns:1fr}.fund-intro{gap:28px;padding-bottom:54px}.fund-system{gap:56px;padding:60px 0 70px}.fund-oversight{gap:32px}.approach{grid-template-columns:1fr;gap:40px;padding:80px var(--pad)}}
+@media(max-width:900px){.fund-second{padding:80px var(--pad) 90px}.fund-second-intro{grid-template-columns:1fr;gap:28px;padding-bottom:54px}.fund-second-allocation{padding-top:60px}}
+@media(max-width:560px){.fund-allocation-labels{gap:16px}.fund-allocation-labels>div{display:block}.fund-allocation-labels span{display:block;margin-top:4px;font-size:15px}}
 @media(max-width:700px){.strategy-row{grid-template-columns:38px 1fr;gap:8px 14px}.strategy-manager{grid-column:2}.fund-oversight-people{grid-template-columns:1fr;gap:24px}}
 .credits{padding:0 var(--pad) 40px;color:var(--mute);font-size:13px;line-height:1.5}
 .ecard h3{min-height:0;margin-bottom:0}
