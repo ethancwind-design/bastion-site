@@ -388,3 +388,6 @@ html{scroll-behavior:smooth}
 @media(max-width:900px){.work-together{grid-template-columns:1fr}.wt-photo{height:320px}.wt-body{padding:56px var(--pad)}#wtForm fieldset{grid-template-columns:1fr}}
 /* admin: inquiries */
 .admin-sub{margin-top:90px;font:400 clamp(34px,3.2vw,48px)/1.1 Newsreader,Georgia,serif;color:var(--navy);border-bottom:3px solid var(--navy);padding-bottom:20px}
+#wtForm label{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;row-gap:10px}
+#wtForm label>input,#wtForm label>textarea{flex-basis:100%}
+.pslider{padding-bottom:200px}
