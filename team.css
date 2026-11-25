@@ -394,3 +394,4 @@ html{scroll-behavior:smooth}
 .tl-bg-gta{background-size:cover;background-position:60% 30%}
 .tl-bg-gta::after{background:linear-gradient(90deg,rgba(10,8,30,.86) 0%,rgba(10,8,30,.6) 48%,rgba(10,8,30,.15) 100%)!important}
 .tl-polaroid img[src*="ttwo-cover"],.tl-polaroid img[src*="wharton-magazine"]{object-position:top;aspect-ratio:8.5/11}
+.tl-bg-gta{background-position:45% 40%}
