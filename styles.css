@@ -256,7 +256,7 @@ footer a{color:#c3cffa}
 
 /* PAGES */
 .split{padding:130px var(--pad) 60px;display:grid;grid-template-columns:1fr 1fr;gap:var(--column-gap);align-items:start}
-#internal.split{padding-top:100px}
+#internal.split{padding-top:80px;padding-bottom:80px}
 .split h2,.strat h2,.news h2{font-size:clamp(40px,4.6vw,70px);line-height:1.08;color:var(--navy)}
 .split h2 em,.strat h2 em,.news h2 em{font-style:normal;color:var(--blue);display:block}
 .split p,.strat .head p{color:var(--mute);font-size:20px;line-height:1.65;font-weight:400;max-width:620px;padding-top:12px}
