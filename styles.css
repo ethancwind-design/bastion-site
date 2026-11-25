@@ -256,6 +256,7 @@ footer a{color:#c3cffa}
 
 /* PAGES */
 .split{padding:130px var(--pad) 60px;display:grid;grid-template-columns:1fr 1fr;gap:var(--column-gap);align-items:start}
+#internal.split{padding-top:80px;padding-bottom:80px}
 .split h2,.strat h2,.news h2{font-size:clamp(40px,4.6vw,70px);line-height:1.08;color:var(--navy)}
 .split h2 em,.strat h2 em,.news h2 em{font-style:normal;color:var(--blue);display:block}
 .split p,.strat .head p{color:var(--mute);font-size:20px;line-height:1.65;font-weight:400;max-width:620px;padding-top:12px}
@@ -265,6 +266,12 @@ footer a{color:#c3cffa}
 
 #argos .vid{position:static}
 #argos .vid img{width:100%;height:100%;object-fit:cover;display:block}
+#argos.feature{display:block}
+#argos .copy{display:flow-root}
+#argos .vid{float:left;width:calc((100% - var(--column-gap)) / 2);margin:0 var(--column-gap) 0 0}
+#argos.feature{padding-bottom:48px}
+#community.split{padding-top:48px}
+#timeline-3{display:none}
 .brand-row{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;text-decoration:none;color:var(--navy)}
 .brand-row img{height:54px;width:auto}
 .brand-row span{font-weight:600;font-size:18px;letter-spacing:.24em}
