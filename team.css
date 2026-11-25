@@ -77,6 +77,7 @@ a.pc:hover h3{background-size:100% 1px}
 .feature h2 a.h2link:hover{background-size:100% 2px}
 .feature p a.inl{color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor}
 @media(max-width:900px){.feature.flip .vid{order:0}}
+@media(max-width:900px){#argos .vid{float:none;width:auto;margin:0 0 32px}}
 
 /* FOUR STRATEGIES alignment */
 @media(min-width:1301px){.strat .card h3{font-size:clamp(24px,1.8vw,30px);min-height:2.6em}.strat .card .more{min-height:3.4em;align-items:flex-start}.strat .card p{min-height:5.2em}}
@@ -254,7 +255,7 @@ span.more:hover{text-decoration:none}
 .fsoc a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.6);display:grid;place-items:center;color:#fff;transition:background .3s,color .3s}
 .fsoc a:hover{background:#f1cf63;border-color:#f1cf63;color:var(--ink)}
 /* Partnerships slider */
-.pslider{background:linear-gradient(#0f2160 0,#0f2160 calc(100% - 240px),var(--soft) calc(100% - 240px));padding:20px var(--pad) 130px}
+.pslider{--ps-card-width:min(560px,46%);--ps-panel-bottom:-35px;--ps-cta-height:84px;--ps-bottom-space:52px;background:linear-gradient(#0f2160 0,#0f2160 calc(100% - var(--ps-cta-height) - var(--ps-bottom-space)),var(--soft) calc(100% - var(--ps-cta-height) - var(--ps-bottom-space)));padding:20px var(--pad) var(--ps-bottom-space)}
 .ps-tabs{display:grid;grid-template-columns:repeat(4,1fr);overflow-x:auto;scrollbar-width:none}
 .ps-tabs::-webkit-scrollbar{display:none}
 .ps-tab{position:relative;text-align:left;background:none;border:0;border-right:1px solid rgba(255,255,255,.35);padding:12px 18px 24px;cursor:pointer;color:rgba(255,255,255,.55);min-width:200px;transition:color .35s}
@@ -265,19 +266,20 @@ span.more:hover{text-decoration:none}
 .ps-tab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:#f1cf63;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .ps-tab.on{color:#fff}.ps-tab.on::after{transform:scaleX(1)}
 .ps-tab:hover{color:#fff}
-.ps-stage{position:relative;display:grid;margin-top:0}
+.ps-stage{position:relative;display:grid;margin-top:0;margin-bottom:var(--ps-panel-bottom);padding-bottom:max(0px,var(--ps-panel-bottom));clip-path:inset(0 0 calc(-1 * var(--ps-panel-bottom)) 0)}
 .ps-slide{grid-area:1/1;position:relative;height:clamp(420px,44vw,640px);visibility:hidden}
 .ps-slide.on,.ps-slide.out{visibility:visible}.ps-slide.on{z-index:2}.ps-slide.out{z-index:1}
 .ps-img{position:absolute;inset:0;background-size:cover;background-position:center}
 .ps-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,12,35,.55),rgba(5,12,35,.05) 60%)}
 .ps-quote{position:absolute;left:4%;top:36%;max-width:min(560px,48%);font:400 clamp(30px,3vw,48px)/1.25 Newsreader,Georgia,serif;color:#fff;z-index:2}
-.ps-card{position:absolute;right:0;bottom:-150px;width:min(560px,46%);background:#fff;padding:clamp(30px,3.6vw,58px);z-index:3;box-shadow:0 18px 50px rgba(11,21,51,.08)}
+.ps-card{position:absolute;right:0;bottom:calc(-1 * var(--ps-panel-bottom));width:var(--ps-card-width);background:#fff;padding:clamp(21px,2.52vw,40.6px);z-index:3;box-shadow:0 18px 50px rgba(11,21,51,.08)}
 .ps-card p{font:400 clamp(20px,1.7vw,27px)/1.4 Newsreader,Georgia,serif;color:var(--blue)}
 .ps-arrows{position:absolute;right:3%;top:7%;display:flex;gap:10px;z-index:5}
 .ps-arrows button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:none;color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
 .ps-arrows button:hover{background:#fff;color:var(--ink)}
-.ps-cta{position:absolute;left:0;bottom:0;z-index:5;display:flex;align-items:center;gap:16px;background:var(--blue);color:#fff;text-decoration:none;padding:20px 34px 20px 22px;font-size:15px}
-.ps-play{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;transition:transform .3s}
+.ps-cta{position:absolute;left:0;bottom:max(0px,calc(-1 * var(--ps-panel-bottom)));z-index:4;display:flex;align-items:center;justify-content:flex-start;gap:28px;width:calc(100% - var(--ps-card-width));height:var(--ps-cta-height);background:var(--blue);color:#fff;text-decoration:none;padding:10px clamp(38px,4vw,60px);font:400 clamp(22px,2.15vw,34px)/1.15 Newsreader,Georgia,serif;transition:background .25s}
+.ps-cta:hover,.ps-cta:focus-visible{background:#0f2160}
+.ps-play{width:62px;height:62px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;flex:none;transition:transform .3s}.ps-play svg{width:22px;height:14px}
 .ps-cta:hover .ps-play{transform:translateX(4px)}
 @keyframes psImgIn{0%{opacity:0;transform:scale(1.06)}100%{opacity:1;transform:none}}
 @keyframes psOut{0%{opacity:1}100%{opacity:0}}
@@ -287,7 +289,7 @@ span.more:hover{text-decoration:none}
 .ps-slide.out .ps-img,.ps-slide.out .ps-quote,.ps-slide.out .ps-card{animation:psOut .6s both}
 .ps-slide.on .ps-quote{animation:psUp .8s .35s cubic-bezier(.2,.7,.2,1) both}
 .ps-slide.on .ps-card{animation:psCard .8s .5s cubic-bezier(.65,0,.35,1) both}
-@media(max-width:900px){.pslider{background:linear-gradient(#0f2160 0,#0f2160 70%,var(--soft) 70%);padding-bottom:60px}.ps-slide{height:auto;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end}.ps-img{bottom:auto;height:420px}.ps-quote{top:120px;max-width:86%}.ps-card{position:relative;bottom:auto;right:auto;width:auto;margin-top:380px}.ps-cta{top:340px;bottom:auto}}
+@media(max-width:900px){.pslider{--ps-panel-lift:115px;background:linear-gradient(#0f2160 0,#0f2160 70%,var(--soft) 70%);padding-bottom:60px}.ps-stage{margin-bottom:0;padding-bottom:0;clip-path:none}.ps-slide{height:auto;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end}.ps-img{bottom:auto;height:420px}.ps-quote{top:120px;max-width:86%}.ps-card{position:relative;bottom:auto;right:auto;width:auto;margin-top:calc(428px - var(--ps-panel-lift))}.ps-cta{top:calc(340px - var(--ps-panel-lift));bottom:auto;width:auto;height:auto;padding:18px 30px;font-size:20px;gap:18px}.ps-play{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.ps-slide *{animation:none!important}}
 /* Admin page */
 .admin{padding:170px var(--pad) 120px;min-height:70vh}
@@ -391,7 +393,6 @@ html{scroll-behavior:smooth}
 .admin-sub{margin-top:90px;font:400 clamp(34px,3.2vw,48px)/1.1 Newsreader,Georgia,serif;color:var(--navy);border-bottom:3px solid var(--navy);padding-bottom:20px}
 #wtForm label{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;row-gap:10px}
 #wtForm label>input,#wtForm label>textarea{flex-basis:100%}
-.pslider{padding-bottom:200px}
 .tl-bg-gta{background-size:cover;background-position:60% 30%}
 .tl-bg-gta::after{background:linear-gradient(90deg,rgba(10,8,30,.86) 0%,rgba(10,8,30,.6) 48%,rgba(10,8,30,.15) 100%)!important}
 .tl-polaroid img[src*="ttwo-cover"],.tl-polaroid img[src*="wharton-magazine"]{object-position:top;aspect-ratio:8.5/11}
