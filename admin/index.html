@@ -30,6 +30,9 @@
   <p class="admin-count" id="adminCount"></p>
   <div class="admin-wrap"><table class="admin-table" id="adminTable"><thead></thead><tbody></tbody></table></div>
   <p class="admin-msg" id="adminMsg">Loading...</p>
+  <h2 class="admin-sub">Partner Inquiries</h2>
+  <p class="admin-count" id="inqCount"></p>
+  <div class="admin-wrap"><table class="admin-table" id="inqTable"><thead></thead><tbody></tbody></table></div>
 </main>
 <footer>
   <div class="row">
@@ -54,6 +57,11 @@
     tbl.tHead.innerHTML='<tr>'+data.headers.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr>';
     tbl.tBodies[0].innerHTML=rows.map(r=>'<tr'+(r[4]==='Existing member'?'':' class="new"')+'>'+r.map((c,k)=>{const h=data.headers[k]||'';const cls=h==='Full Name'?'nm':(h.indexOf('Why')===0?'why':'');return '<td'+(cls?' class="'+cls+'"':'')+' data-label="'+esc(h)+'">'+(h.indexOf('Why')===0&&c==='Existing member'?'<span class="tag">Existing member</span>':esc(c))+'</td>'}).join('')+'</tr>').join('');
     const apps=data.rows.filter(r=>r[4]!=='Existing member').length;
+    const inq=data.inquiries||{headers:[],rows:[]},it=document.getElementById('inqTable');
+    const irows=inq.rows.filter(r=>!term||r.join(' ').toLowerCase().includes(term));
+    it.tHead.innerHTML='<tr>'+inq.headers.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr>';
+    it.tBodies[0].innerHTML=irows.length?irows.map(r=>'<tr>'+r.map((c,k)=>{const h=inq.headers[k]||'';const cls=(h==='First Name'||h==='Last Name')?'nm':(h==='Message'?'why':'');const v=h==='Email'?'<a href="mailto:'+esc(c)+'">'+esc(c)+'</a>':esc(c);return '<td'+(cls?' class="'+cls+'"':'')+'>'+v+'</td>'}).join('')+'</tr>').join(''):'<tr><td colspan="'+Math.max(inq.headers.length,1)+'">No inquiries yet.</td></tr>';
+    document.getElementById('inqCount').textContent=inq.rows.length+(inq.rows.length===1?' inquiry':' inquiries');
     count.textContent=data.rows.length+(data.rows.length===1?' person · ':' people · ')+apps+' new application'+(apps===1?'':'s')+(term?' · '+rows.length+' shown':'');
   }
   async function load(){
