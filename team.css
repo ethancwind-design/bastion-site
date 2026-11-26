@@ -541,3 +541,13 @@ html{scroll-behavior:smooth}
 .cx-amount b{font-family:Newsreader,serif;font-weight:400;font-size:clamp(72px,8vw,128px);line-height:1}
 .cx-amount small{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#f1cf63}
 @media(max-width:1000px){.cx-col{flex-basis:88%;padding:0 26px 24px 24px}.cx-body{grid-template-columns:1fr;gap:26px}.cx-media,.cx-media.cx-cover,.cx-media.cx-banner,.cx-names,.cx-social{height:260px}.cx-media.cx-banner{height:auto}}
+/* News is text only now */
+.cx-body{grid-template-columns:1fr}
+.cx-txt{max-width:820px}
+.cx-col{padding-bottom:10px}
+/* Moving names band above News */
+.names-band{background:#fff;padding:70px 0 20px;display:flex;flex-direction:column;gap:22px;overflow:hidden;border-top:1px solid #e6e9ef}
+.names-band .cx-row{overflow:hidden;white-space:nowrap}
+.names-band .cx-run span{font-size:18px}
+/* Funds slider: CTA and card sit on the image */
+#partner-slider{--ps-panel-bottom:0px;padding-top:56px}
