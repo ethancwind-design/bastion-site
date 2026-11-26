@@ -75,7 +75,12 @@
     .chip:disabled{opacity:.45;cursor:not-allowed;background:#fff}
     .chip-note{margin:10px 0 0;font-size:13px;color:var(--mute)}
     .cblock{margin-top:22px;padding:22px 22px 8px;background:#f6f8fc;border:1px solid #e3e8f2;border-radius:4px}
-    .cblock h4{margin:0 0 14px;color:var(--navy);font:400 21px/1.2 Newsreader,Georgia,serif}
+    .cblock h4{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px;color:var(--navy);font:400 21px/1.2 Newsreader,Georgia,serif}
+    .rank{display:inline-block;margin-right:10px;padding:3px 9px;border-radius:20px;background:var(--navy);color:#fff;font:600 11px/1.4 "Albert Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;vertical-align:middle}
+    .cblock:nth-child(2) .rank{background:#7b8aa8}
+    .swap{min-width:0;padding:7px 12px;border:1px solid var(--line);background:#fff;color:var(--navy);font:600 12px/1 "Albert Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;border-radius:3px}
+    .swap:hover{background:#eef3ff;border-color:var(--blue)}
+    .chip .ord{margin-left:auto;font-size:12px;font-weight:600;color:var(--blue)}
     .file{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:16px;border:1.5px dashed var(--line);border-radius:4px}
     .file input{width:auto;border:0;padding:0}
     .file small{color:var(--mute);font-size:13px}
@@ -101,7 +106,7 @@
       <div class="in">
         <h1>Apply</h1>
         <p class="sub">Apply for an interview with the Bastion Investment Society.</p>
-        <p class="notice"><b>Please don't submit an application until the spring semester begins.</b> You can apply to up to two committees.</p>
+        <p class="notice"><b>Applications open January 20.</b> Please don't submit an application until the spring semester begins. You can apply to up to two committees, ranked by preference. Your answers save in this browser as you type.</p>
         <form id="application-form" novalidate>
           <div class="sec">
             <h3>About you</h3>
@@ -120,7 +125,7 @@
           </div>
           <div class="sec">
             <h3>Choose your committees</h3>
-            <p class="lede">Pick one or two. Each committee asks two short questions.</p>
+            <p class="lede">Pick one or two. Your first pick is your first choice; use Swap to change the order. Each committee asks two short questions.</p>
             <div class="chips" id="chips" role="group" aria-label="Committees"></div>
             <p class="chip-note" id="chipNote">You can choose up to two.</p>
             <div id="cblocks"></div>
@@ -177,10 +182,11 @@
     function wireCount(ta){const max=+ta.dataset.max,out=ta.parentElement.querySelector('.count'),wc=ta.parentElement.querySelector('.wc');const upd=()=>{const n=words(ta.value);out.textContent=n+' / '+max+' words';wc.classList.toggle('over',n>max)};ta.addEventListener('input',upd);upd()}
     function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
     function renderBlocks(){
-      blocks.innerHTML=chosen.map((c,k)=>{const p=promptFor(c);return '<div class="cblock" data-committee="'+esc(c)+'"><h4>'+esc(c)+'</h4>'+
+      blocks.innerHTML=chosen.map((c,k)=>{const p=promptFor(c);return '<div class="cblock" data-committee="'+esc(c)+'"><h4><span><span class="rank">'+(k===0?'1st choice':'2nd choice')+'</span>'+esc(c)+'</span>'+(k===1?'<button type="button" class="swap">Swap order</button>':'')+'</h4>'+
         '<label><span class="q">'+esc(p[0])+' <em>(up to 250 words)</em></span><textarea name="idea'+k+'" data-max="250" rows="6" required></textarea><span class="wc"><span></span><span class="count"></span></span></label>'+
         '<label><span class="q">'+esc(p[1])+' <em>(up to 250 words)</em></span><textarea name="view'+k+'" data-max="250" rows="6" required></textarea><span class="wc"><span></span><span class="count"></span></span></label></div>'}).join('');
       blocks.querySelectorAll('textarea').forEach(wireCount);
+      const sw=blocks.querySelector('.swap');if(sw)sw.addEventListener('click',()=>{saveDraft();chosen.reverse();refreshChips();renderBlocks();restoreDraft();persist()});
     }
     const draft={};
     function saveDraft(){blocks.querySelectorAll('.cblock').forEach(b=>b.querySelectorAll('textarea').forEach(t=>{draft[b.dataset.committee+'|'+t.name.replace(/\d+$/,'')]=t.value}))}
@@ -189,14 +195,22 @@
       saveDraft();
       const i=chosen.indexOf(c);
       if(i>=0)chosen.splice(i,1);else if(chosen.length<2)chosen.push(c);
-      chips.querySelectorAll('.chip').forEach(b=>{const on=chosen.includes(b.dataset.c);b.setAttribute('aria-pressed',on);b.disabled=!on&&chosen.length>=2});
+      refreshChips();renderBlocks();restoreDraft();persist();
+    }
+    function refreshChips(){
+      chips.querySelectorAll('.chip').forEach(b=>{const k=chosen.indexOf(b.dataset.c),on=k>=0;b.setAttribute('aria-pressed',on);b.disabled=!on&&chosen.length>=2;let o=b.querySelector('.ord');if(on){if(!o){o=document.createElement('span');o.className='ord';b.appendChild(o)}o.textContent=k===0?'1st':'2nd'}else if(o)o.remove()});
       note.textContent=chosen.length>=2?'You have chosen two committees. Unselect one to change.':'You can choose up to two.';
-      renderBlocks();restoreDraft();
     }
     function buildChips(list){chips.innerHTML=list.map(c=>'<button type="button" class="chip" aria-pressed="false" data-c="'+esc(c)+'"><span class="box" aria-hidden="true"></span>'+esc(c)+'</button>').join('');chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.c,b)))}
     buildChips(FALLBACK);
-    fetch('/investment-team/').then(r=>r.text()).then(h=>{const d=new DOMParser().parseFromString(h,'text/html');const list=[...d.querySelectorAll('.rt-tabs [role=tab]')].map(b=>b.textContent.trim()).filter(Boolean);if(list.length&&!chosen.length)buildChips(list)}).catch(()=>{});
+    fetch('/investment-team/').then(r=>r.text()).then(h=>{const d=new DOMParser().parseFromString(h,'text/html');const list=[...d.querySelectorAll('.rt-tabs [role=tab]')].map(b=>b.textContent.trim()).filter(Boolean);if(list.length){const keep=chosen.slice();buildChips(list);chosen=keep.filter(c=>list.includes(c));refreshChips();if(chosen.length!==keep.length){renderBlocks();restoreDraft()}}}).catch(()=>{});
     wireCount(document.querySelector('textarea[name=contribution]'));
+    // Save a draft in this browser (not the resume file).
+    const DKEY='bastionApplicationDraft';
+    function persist(){try{saveDraft();const f=document.getElementById('application-form');const o={chosen,draft};['name','school','email','phone','contribution'].forEach(k=>o[k]=f.elements[k].value);localStorage.setItem(DKEY,JSON.stringify(o))}catch(e){}}
+    function loadDraft(){try{const o=JSON.parse(localStorage.getItem(DKEY)||'null');if(!o)return;const f=document.getElementById('application-form');['name','school','email','phone','contribution'].forEach(k=>{if(o[k])f.elements[k].value=o[k]});Object.assign(draft,o.draft||{});const avail=[...chips.querySelectorAll('.chip')].map(b=>b.dataset.c);chosen=(o.chosen||[]).filter(c=>avail.includes(c)).slice(0,2);refreshChips();renderBlocks();restoreDraft();f.elements.contribution.dispatchEvent(new Event('input'))}catch(e){}}
+    let ptimer;document.getElementById('application-form').addEventListener('input',()=>{clearTimeout(ptimer);ptimer=setTimeout(persist,400)});
+    loadDraft();
 
     // Submission -> Google Sheet "Applications" tab (Apps Script web app).
     const ENDPOINT='https://script.google.com/macros/s/AKfycbx-5JAkwXLPn2lSf8S6YmUPRGSe6agOHyMK9cB9wwMdCgqHth16wcEjSkdfMlWqdK8SwA/exec';
@@ -223,7 +237,7 @@
         const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});
         const j=await r.json();
         if(!j.ok)throw new Error(j.error||'failed');
-        card.classList.add('sent');window.scrollTo({top:0,behavior:'smooth'});
+        try{localStorage.removeItem(DKEY)}catch(e){}card.classList.add('sent');window.scrollTo({top:0,behavior:'smooth'});
       }catch(_){
         err.innerHTML='Something went wrong. Please try again, or email <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a>.';
       }finally{btn.disabled=false;btn.textContent='Submit application'}
