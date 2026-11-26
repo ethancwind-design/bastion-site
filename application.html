@@ -119,9 +119,9 @@
           </div>
           <div class="sec">
             <h3>Building Bastion</h3>
-            <label><span class="q">Every Bastion member keeps working to grow our network, create opportunities for other students, bring in partners, and improve our platform. What would you add to or improve about Bastion, and what will you bring to make it happen? <em>(required, up to 300 words)</em></span>
-              <textarea name="contribution" required data-max="300" rows="8"></textarea>
-              <span class="wc"><span></span><span class="count">0 / 300 words</span></span></label>
+            <label><span class="q">Every Bastion member keeps working to grow our network, create opportunities for other students, bring in partners, and improve our platform. What would you do to improve Bastion? <em>(required, up to 100 words)</em></span>
+              <textarea name="contribution" required data-max="100" rows="5"></textarea>
+              <span class="wc"><span></span><span class="count">0 / 100 words</span></span></label>
           </div>
           <div class="sec">
             <h3>Choose your committees</h3>
@@ -221,7 +221,7 @@
       const d=Object.fromEntries(new FormData(form));
       for(const k of ['name','school','email','phone','contribution']){if(!String(d[k]||'').trim()){err.textContent='Please fill in every field.';form.elements[k].focus();return}}
       if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email.trim())){err.textContent='Please enter a valid email.';form.elements.email.focus();return}
-      if(words(d.contribution)>300){err.textContent='Please keep "Building Bastion" to 300 words.';return}
+      if(words(d.contribution)>100){err.textContent='Please keep "Building Bastion" to 100 words.';return}
       if(!chosen.length){err.textContent='Please choose at least one committee.';chips.scrollIntoView({block:'center'});return}
       const committees=[];
       for(const b of blocks.querySelectorAll('.cblock')){const [ti,tv]=b.querySelectorAll('textarea');const p=promptFor(b.dataset.committee);
