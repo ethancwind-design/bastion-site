@@ -29,7 +29,7 @@
     .top a.home{color:#fff;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
     .top a.home:hover{text-decoration:underline;text-underline-offset:4px}
     main{position:relative;z-index:2;display:flex;justify-content:center;padding:clamp(28px,7vh,90px) var(--pad) 80px}
-    .card{width:min(560px,100%);background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+    .card{background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.28)}
     .card .in{padding:40px 44px 34px}
     h1{margin:0;text-align:center;color:var(--navy);font:700 46px/1.1 "Albert Sans",sans-serif;letter-spacing:.01em;text-transform:uppercase}
     .sub{margin:12px 0 26px;text-align:center;color:#333;font-size:16px}
@@ -51,8 +51,36 @@
     .done .tick{width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center}
     .done h2{margin:0 0 10px;color:var(--navy);font:700 26px/1.2 "Albert Sans",sans-serif}
     .done p{margin:0;color:#333}
-    .card.sent form,.card.sent .sub{display:none}
+    .card.sent form,.card.sent .sub,.card.sent .notice{display:none}
     .card.sent .done{display:block}
+    .card{width:min(760px,100%)}
+    .notice{margin:0 0 26px;padding:14px 18px;background:#fff7dc;border-left:4px solid #f1cf63;color:#3d3420;font-size:14.5px;line-height:1.55}
+    .notice b{color:var(--ink)}
+    .sec{margin:30px 0 0;padding-top:24px;border-top:1px solid #e3e6ee}
+    .sec:first-of-type{border-top:0;padding-top:0;margin-top:0}
+    .sec h3{margin:0 0 6px;color:var(--navy);font:400 24px/1.25 Newsreader,Georgia,serif}
+    .sec .lede{margin:0 0 16px;color:var(--mute);font-size:14.5px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+    .wc{display:flex;justify-content:space-between;gap:12px;margin-top:6px;font-size:13px;color:var(--mute)}
+    .wc.over{color:#b42318;font-weight:600}
+    .q{display:block;margin:0 0 6px;font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.5}
+    .q em{font-style:normal;font-weight:400;color:var(--mute)}
+    .chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+    .chip{position:relative;display:flex;align-items:center;gap:10px;min-width:0;padding:14px 16px;border:1.5px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);font:500 15px/1.3 "Albert Sans",sans-serif;text-align:left;letter-spacing:0;text-transform:none;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+    .chip:hover{border-color:var(--blue);background:#f5f8ff}
+    .chip .box{flex:none;width:18px;height:18px;border:1.5px solid var(--line);border-radius:3px;display:grid;place-items:center;transition:background .2s,border-color .2s}
+    .chip[aria-pressed=true]{border-color:var(--blue);background:#eef3ff;box-shadow:0 0 0 1px var(--blue) inset}
+    .chip[aria-pressed=true] .box{background:var(--blue);border-color:var(--blue)}
+    .chip[aria-pressed=true] .box:after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+    .chip:disabled{opacity:.45;cursor:not-allowed;background:#fff}
+    .chip-note{margin:10px 0 0;font-size:13px;color:var(--mute)}
+    .cblock{margin-top:22px;padding:22px 22px 8px;background:#f6f8fc;border:1px solid #e3e8f2;border-radius:4px}
+    .cblock h4{margin:0 0 14px;color:var(--navy);font:400 21px/1.2 Newsreader,Georgia,serif}
+    .file{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:16px;border:1.5px dashed var(--line);border-radius:4px}
+    .file input{width:auto;border:0;padding:0}
+    .file small{color:var(--mute);font-size:13px}
+    button.chip{min-width:0}
+    @media(max-width:600px){.two{grid-template-columns:1fr}}
     @media(max-width:600px){.brand b{font-size:24px}.brand img{height:38px}.brand span{display:none}.card .in{padding:30px 22px 26px}h1{font-size:36px}button{width:100%}}
     @media(prefers-reduced-motion:reduce){.bg video{display:none}}
   </style>
@@ -73,11 +101,34 @@
       <div class="in">
         <h1>Apply</h1>
         <p class="sub">Apply for an interview with the Bastion Investment Society.</p>
+        <p class="notice"><b>Please don't submit an application until the spring semester begins.</b> You can apply to up to two committees.</p>
         <form id="application-form" novalidate>
-          <label><span>Full name</span><input name="name" autocomplete="name" required maxlength="120"></label>
-          <label><span>School</span><input name="school" autocomplete="organization" required maxlength="160"></label>
-          <label><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
-          <label><span>Why are you interested in joining Bastion?</span><textarea name="why" required maxlength="4000"></textarea><small class="hint">5 to 6 sentences is fine.</small></label>
+          <div class="sec">
+            <h3>About you</h3>
+            <div class="two">
+              <label><span>Full name</span><input name="name" autocomplete="name" required maxlength="120"></label>
+              <label><span>School</span><input name="school" autocomplete="organization" required maxlength="160"></label>
+              <label><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="160"></label>
+              <label><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" required maxlength="40"></label>
+            </div>
+          </div>
+          <div class="sec">
+            <h3>Building Bastion</h3>
+            <label><span class="q">Every Bastion member keeps working to grow our network, create opportunities for other students, bring in partners, and improve our platform. What would you add to or improve about Bastion, and what will you bring to make it happen? <em>(required, up to 300 words)</em></span>
+              <textarea name="contribution" required data-max="300" rows="8"></textarea>
+              <span class="wc"><span></span><span class="count">0 / 300 words</span></span></label>
+          </div>
+          <div class="sec">
+            <h3>Choose your committees</h3>
+            <p class="lede">Pick one or two. Each committee asks two short questions.</p>
+            <div class="chips" id="chips" role="group" aria-label="Committees"></div>
+            <p class="chip-note" id="chipNote">You can choose up to two.</p>
+            <div id="cblocks"></div>
+          </div>
+          <div class="sec">
+            <h3>Resume</h3>
+            <label class="file"><input type="file" name="resume" id="resume" accept="application/pdf" required><small>PDF, up to 5 MB.</small></label>
+          </div>
           <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
           <div class="actions"><button type="submit" id="submit">Submit application</button></div>
           <p class="err" id="err" role="alert"></p>
@@ -106,19 +157,73 @@
       vids[0].play().catch(()=>{});
     })();
 
+    // Committees come from the Committees page, so new committees appear here automatically.
+    const FALLBACK=['Global Quantitative Strategies','Venture Capital','Equities: Tech','Equities: Retail','Equities: Financials','Equities: Industrials','Energy & Infrastructure','Fixed Income','Real Estate'];
+    const PROMPTS={
+      'Global Quantitative Strategies':['Describe a systematic strategy or signal you would want to test. What data would you use, and how would you know whether it works?','Pick one factor or market anomaly (for example momentum, value, or carry). Do you think it still works today? Why or why not?'],
+      'Venture Capital':['Describe an early-stage startup or market you would invest in today. Why now?','Pick one private company. Would you invest at its most recent valuation? Why or why not?'],
+      'Equities: Tech':['What trend in technology do you think the market is mispricing, and how would you invest around it?','Pick one public technology company and give us your view: buy, hold, or sell, and why.'],
+      'Equities: Retail':['What change in how consumers shop or spend do you think the market is missing?','Pick one public consumer or retail company and give us your view: buy, hold, or sell, and why.'],
+      'Equities: Financials':['What change in banking, insurance, asset management, or payments do you think matters most right now?','Pick one public financial company and give us your view: buy, hold, or sell, and why.'],
+      'Equities: Industrials':['Which part of the industrial economy (for example aerospace, defense, machinery, or transportation) do you think is most mispriced, and why?','Pick one public industrial company and give us your view: buy, hold, or sell, and why.'],
+      'Energy & Infrastructure':['What change in energy or infrastructure do you think will matter most over the next five years, and why?','Pick one energy or infrastructure company or project and give us your view: buy, hold, or sell, and why.'],
+      'Fixed Income':['Where do you think interest rates or credit spreads are heading over the next year, and why?','Pick one bond (government or corporate). Would you buy it at today’s yield? Why or why not?'],
+      'Real Estate':['Which property type or market do you think is most mispriced right now, and why?','Pick one REIT or one property market and give us your view: buy, hold, or sell, and why.']
+    };
+    const promptFor=c=>PROMPTS[c]||['Tell us about an idea you have for the '+c+' committee.','Pick one company or asset this committee would cover and give us your view.'];
+    const chips=document.getElementById('chips'),blocks=document.getElementById('cblocks'),note=document.getElementById('chipNote');
+    let chosen=[];
+    const words=t=>(String(t).trim().match(/\S+/g)||[]).length;
+    function wireCount(ta){const max=+ta.dataset.max,out=ta.parentElement.querySelector('.count'),wc=ta.parentElement.querySelector('.wc');const upd=()=>{const n=words(ta.value);out.textContent=n+' / '+max+' words';wc.classList.toggle('over',n>max)};ta.addEventListener('input',upd);upd()}
+    function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+    function renderBlocks(){
+      blocks.innerHTML=chosen.map((c,k)=>{const p=promptFor(c);return '<div class="cblock" data-committee="'+esc(c)+'"><h4>'+esc(c)+'</h4>'+
+        '<label><span class="q">'+esc(p[0])+' <em>(up to 250 words)</em></span><textarea name="idea'+k+'" data-max="250" rows="6" required></textarea><span class="wc"><span></span><span class="count"></span></span></label>'+
+        '<label><span class="q">'+esc(p[1])+' <em>(up to 250 words)</em></span><textarea name="view'+k+'" data-max="250" rows="6" required></textarea><span class="wc"><span></span><span class="count"></span></span></label></div>'}).join('');
+      blocks.querySelectorAll('textarea').forEach(wireCount);
+    }
+    const draft={};
+    function saveDraft(){blocks.querySelectorAll('.cblock').forEach(b=>b.querySelectorAll('textarea').forEach(t=>{draft[b.dataset.committee+'|'+t.name.replace(/\d+$/,'')]=t.value}))}
+    function restoreDraft(){blocks.querySelectorAll('.cblock').forEach(b=>b.querySelectorAll('textarea').forEach(t=>{const v=draft[b.dataset.committee+'|'+t.name.replace(/\d+$/,'')];if(v){t.value=v;t.dispatchEvent(new Event('input'))}}))}
+    function toggle(c,btn){
+      saveDraft();
+      const i=chosen.indexOf(c);
+      if(i>=0)chosen.splice(i,1);else if(chosen.length<2)chosen.push(c);
+      chips.querySelectorAll('.chip').forEach(b=>{const on=chosen.includes(b.dataset.c);b.setAttribute('aria-pressed',on);b.disabled=!on&&chosen.length>=2});
+      note.textContent=chosen.length>=2?'You have chosen two committees. Unselect one to change.':'You can choose up to two.';
+      renderBlocks();restoreDraft();
+    }
+    function buildChips(list){chips.innerHTML=list.map(c=>'<button type="button" class="chip" aria-pressed="false" data-c="'+esc(c)+'"><span class="box" aria-hidden="true"></span>'+esc(c)+'</button>').join('');chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.c,b)))}
+    buildChips(FALLBACK);
+    fetch('/investment-team/').then(r=>r.text()).then(h=>{const d=new DOMParser().parseFromString(h,'text/html');const list=[...d.querySelectorAll('.rt-tabs [role=tab]')].map(b=>b.textContent.trim()).filter(Boolean);if(list.length&&!chosen.length)buildChips(list)}).catch(()=>{});
+    wireCount(document.querySelector('textarea[name=contribution]'));
+
     // Submission -> Google Sheet "Applications" tab (Apps Script web app).
     const ENDPOINT='https://script.google.com/macros/s/AKfycbx-5JAkwXLPn2lSf8S6YmUPRGSe6agOHyMK9cB9wwMdCgqHth16wcEjSkdfMlWqdK8SwA/exec';
     const form=document.getElementById('application-form'),btn=document.getElementById('submit'),err=document.getElementById('err'),card=document.getElementById('card');
+    const readFile=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(f)});
     form.addEventListener('submit',async e=>{
       e.preventDefault();err.textContent='';
       const d=Object.fromEntries(new FormData(form));
-      for(const k of ['name','school','phone','why']){if(!String(d[k]||'').trim()){err.textContent='Please fill in every field.';form.elements[k].focus();return}}
+      for(const k of ['name','school','email','phone','contribution']){if(!String(d[k]||'').trim()){err.textContent='Please fill in every field.';form.elements[k].focus();return}}
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email.trim())){err.textContent='Please enter a valid email.';form.elements.email.focus();return}
+      if(words(d.contribution)>300){err.textContent='Please keep "Building Bastion" to 300 words.';return}
+      if(!chosen.length){err.textContent='Please choose at least one committee.';chips.scrollIntoView({block:'center'});return}
+      const committees=[];
+      for(const b of blocks.querySelectorAll('.cblock')){const [ti,tv]=b.querySelectorAll('textarea');const p=promptFor(b.dataset.committee);
+        if(!ti.value.trim()||!tv.value.trim()){err.textContent='Please answer both questions for '+b.dataset.committee+'.';(ti.value.trim()?tv:ti).focus();return}
+        if(words(ti.value)>250||words(tv.value)>250){err.textContent='Please keep each committee answer to 250 words.';return}
+        committees.push({name:b.dataset.committee,ideaPrompt:p[0],idea:ti.value.trim(),viewPrompt:p[1],view:tv.value.trim()})}
+      const f=document.getElementById('resume').files[0];
+      if(!f){err.textContent='Please attach your resume.';return}
+      if(f.type!=='application/pdf'||f.size>5*1024*1024){err.textContent='Your resume must be a PDF under 5 MB.';return}
       btn.disabled=true;btn.textContent='Submitting…';
       try{
-        const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+        const body={name:d.name,school:d.school,email:d.email,phone:d.phone,contribution:d.contribution,website:d.website,committees,resume:{name:f.name,type:f.type,data:await readFile(f)}};
+        const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});
         const j=await r.json();
         if(!j.ok)throw new Error(j.error||'failed');
-        card.classList.add('sent');
+        card.classList.add('sent');window.scrollTo({top:0,behavior:'smooth'});
       }catch(_){
         err.innerHTML='Something went wrong. Please try again, or email <a href="mailto:bastioninvestmentsociety@gmail.com">bastioninvestmentsociety@gmail.com</a>.';
       }finally{btn.disabled=false;btn.textContent='Submit application'}
