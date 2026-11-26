@@ -22,6 +22,7 @@
   };
   const VP_ROLES = ['Vice President of Internal Affairs', 'Vice President of External Affairs', 'Vice President of Community Outreach'];
   const OFFICERS = {
+    penn: { 'Vice President of External Affairs': { name: 'James Horangic', url: 'https://www.linkedin.com/in/james-horangic-314026364/', photo: '/media/people/james-horangic.jpg' } },
     columbia: { 'Vice President of Community Outreach': { name: 'Hugo Eechaute', url: 'https://www.linkedin.com/in/hugoeechaute/', photo: '/media/people/hugo-eechaute.jpg' }, 'Vice President of Internal Affairs': { name: 'Sophia Kalochoritis', url: 'https://www.linkedin.com/in/skalochoritis/', photo: '/media/people/sophia-kalochoritis.jpg' }, 'Vice President of External Affairs': { name: 'Fateh Arif Kerimli', url: 'https://www.linkedin.com/in/fateh-arif-kerimli/', photo: '/media/people/fateh-arif-kerimli.jpg' } }
   };
   const officers = presCard + VP_ROLES.map((role) => card(Object.assign({ name: 'First Last' }, (OFFICERS[key] || {})[role], { role: role }))).join('');
@@ -39,7 +40,6 @@
     penn: [
       { name: 'Albert Armin', role: 'Portfolio Manager, Real Estate', url: 'https://www.linkedin.com/in/albert-armin-07110026b/', photo: '/media/people/albert-armin.jpg' },
       { name: 'Ryan Watach', role: 'Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/ryan-watach/', photo: '/media/people/ryan-watach.jpg' },
-      { name: 'James Horangic', role: 'Associate Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/james-horangic-314026364/', photo: '/media/people/james-horangic.jpg' },
       { name: 'Asher Wan', role: 'Portfolio Manager, Equities: Financials', url: 'https://www.linkedin.com/in/asherwan/', photo: '/media/people/asher-wan.jpg' },
       { name: 'Arna Rakhimbergenova', role: 'Portfolio Manager, Energy &amp; Infrastructure', url: 'https://www.linkedin.com/in/arnusikon/', photo: '/media/people/arna-rakhimbergenova.jpg' },
       { name: 'David Bratucu', role: 'Co-Founder &amp; Chief Investment Officer', url: 'https://www.linkedin.com/in/david-bratucu/', photo: '/media/people/david-bratucu.jpg' },
