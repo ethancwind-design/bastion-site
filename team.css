@@ -520,3 +520,7 @@ html{scroll-behavior:smooth}
 .cx-social{aspect-ratio:auto;padding:46px 20px;flex-direction:row}
 .cx-names{aspect-ratio:auto;padding:40px 0}
 .cx .cx-lead{margin-bottom:28px}
+.cx-media.cx-cover{aspect-ratio:auto;max-width:620px;overflow:visible;background:none}
+.cx-media.cx-banner{aspect-ratio:auto;border:1px solid #dfe3ea}
+.cx-banner img{display:block;width:100%;height:auto}
+.cx-more p a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
