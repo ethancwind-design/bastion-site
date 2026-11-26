@@ -87,3 +87,14 @@ function bastionAdminSession(){try{return JSON.parse(sessionStorage.getItem('bas
   addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))close()});
   setTimeout(()=>document.getElementById('devOk').focus(),50);
 })();
+
+// Apply button above the footer on every page (not on the application or admin pages).
+(function(){
+  if(/^\/(application|admin)/.test(location.pathname))return;
+  const f=document.querySelector('footer');
+  if(!f||document.querySelector('.apply-band'))return;
+  const s=document.createElement('section');
+  s.className='apply-band';
+  s.innerHTML='<a class="apply-band-btn" href="/application.html">Apply</a>';
+  f.parentNode.insertBefore(s,f);
+})();
