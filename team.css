@@ -444,3 +444,72 @@ html{scroll-behavior:smooth}
 .ps-cta:hover .ps-arrow{transform:translateX(6px)}
 .ps-cta:hover,.ps-cta:focus-visible{background:#0a1a4d}
 @media(max-width:900px){.pslider,.pslider:not(#x){background:#0f2160;padding-bottom:70px}}
+/* Bastion has three goals: Citadel "Work in Global Cities" accordion */
+.goals{background:#f5f5f5;padding:110px var(--pad) 100px;color:var(--ink)}
+.gl-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:start;margin-bottom:70px}
+.gl-head h2{margin:0;font-family:Newsreader,serif;font-weight:400;font-size:clamp(40px,4.4vw,72px);line-height:1.05;color:var(--navy)}
+.gl-head h2 em{display:block;font-style:normal;color:var(--blue)}
+.gl-head p{margin:8px 0 34px;color:var(--mute);font-size:18px;line-height:1.7;max-width:620px}
+.gl-btn{display:inline-block;position:relative;overflow:hidden;z-index:0;padding:17px 30px;background:var(--blue);color:#fff;text-decoration:none;font-family:"Albert Sans","Helvetica Neue",Arial,sans-serif;font-size:16px;letter-spacing:.02em;transition:color .35s ease}
+.gl-btn::before{content:"";position:absolute;inset:0;background:#f1cf63;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.65,0,.35,1);z-index:-1}
+.gl-btn:hover,.gl-btn:focus-visible{color:var(--ink)}
+.gl-btn:hover::before,.gl-btn:focus-visible::before{transform:scaleX(1)}
+.gl-item{border-bottom:1px solid #d6dbe4}
+.gl-row{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:0;padding:40px 0;cursor:pointer;text-align:left;color:var(--navy);font-family:Newsreader,serif;font-size:clamp(34px,3.2vw,52px);line-height:1.1}
+.gl-row span{transition:color .25s}
+.gl-row:hover span{color:var(--blue)}
+.gl-pm{position:relative;flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--navy);transition:background .25s,border-color .25s}
+.gl-pm::before,.gl-pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--navy);transform:translate(-50%,-50%);transition:transform .3s,background .25s}
+.gl-pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.gl-row:hover .gl-pm{border-color:var(--blue)}
+.gl-item.open .gl-pm{background:var(--blue);border-color:var(--blue)}
+.gl-item.open .gl-pm::before,.gl-item.open .gl-pm::after{background:#fff}
+.gl-item.open .gl-pm::after{transform:translate(-50%,-50%) rotate(0)}
+.gl-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.65,0,.35,1)}
+.gl-item.open .gl-panel{grid-template-rows:1fr}
+.gl-inner{overflow:hidden;display:grid;grid-template-columns:230px minmax(0,1fr) minmax(0,1.6fr);gap:clamp(28px,3vw,56px);align-items:start}
+.gl-item.open .gl-inner{padding-bottom:60px}
+.gl-subs{list-style:none;margin:0;padding:6px 0 0}
+.gl-sub{position:relative;display:block;background:none;border:0;padding:0 0 0 30px;margin:0 0 24px;cursor:pointer;text-align:left;font-family:"Albert Sans","Helvetica Neue",Arial,sans-serif;font-size:18px;color:var(--mute);transition:color .2s}
+.gl-sub:hover{color:var(--navy)}
+.gl-sub.on{color:var(--blue)}
+.gl-sub.on::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;border-radius:50%;background:var(--blue);transform:translateY(-50%)}
+.gl-texts{display:grid}
+.gl-text{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .4s}
+.gl-text.on{opacity:1;visibility:visible}
+.gl-text h3{margin:0 0 40px;font-family:Newsreader,serif;font-weight:400;font-size:30px;color:var(--navy)}
+.gl-k{margin:0 0 10px;font-size:15px;color:var(--navy)}
+.gl-v{margin:0 0 20px;font-size:17px;color:var(--mute)}
+.gl-p{margin:0 0 34px;font-size:17px;line-height:1.7;color:var(--mute)}
+.gl-p a{color:inherit;text-decoration:underline;text-underline-offset:4px}
+.gl-pics{display:grid;aspect-ratio:3/2;background:#e4e7ee}
+.gl-set{grid-area:1/1;position:relative;opacity:0;transition:opacity .5s}
+.gl-set.on{opacity:1}
+.gl-set img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1s ease,transform 4.5s linear}
+.gl-set img.on{opacity:1;transform:scale(1)}
+@media(max-width:1000px){.gl-inner{grid-template-columns:1fr}.gl-subs{display:flex;flex-wrap:wrap;gap:6px 22px}.gl-sub{margin:0}.gl-text h3{margin-bottom:20px}}
+@media(max-width:900px){.goals{padding:80px var(--pad) 70px}.gl-head{grid-template-columns:1fr;gap:24px;margin-bottom:40px}.gl-row{padding:28px 0}}
+/* News carousel columns with media */
+.cx-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:48px;align-items:start}
+.cx-more p{margin:0 0 16px;font-size:16px;line-height:1.65;color:var(--mute)}
+.cx-link{display:inline-flex;align-items:center;gap:12px;margin-top:8px;color:var(--blue);text-decoration:none;font-size:16px}
+.cx-link:hover{text-decoration:underline;text-underline-offset:4px}
+.cx-media{display:block;width:100%;aspect-ratio:4/3;overflow:hidden;background:#fff}
+.cx-media video{width:100%;height:100%;object-fit:cover;display:block}
+.cx-cover{aspect-ratio:auto;max-width:340px;box-shadow:0 18px 40px rgba(10,33,102,.15)}
+.cx-cover img{display:block;width:100%}
+.cx-names{display:flex;flex-direction:column;justify-content:center;gap:26px;border:1px solid #dfe3ea}
+.cx-row{overflow:hidden;white-space:nowrap}
+.cx-run{display:inline-block;animation:cxRun 60s linear infinite}
+.cx-row.r1 .cx-run{animation-duration:75s;animation-delay:-20s}
+.cx-row.r2 .cx-run{animation-duration:66s;animation-delay:-40s}
+.cx-run span{font-style:italic;font-size:17px;color:var(--blue);margin-right:34px}
+@keyframes cxRun{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.cx-social{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;border:1px solid #dfe3ea;color:var(--navy);text-decoration:none;transition:color .2s}
+.cx-social b{font-weight:500;font-size:18px}
+.cx-social:hover{color:var(--blue)}
+.cx .cx-when{margin-bottom:50px}
+@media(max-width:1000px){.cx-body{grid-template-columns:1fr;gap:28px}}
+@media(prefers-reduced-motion:reduce){.cx-run{animation:none}}
+/* Home: semester slideshow under "Research at the Center of Knowledge" */
+.home-tl{background:var(--deep)}.timeline.labeled.home-tl{--tl-top:56px}
