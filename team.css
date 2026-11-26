@@ -513,3 +513,10 @@ html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){.cx-run{animation:none}}
 /* Home: semester slideshow under "Research at the Center of Knowledge" */
 .home-tl{background:var(--deep)}.timeline.labeled.home-tl{--tl-top:56px}
+/* News: text on top, media full width below */
+.cx-body{grid-template-columns:1fr;gap:36px}
+.cx-txt{max-width:820px}
+.cx-media{aspect-ratio:16/9}
+.cx-social{aspect-ratio:auto;padding:46px 20px;flex-direction:row}
+.cx-names{aspect-ratio:auto;padding:40px 0}
+.cx .cx-lead{margin-bottom:28px}
