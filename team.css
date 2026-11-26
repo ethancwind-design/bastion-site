@@ -400,9 +400,11 @@ html{scroll-behavior:smooth}
 .split p a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;transition:opacity .2s}
 .split p a:hover{opacity:.7}
 /* "Internal Goal" label strip above the first timeline */
-#timeline{--tl-top:96px;padding-top:calc(var(--tl-top) + 90px)}
-#timeline .tl-bg{top:var(--tl-top)}
+.timeline.labeled{--tl-top:96px;padding-top:calc(var(--tl-top) + 90px)}
+.timeline.labeled .tl-bg{top:var(--tl-top)}
 .tl-label{position:absolute;top:0;left:var(--tl-frame);right:var(--tl-frame);height:var(--tl-top);display:flex;align-items:center;gap:18px;color:#fff;font-family:"Albert Sans","Helvetica Neue",Arial,sans-serif;font-size:15px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;z-index:3}
 .tl-label span{display:block;width:44px;height:4px;background:#f1cf63}
-@media(max-width:900px){.tl-label{left:var(--pad);right:var(--pad)}#timeline{--tl-top:76px;padding-top:calc(var(--tl-top) + 64px)}}
-#timeline .tl-polaroid{top:calc(var(--tl-top) + 70px)!important}
+@media(max-width:900px){.tl-label{left:var(--pad);right:var(--pad)}.timeline.labeled{--tl-top:76px;padding-top:calc(var(--tl-top) + 64px)}}
+.timeline.labeled .tl-polaroid{top:calc(var(--tl-top) + 70px)!important}
+.pslider .tl-label{position:static;height:auto;padding:28px 0 26px}
+@media(max-width:900px){.pslider .tl-label{padding:22px 0 20px}}

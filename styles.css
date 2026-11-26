@@ -271,7 +271,6 @@ footer a{color:#c3cffa}
 #argos .vid{float:left;width:calc((100% - var(--column-gap)) / 2);margin:0 var(--column-gap) 0 0}
 #argos.feature{padding-bottom:48px}
 #community.split{padding-top:48px}
-#timeline-3{display:none}
 .brand-row{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;text-decoration:none;color:var(--navy)}
 .brand-row img{height:54px;width:auto}
 .brand-row span{font-weight:600;font-size:18px;letter-spacing:.24em}
