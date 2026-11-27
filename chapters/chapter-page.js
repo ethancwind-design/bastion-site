@@ -46,6 +46,7 @@
       { name: 'Giacomo Maffre', role: 'Head of Portfolio Analytics', url: 'https://www.linkedin.com/in/giacomo-maffre/', photo: '/media/people/giacomo-maffre.jpg?v=2' },
       { name: 'Rasmus Suonio', role: 'Head of Trading &amp; Execution', url: 'https://www.linkedin.com/in/rasmus-suonio/', photo: '/media/people/rasmus-suonio.jpg' },
       { name: 'Adam Polzien', role: 'Portfolio Manager, Equities: Industrials', url: 'https://www.linkedin.com/in/adam-polzien-0a29a1262/', photo: '/media/people/adam-polzien.jpg' },
+      { name: 'Jonah Begley', role: 'Member &amp; Co-Founder, Equities: Tech', url: 'https://www.linkedin.com/in/jonah-begley-b0b92322a/', photo: '/media/people/jonah-begley.jpg' },
       { name: 'Stanley Yang', role: 'Associate Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/stanley-yang-933652369/', photo: '/media/people/stanley-yang.jpg' }
     ],
     columbia: [
