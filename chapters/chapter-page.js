@@ -31,14 +31,14 @@
       { name: 'Johnny Guo', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/johnny-guo-212bb22a5/', photo: '/media/people/johnny-guo.jpg' },
     ],
     princeton: [
-      { name: 'Krish Bharwani', role: 'Member', url: 'https://www.linkedin.com/in/krish-bharwani-aa0626313/' }
+      { name: 'Krish Bharwani', role: 'Member, Equities: Financials', url: 'https://www.linkedin.com/in/krish-bharwani-aa0626313/' }
     ],
     harvard: [
       { name: 'Ryan Casey', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/ryancasey-/', photo: '/media/people/ryan-casey.jpg' },
-      { name: 'Buhlebenkosi Mhlongo', role: 'Member', url: 'https://www.linkedin.com/in/buhlebenkosi-mhlongo-895285361/', photo: '/media/people/buhlebenkosi-mhlongo.jpg' }
+      { name: 'Buhlebenkosi Mhlongo', role: 'Associate Portfolio Manager, Equities: Retail', url: 'https://www.linkedin.com/in/buhlebenkosi-mhlongo-895285361/', photo: '/media/people/buhlebenkosi-mhlongo.jpg' }
     ],
     penn: [
-      { name: 'Albert Armin', role: 'Portfolio Manager, Real Estate', url: 'https://www.linkedin.com/in/albert-armin-07110026b/', photo: '/media/people/albert-armin.jpg' },
+      { name: 'Albert Armin', role: 'Head of Risk', url: 'https://www.linkedin.com/in/albert-armin-07110026b/', photo: '/media/people/albert-armin.jpg' },
       { name: 'Ryan Watach', role: 'Portfolio Manager, Venture Capital', url: 'https://www.linkedin.com/in/ryan-watach/', photo: '/media/people/ryan-watach.jpg' },
       { name: 'Asher Wan', role: 'Portfolio Manager, Equities: Financials', url: 'https://www.linkedin.com/in/asherwan/', photo: '/media/people/asher-wan.jpg' },
       { name: 'Arna Rakhimbergenova', role: 'Portfolio Manager, Energy &amp; Infrastructure', url: 'https://www.linkedin.com/in/arnusikon/', photo: '/media/people/arna-rakhimbergenova.jpg' },
@@ -52,10 +52,10 @@
       { name: 'Andrew Watcharananan', role: 'Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/andrew-watcharananan-627aa9348/', photo: '/media/people/andrew-watcharananan.jpg' },
       { name: 'Dean Karuhadej', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/varis-karuhadej-542616330/', photo: '/media/people/dean-karuhadej.jpg' },
       { name: 'Aituar Kurmambay', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/aituar-kurmambay-4238bb3a1/', photo: '/media/people/aituar-kurmambay.jpg' },
-      { name: 'Manuel Trelles', role: 'Member', url: 'https://www.linkedin.com/in/manuel-trelles-a559a437a/', photo: '/media/people/manuel-trelles.jpg' },
+      { name: 'Manuel Trelles', role: 'Associate Portfolio Manager, Fixed Income', url: 'https://www.linkedin.com/in/manuel-trelles-a559a437a/', photo: '/media/people/manuel-trelles.jpg' },
       { name: 'Pavani Rhoads', role: 'Portfolio Manager, Real Estate', url: 'https://www.linkedin.com/in/pavani-rhoads-0348582a5/', photo: '/media/people/pavani-rhoads.jpg' },
-      { name: 'Amelie Piergentili', role: 'Member', url: 'https://www.linkedin.com/in/amelie-piergentili-b832072a5/', photo: '/media/people/amelie-piergentili.jpg' },
-      { name: 'Aura Ackerman Sandoval', role: 'Member', url: 'https://www.linkedin.com/in/aura-ackerman-sandoval-3507b33ba/', photo: '/media/people/aura-ackerman-sandoval.jpg' }
+      { name: 'Amelie Piergentili', role: 'Member, Equities: Tech', url: 'https://www.linkedin.com/in/amelie-piergentili-b832072a5/', photo: '/media/people/amelie-piergentili.jpg' },
+      { name: 'Aura Ackerman Sandoval', role: 'Associate Portfolio Manager, Equities: Industrials', url: 'https://www.linkedin.com/in/aura-ackerman-sandoval-3507b33ba/', photo: '/media/people/aura-ackerman-sandoval.jpg' }
     ]
   };
   const memberList = MEMBERS[key] || Array.from({ length: 4 }, () => ({ name: 'First Last', role: 'Member' }));
