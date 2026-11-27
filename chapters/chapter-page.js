@@ -55,7 +55,7 @@
       { name: 'Manuel Trelles', role: 'Associate Portfolio Manager, Fixed Income', url: 'https://www.linkedin.com/in/manuel-trelles-a559a437a/', photo: '/media/people/manuel-trelles.jpg' },
       { name: 'Pavani Rhoads', role: 'Portfolio Manager, Real Estate', url: 'https://www.linkedin.com/in/pavani-rhoads-0348582a5/', photo: '/media/people/pavani-rhoads.jpg' },
       { name: 'Amelie Piergentili', role: 'Member, Equities: Tech', url: 'https://www.linkedin.com/in/amelie-piergentili-b832072a5/', photo: '/media/people/amelie-piergentili.jpg' },
-      { name: 'Aura Ackerman Sandoval', role: 'Associate Portfolio Manager, Equities: Industrials', url: 'https://www.linkedin.com/in/aura-ackerman-sandoval-3507b33ba/', photo: '/media/people/aura-ackerman-sandoval.jpg' }
+      { name: 'Aura Ackerman Sandoval', role: 'Member, Equities: Industrials', url: 'https://www.linkedin.com/in/aura-ackerman-sandoval-3507b33ba/', photo: '/media/people/aura-ackerman-sandoval.jpg' }
     ]
   };
   const memberList = MEMBERS[key] || Array.from({ length: 4 }, () => ({ name: 'First Last', role: 'Member' }));
