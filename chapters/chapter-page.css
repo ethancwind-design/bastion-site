@@ -239,3 +239,4 @@ body[data-chapter] header {
 .chapter-page .chapter-navy p a{color:var(--school-text-2,var(--navy))}
 .chapter-page .chapter-officials h2::after,.chapter-page .chapter-activity h2::after{background:var(--school-text-2,var(--school))}
 .chapter-officials .pgrid{align-items:stretch}
+.chapter-interviewing{max-width:760px;margin:26px 0 34px;font-size:18px;line-height:1.7;color:#58627a}

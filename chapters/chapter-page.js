@@ -13,7 +13,7 @@
   const pres = PRESIDENTS[key];
   const presCard = pres
     ? '<a class="pc" href="' + pres.url + '" target="_blank" rel="noopener"><h3>' + pres.name + '</h3><p class="pt">Campus President</p>' + (pres.photo ? '<div class="ph pic"><img src="' + pres.photo + '" alt="' + pres.name + '" loading="lazy"></div>' : '<div class="ph"><span></span></div>') + '</a>'
-    : '<article class="pc"><h3>First Last</h3><p class="pt">Campus President</p><div class="ph" aria-label="Portrait placeholder"><span></span></div></article>';
+    : '';
   const ph = '<div class="ph" aria-label="Portrait placeholder"><span></span></div>';
   const card = (p) => {
     const inner = '<h3>' + p.name + '</h3>' + (p.role ? '<p class="pt">' + p.role + '</p>' : '') +
@@ -25,7 +25,8 @@
     penn: { 'Vice President of External Affairs': { name: 'James Horangic', url: 'https://www.linkedin.com/in/james-horangic-314026364/', photo: '/media/people/james-horangic.jpg' } },
     columbia: { 'Vice President of Community Outreach': { name: 'Hugo Eechaute', url: 'https://www.linkedin.com/in/hugoeechaute/', photo: '/media/people/hugo-eechaute.jpg' }, 'Vice President of Internal Affairs': { name: 'Sophia Kalochoritis', url: 'https://www.linkedin.com/in/skalochoritis/', photo: '/media/people/sophia-kalochoritis.jpg' }, 'Vice President of External Affairs': { name: 'Fateh Arif Kerimli', url: 'https://www.linkedin.com/in/fateh-arif-kerimli/', photo: '/media/people/fateh-arif-kerimli.jpg', suffix: ' &amp; Co-Founder' } }
   };
-  const officers = presCard + VP_ROLES.map((role) => { const o = (OFFICERS[key] || {})[role] || {}; return card(Object.assign({ name: 'First Last' }, o, { role: role + (o.suffix || '') })); }).join('');
+  const officers = presCard + VP_ROLES.map((role) => { const o = (OFFICERS[key] || {})[role]; return o ? card(Object.assign({}, o, { role: role + (o.suffix || '') })) : ''; }).join('');
+  const interviewing = key !== 'penn' && key !== 'columbia';
   const MEMBERS = {
     yale: [
       { name: 'Johnny Guo', role: 'Associate Portfolio Manager, Global Quantitative Strategies', url: 'https://www.linkedin.com/in/johnny-guo-212bb22a5/', photo: '/media/people/johnny-guo.jpg' },
@@ -59,7 +60,7 @@
       { name: 'Aura Ackerman Sandoval', role: 'Member, Equities: Industrials', url: 'https://www.linkedin.com/in/aura-ackerman-sandoval-3507b33ba/', photo: '/media/people/aura-ackerman-sandoval.jpg' }
     ]
   };
-  const memberList = MEMBERS[key] || Array.from({ length: 4 }, () => ({ name: 'First Last', role: 'Member' }));
+  const memberList = (MEMBERS[key] || []).filter((m) => m.name !== 'First Last');
   const members = memberList.map(card).join('');
 
   const SCHOOL_COLORS = {
@@ -110,15 +111,16 @@
       '<section class="pgroup chapter-officials" id="officials">',
         '<div class="chapter-wrap">',
           '<h2>Chapter Officials</h2>',
-          '<div class="pgrid">' + officers + '</div>',
+          (interviewing ? '<p class="chapter-interviewing">This chapter is still in the interview process. We are currently deciding leadership roles and will share the full team soon.</p>' : ''),
+          (officers ? '<div class="pgrid">' + officers + '</div>' : ''),
         '</div>',
       '</section>',
-      '<section class="pgroup chapter-officials chapter-members" id="members">',
-        '<div class="chapter-wrap">',
-          '<h2>Chapter Members</h2>',
-          '<div class="pgrid">' + members + '</div>',
-        '</div>',
-      '</section>',
+      !members ? '' : '<section class="pgroup chapter-officials chapter-members" id="members">',
+        !members ? '' : '<div class="chapter-wrap">',
+          !members ? '' : '<h2>Chapter Members</h2>',
+          !members ? '' : '<div class="pgrid">' + members + '</div>',
+        !members ? '' : '</div>',
+      !members ? '' : '</section>',
       '<section class="pgroup alt chapter-activity">',
         '<div class="chapter-wrap">',
           '<h2>What We Are Up To</h2>',
