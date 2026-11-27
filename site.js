@@ -71,23 +71,6 @@ function bastionAdminSession(){try{return JSON.parse(sessionStorage.getItem('bas
   });
 })();
 
-// "Under development" notice: shows once per visit (per browser session) when the site opens.
-(function(){
-  let seen=false;try{seen=sessionStorage.getItem('devNoticeSeen')==='1'}catch(e){}
-  if(seen)return;
-  const m=document.createElement('div');m.className='modal open notice';m.id='devNotice';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','devTitle');
-  m.innerHTML=`<div class="modal-card"><button class="modal-x" id="devX" aria-label="Close"></button>
-    <h2 id="devTitle">Under Development</h2>
-    <p class="terms" style="margin-bottom:30px">This website is under development. Some pages and details are placeholders and will change.</p>
-    <button class="enter" id="devOk" type="button">CONTINUE</button></div>`;
-  document.body.appendChild(m);
-  const close=()=>{m.classList.remove('open');try{sessionStorage.setItem('devNoticeSeen','1')}catch(e){}};
-  document.getElementById('devX').onclick=close;document.getElementById('devOk').onclick=close;
-  m.addEventListener('mousedown',e=>{if(e.target===m)close()});
-  addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))close()});
-  setTimeout(()=>document.getElementById('devOk').focus(),50);
-})();
-
 // Apply button above the footer on every page (not on the application or admin pages).
 (function(){
   if(/^\/(application|admin)/.test(location.pathname))return;
